@@ -9,13 +9,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title><?php echo e($page_title) ?></title>
+	<?php echo loadCSS() ?>
 </head>
 
 <body class="<?php echo (empty($body_class) ? '' : $body_class) ?>">
 
 	<?php include("include/header.php") ?>
 	
-	<?php echo loadMenu('slideshow') ?>
+	<?php echo loadMenu() ?>
 	
 	<?php echo loadSection('slideshow') ?>
 	

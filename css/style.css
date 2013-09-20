@@ -1,0 +1,22 @@
+
+body {
+	background-color: #f6f6f6;
+	color: #2f2f2f;
+}
+
+body.dark {
+	background-color: #2f2f2f;
+	color: #f6f6f6;
+}
+
+a {
+	color: #006699;
+}
+
+body.dark a {
+	color: #66bbee;
+}
+
+.active {
+	font-weight: bold;
+}

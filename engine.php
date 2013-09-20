@@ -66,18 +66,31 @@
 	// - $wrapper Wrapper tag for menu, default "ul" 
 	// - $items Items tag, default "li"
 	// - $active Class name for active item, default is "active"
-	// - $max_depth Max depth for menu, default is NULL (no maximum)
+	// - $max_depth Max depth for menu (1 to n), default is NULL (no maximum)
 	function loadMenu($wrapper = "ul", $items = "li", $active = 'active', $max_depth = null) {
 		global $root;
-		// TODO: loadMenu()
-		
-		// Get and parse files list
-		$menu = array();
-		$ls = ls("$root/pages", true, false, true);
-		
-		
-		return '<p><i>[TODO: menu]</i></p>';
-		
+		global $page;
+		$h = "";
+		loadMenuRecursion($h, ls("$root/pages", true, false, true), '', $wrapper, $items, $active, $page, $max_depth);
+		return $h;
+	}
+	
+	// Menu recursive builder
+	function loadMenuRecursion(&$h, $menu, $prefix = '', $wrapper = "ul", $items = "li", $active = 'active', $active_page = null, $max_depth = null) {
+		if (!is_null($max_depth) && $max_depth == 0) return;
+		$h .= "<$wrapper>";
+		foreach ($menu as $m) {
+			if (is_array($m)) continue;
+			$h .= "<$items>";
+			$pagename = substr($m, 0, -4);
+			$pagelink = e(substr($m, 0, -4));
+			$pagetitle = e(ucfirst(trim(str_replace("_", " ", substr($m, 0, -4)))));
+			$c = "$prefix$pagename" == $active_page ? " class=\"$active\"" : "";
+			$h .= "<a$c href=\"index.php?page=$prefix$pagelink\">$pagetitle</a>";
+			if (!empty($menu[$pagename])) loadMenuRecursion($h, $menu[$pagename], "$prefix$pagename/", $wrapper, $items, $active, $active_page, is_null($max_depth) ? null : $max_depth - 1);
+			$h .= "</$items>";
+		} 
+		$h .= "</$wrapper>";
 	}
 	
 	// Returns page content
@@ -88,8 +101,35 @@
 	
 	// Returns custom section content
 	function loadSection($name) {
-		// TODO: loadSection()
-		return '<p><i>[TODO: section "' . e($name) . '"]</i></p>';
+		global $sections;
+		if (empty($sections[$name]) || $sections[$name][0] != 'enabled') return;
+		ob_start();
+		include "$root{$sections[$name][1]}";
+		return ob_get_clean();
+	}
+	
+	// Returns HTML inclusion of CSS files
+	function loadCSS() {
+		global $root;
+		global $css_files;
+		$h = "";
+		foreach ($css_files as $c) {
+			$mtime = @filemtime("$root$c");
+			if ($mtime) $h .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"$c?t=$mtime\" media=\"all\">\n";
+		}
+		return $h;
+	}
+	
+	// Re-defines sections over default ones
+	function overrideSections($array) {
+		global $sections;
+		foreach ($array as $k => $s) {
+			if (!empty($sections[$k])) { // Overrides
+				if ($s[0] != 'enabled' && $s[0] != 'disabled') $s[0] = $sections[$k][0]; // Inherit enable/disable
+				if ($s[1] == 'inherit') $s[1] = $sections[$k][1]; // Inherit path
+			}
+			$sections[$k] = $s;
+		}
 	}
 	
 ?>
