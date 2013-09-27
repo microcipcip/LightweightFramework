@@ -3,7 +3,7 @@
 	// JAVASCRIPT CONFIGURATION
 	
 	// Settings
-	$js_path = "/js"; // Main JS folder (set permissions to 777)
+	$js_path = "js"; // Main JS folder (set permissions to 777)
 	$js_sources_path = "$js_path/javascript"; // Uncompressed sources and settings folder 
 	$js_output = "$js_path/javascript.js"; // Single-file (compressed) output
 	$js_settings_output = "$js_path/settings.js"; // Single-file (compressed) output for settings

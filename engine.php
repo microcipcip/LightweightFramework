@@ -105,7 +105,7 @@
 		global $sections;
 		if (empty($sections[$name]) || $sections[$name][0] != 'enabled') return;
 		ob_start();
-		include "$root{$sections[$name][1]}";
+		include "$root/{$sections[$name][1]}";
 		return ob_get_clean();
 	}
 	
@@ -115,7 +115,7 @@
 		global $css_files;
 		$h = "";
 		foreach ($css_files as $c) {
-			$mtime = @filemtime("$root$c");
+			$mtime = @filemtime("$root/$c");
 			if ($mtime) $h .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"$c?t=$mtime\" media=\"all\">\n";
 		}
 		return $h;

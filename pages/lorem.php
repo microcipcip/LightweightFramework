@@ -9,7 +9,7 @@
 	
 	// Override sidebars definitions
 	overrideSections(array(
-		'sidebar1'  => array('inherit', '/include/sidebar_dark.php'), // Change sidebar 1 path
+		'sidebar1'  => array('inherit', 'include/sidebar_dark.php'), // Change sidebar 1 path
 		'sidebar2'  => array('disabled', 'inherit') // Disable sidebar 2
 	));
 	
