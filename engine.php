@@ -56,7 +56,7 @@
 		while (($file = readdir($dh)) !== false) {
 			if (!$show_hidden) if (substr($file, 0, 1) == '.') continue;
 			if (!$show_folders) if (is_dir($path.$file)) continue;
-			if ($recursive && ($file != '.') && ($file != '..') && is_dir($path.$file)) $ls[$file] = ls($path.$file, $ext_filter, $show_folders, $show_hidden, $recursive);
+			if ($recursive && ($file != '.') && ($file != '..') && is_dir($path.$file)) $ls[$file] = ls($path.$file, $show_folders, $show_hidden, $recursive);
 			else $ls[] = $file;
 		}
 		return $ls;
@@ -101,6 +101,7 @@
 	
 	// Returns custom section content
 	function loadSection($name) {
+		global $root;
 		global $sections;
 		if (empty($sections[$name]) || $sections[$name][0] != 'enabled') return;
 		ob_start();
