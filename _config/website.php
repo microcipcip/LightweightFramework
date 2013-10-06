@@ -6,9 +6,9 @@
 	$site_name = "SiteName";
 	$page_title = "Welcome to SiteName";
 	$page_h1 = "Welcome to SiteName";
-	$page = 'Home'; // Default page file name (homepage)
+	$page = 'home'; // Default page file name (homepage)
 	
-	// Body Class
+	// Body class
 	$body_class = "is-col2";
 	
 	// Menu options
@@ -16,7 +16,7 @@
 		'wrapper' => 'ul', // Wrapper tag for menu
 		'items' => 'li', // Items tag
 		'active_class' => 'active', // Class name for active items
-		'copy_active_class_to_parent' => false, // Parent items should be activated if one of its children is?
+		'copy_active_class_to_parent' => true, // Parent items should be active if one of its children is?
 		'max_depth' => null, // Max depth for menu (1 to n), default is NULL (no maximum)
 		'1st_level_class' => 'mainmenu', // Class name for the root wrapper
 		'2nd_level_class' => 'submenu', // Class name for the first-level submenus wrappers

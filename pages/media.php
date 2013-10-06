@@ -8,7 +8,7 @@
 	 
 	// Override sidebars definitions
 	overrideSections(array(
-		'sidebar1'  => array('disabled','inherit')
+		'sidebar' => array('disabled', 'inherit')
 	));
 	
 ?>
