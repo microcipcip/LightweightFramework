@@ -9,8 +9,8 @@
 	$root = dirname(__FILE__);
 	
 	// Load configuration
-	require_once "$root/config/website.php";
-	require_once "$root/config/javascript.php";
+	require_once "$root/_config/website.php";
+	require_once "$root/_config/javascript.php";
 
 	// UTF-8 stuffs
 	setlocale(LC_CTYPE, 'en_US.utf8');

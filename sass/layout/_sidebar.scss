@@ -1,0 +1,26 @@
+.side {
+	margin: 0 0 2em;
+	padding: 0 0 2em;
+	border-bottom: 4px solid scale-lightness($border-color, -30%);
+	&:last-child {
+		border-bottom: 0;
+	}
+	.side-title {
+		margin: 0 0 0.8em;
+		color: $font-heading-color;
+		font-size: $font-heading-h2-size;
+		font-weight: bold;
+	}
+	.side-content {
+		> *:last-child {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}		
+	}	
+}
+@include MQ(MLplus) {
+	.is-col2 #side {
+		padding: 2em 0 0 0;
+		@include span-columns(3 omega,12);
+	}	
+}

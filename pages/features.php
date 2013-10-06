@@ -1,9 +1,9 @@
-<?php 
-
+<?php
+	
 	// Page settings (override defaults in config/website.php)
-	$page_title = "Home Page";
-	$page_h1 = "This is the homepage";
-
+	$page_title = "Features";
+	$page_h1 = "Features";
+	 	
 ?>
 <h1><?php echo e($page_h1) ?></h1>
 <p>
@@ -39,23 +39,23 @@
 </p>
 
 <ul>
-	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-	<li>Mauris vulputate dui et ante aliquet eu pretium magna mollis.</li>
-	<li>Mauris varius elementum ante, et bibendum arcu venenatis in.</li>
-	<li>Donec consequat nunc id est aliquam at lobortis dolor tempus.</li>
-	<li>Donec rutrum massa sit amet sem adipiscing dictum euismod et leo.</li>
-	<li>Vivamus varius tristique sem, vel mollis lacus volutpat tempus.</li>
-	<li>Nullam sed odio sed enim ultricies gravida.</li>
-	<li>Morbi condimentum gravida tellus, vel hendrerit dolor varius ac.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <li>Mauris vulputate dui et ante aliquet eu pretium magna mollis.</li>
+    <li>Mauris varius elementum ante, et bibendum arcu venenatis in.</li>
+    <li>Donec consequat nunc id est aliquam at lobortis dolor tempus.</li>
+    <li>Donec rutrum massa sit amet sem adipiscing dictum euismod et leo.</li>
+    <li>Vivamus varius tristique sem, vel mollis lacus volutpat tempus.</li>
+    <li>Nullam sed odio sed enim ultricies gravida.</li>
+    <li>Morbi condimentum gravida tellus, vel hendrerit dolor varius ac.</li>
 </ul>
 
 <ol>
-	<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-	<li>Mauris vulputate dui et ante aliquet eu pretium magna mollis.</li>
-	<li>Mauris varius elementum ante, et bibendum arcu venenatis in.</li>
-	<li>Donec consequat nunc id est aliquam at lobortis dolor tempus.</li>
-	<li>Donec rutrum massa sit amet sem adipiscing dictum euismod et leo.</li>
-	<li>Vivamus varius tristique sem, vel mollis lacus volutpat tempus.</li>
-	<li>Nullam sed odio sed enim ultricies gravida.</li>
-	<li>Morbi condimentum gravida tellus, vel hendrerit dolor varius ac.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <li>Mauris vulputate dui et ante aliquet eu pretium magna mollis.</li>
+    <li>Mauris varius elementum ante, et bibendum arcu venenatis in.</li>
+    <li>Donec consequat nunc id est aliquam at lobortis dolor tempus.</li>
+    <li>Donec rutrum massa sit amet sem adipiscing dictum euismod et leo.</li>
+    <li>Vivamus varius tristique sem, vel mollis lacus volutpat tempus.</li>
+    <li>Nullam sed odio sed enim ultricies gravida.</li>
+    <li>Morbi condimentum gravida tellus, vel hendrerit dolor varius ac.</li>
 </ol>

@@ -1,0 +1,61 @@
+@if $table-active == true {
+// Tables Variables [Custom]
+// ====================================================================
+// Colors
+$tables-color: #222;
+$tables-background: #FFF;
+$tables-background-title: whitesmoke;
+$tables-background-td-nth: #F9F9F9;
+$tables-border: #DDD;
+// Padding
+$tables-padding: 0.5em 0.625em 0.625em;
+$tables-td-padding: 0.5625em 0.625em;
+// Font-size
+$tables-font-size: 1em;
+
+
+
+/***************************************************************/
+/*  Tables                                                    */
+/***************************************************************/
+table {
+	width: 100%;
+  background: $tables-background;
+  margin-bottom: 1.25em;
+  border: solid 1px $tables-border;
+	font-size: $tables-font-size; 
+	thead, tfoot {
+	  background: $tables-background-title;
+		font-weight: bold;		
+	}
+	thead tr, 
+	tfoot tr {
+		th, 
+		td {
+			padding: $tables-padding;
+			color: $tables-color;
+			text-align: left;				
+		}
+	}
+	tr {
+		th,
+		td {
+			padding: $tables-td-padding;
+			color: $tables-color;			
+		}
+		&.even,
+		&.alt,
+		&:nth-of-type(even) {
+			background: $tables-background-td-nth;
+		}
+	} 
+  thead tr th,
+  tfoot tr th,
+  tbody tr td,
+  tr td,
+  tfoot tr td {
+    display: table-cell;
+    line-height: 1.125em; 
+	}	
+}
+} // end if

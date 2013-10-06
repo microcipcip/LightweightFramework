@@ -1,0 +1,14 @@
+/***************************************************************/
+/*  Content                                                    */
+/***************************************************************/
+.wrapper-content {
+	@extend %wrapper;
+}
+#content {
+	@include container;
+}
+@include MQ(MLplus) {
+	.is-col2 #text {
+		@include span-columns(9,12);
+	}	
+}

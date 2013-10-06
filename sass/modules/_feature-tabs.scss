@@ -1,0 +1,266 @@
+@if $tabs-active == true {
+// Tab Variables [Custom]
+// ====================================================================
+// Tab padding
+$tab-width-padding: 1.4em;
+$tab-height-padding: 0.8em;
+$tab-padding-section: $tab-width-padding;
+// Tab Colors
+$tab-border: #DDD;
+$tab-background: #FFF;
+$tab-background-current: scale-lightness($tab-background, -10%);
+$tab-border-style: solid;
+$tab-border-section: $tab-border;
+$tab-background-section: scale-lightness($tab-background, -10%);
+$tab-border-style-section: $tab-border-style;
+
+// Accordion padding
+$accordion-width-padding: 1.4em;
+$accordion-height-padding: 0.8em;
+$accordion-padding-section: $accordion-width-padding;
+// Accordion Colors
+$accordion-border: #CCC;
+$accordion-background-title: #DDD;
+$accordion-background-title-active: $accordion-background-title;
+$accordion-background-title-hover: scale-lightness($accordion-background-title, 10%);
+$accordion-background-section: #FFF;
+$accordion-background-arrow: #666;
+$accordion-background-arrow-active: #666;
+$accordion-background-arrow-width: 6px;
+$accordion-background-arrow-height: 8px;
+
+
+
+/***************************************************************/
+/*  Tabs                                                       */
+/***************************************************************/
+// Base Style
+.clearfix {
+	@extend %clearfix;
+}
+// Base Accordion
+.accordion {
+	> section {
+		display: block;
+		> :first-child + * {
+			overflow: hidden;
+			@include transition-property(height);
+			@include transition-duration(0.25s);
+		}
+		.js & {
+			> :first-child {
+				cursor: pointer;  
+			}
+		}			
+	}
+}
+// Base Tabs
+.tabs {
+	overflow-y: hidden;
+	position: relative;
+	&.cross-fade.transition {
+		@include transition-duration(0.25s);
+		> section {
+			@include transition-duration(0.25s);
+		}
+	}
+	.js & {
+		&.hide-title > section > :first-child {
+			display: none;
+		}		
+	}	
+	> section {
+		width: 100%;
+	}
+	.js & {
+		> section {
+				opacity: 0;
+				position: absolute;
+				visibility: hidden;
+		}			
+	}
+	> section[aria-expanded="true"] {
+		opacity: 1;
+		visibility: visible;
+	}
+	> ul {
+		position: relative;
+		z-index: 99;
+		> li {
+			cursor: pointer;
+		}		
+	}	
+}
+// IE8 Fix
+/* nested intance z-index visbility fix */
+.tabs {
+	.js & {
+		.tabs > section {
+			visibility: hidden;
+		}
+		> section[aria-expanded="true"] .tabs > section[aria-expanded="true"] {
+			visibility: visible;
+		}		
+	}
+}
+// Minimalistic Theme
+.minimal {
+	margin: 1.4em 0;
+	&:focus {
+		outline: none;
+	}
+	// Minimal Theme Accordion
+	&.accordion {
+		> section {
+			padding: $accordion-padding-section;		
+			border: 1px solid $accordion-border;
+			background: $accordion-background-section;
+			* {
+				max-width: 100%;
+			}		
+			> :first-child {
+				display: block;
+				margin-top: 0;
+				background: $accordion-background-title;
+				&:hover {
+					background: $accordion-background-title-hover !important;
+				}			
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				top: 1em;
+				right: 1em;
+				border-left: $accordion-background-arrow-width solid transparent;
+				border-right: $accordion-background-arrow-width solid transparent;
+			}				
+			&[aria-expanded="true"] {
+				> :first-child {
+					background: $accordion-background-title-active;
+				}	
+				&:after {
+					top: 1.1em;
+					border-top: $accordion-background-arrow-height solid $accordion-background-arrow-active;
+				}					
+			}
+			&[aria-expanded="false"]{
+				&:after {
+					border-bottom: $accordion-background-arrow-height solid $accordion-background-arrow;
+				}					
+			}			
+			.js & {
+				position: relative;
+				padding: 0;			
+				> :first-child {
+					font-size: inherit;
+					font-weight: inherit;
+					margin: 0;
+					padding: $accordion-height-padding $accordion-width-padding;
+					+ * > * {
+						padding: $accordion-width-padding;
+						> * {
+							max-width: 100%;
+						}
+						> :first-child {
+							margin-top: 0;
+						}	
+						> :last-child {
+							margin-bottom: 0;
+						}						
+					}					
+				}				
+			}
+		}
+		> section {
+			> :last-child {
+				margin-bottom: 0;
+			}
+			+ section {
+				margin-top: -1px;
+			}			
+		}		
+	}
+	// Minimal Theme Tabs
+	&.tabs {
+		.js & {
+			&.hide-title > section > :first-child + * {
+				margin-top: 0;
+			}
+		}
+		> section {
+			border: 1px $tab-border-style-section $tab-border-section;		
+			background: $tab-background-section;
+			padding: $tab-padding-section;
+			> * {
+				max-width: 100%;
+			}
+			> :first-child {
+				margin-top: 0;
+			}			
+		}
+		.js & {
+			> section > * > * {
+				margin-top: 0;
+				> * {
+					max-width: 100%;
+				}
+				> :first-child {
+					margin-top: 0;
+				}
+				> :last-child {
+					margin-bottom: 0;
+				}				
+			}			
+		}
+		> section {
+			> :last-child {
+				margin-bottom: 0;
+			}
+			+ section {
+				margin-top: -1px;
+				.js & {
+					margin-top: 0;	
+				}
+			}			
+		}
+		> ul {
+			zoom: 1;
+			display: table;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			&:after {
+				clear: both;
+			}
+			&:after, &:before {
+				display: table;
+				content: "";				
+			}
+			> li {
+				background: $tab-background;
+				border: 1px $tab-border-style $tab-border;
+				border-bottom: none;
+				float: left;
+				padding: $tab-height-padding $tab-width-padding;
+				&.current {
+					position: relative;
+					background: $tab-background-current;
+					pointer-events: none;
+					&:after {
+						content: '';
+						position: absolute;
+						bottom: -1px;
+						right: 0;
+						width: 100%;
+						height: 1px;
+						background: $tab-background-current;
+					}
+				}
+				+ li {
+					border-left: none;
+				}				
+			}			
+		}		
+	}
+}
+} // end if

@@ -1,0 +1,57 @@
+@if $gallery-active == true {
+// Gallery Variables [Custom]
+// ====================================================================
+$gallery-img-width: 100%;
+$gallery-img-max-width: 330px;
+$gallery-img-max-height: 246px;
+
+
+
+/***************************************************************/
+/*  Gallery                                                    */
+/***************************************************************/
+.gallery-custom {
+	@include container;
+	a {	
+		display: block;
+		margin-bottom: 1em;
+		img {
+			width: $gallery-img-width;
+			height: auto;
+			max-width: $gallery-img-max-width;
+			max-height: $gallery-img-max-height;			
+		}
+	}
+}
+@include MQ(XSplus) {
+	.gallery-custom {
+		a {	
+			@include span-columns(6,12);
+			&:nth-child(2n) { @include omega; } // every third image completes a row.
+			&:nth-child(2n + 1) { clear: both; }			
+		}
+	}	
+}
+@include MQ(Mplus) {
+	.gallery-custom {
+		a {	
+			@include span-columns(4,12);
+			&:nth-child(2n) { @include remove-omega; }
+			&:nth-child(3n) { @include omega; } // every third image completes a row.
+			&:nth-child(2n + 1) { clear: none; }
+			&:nth-child(3n + 1) { clear: both; }
+		}
+	}	
+}
+@include MQ(XLplus) {
+	.gallery-custom {
+		a {	
+			@include span-columns(3,12);
+			&:nth-child(3n) { @include remove-omega; }
+			&:nth-child(4n) { @include omega; } // every third image completes a row.
+			&:nth-child(3n + 1) { clear: none; }
+			&:nth-child(4n + 1) { clear: both; }			
+		}
+	}	
+}
+} // end if

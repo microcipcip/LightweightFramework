@@ -1,0 +1,271 @@
+// Menu Variables
+// ====================================================================
+$menu-font-size: 1em;
+// Mainmenu
+$mainmenu-font-color: #FFF;
+$mainmenu-font-color-hover: scale-lightness(#FFF, -30%);
+$mainmenu-font-color-arrow: scale-lightness($mainmenu-font-color, -20%);
+$mainmenu-font-color-arrow-hover: scale-lightness($mainmenu-font-color-hover, -20%);
+$mainmenu-background: #333;
+$mainmenu-background-link: transparent;
+//  Submenu 
+$submenu-font-color: $font-link-color;
+$submenu-font-color-hover: scale-lightness($font-link-color, -30%);
+$submenu-arrow-color: scale-lightness(#666, 30%);
+$submenu-border: #CCC;
+//  Mobile Mainmenu
+$mainmenu-mobile-font-color: #DDD;
+$mainmenu-mobile-font-color-hover: scale-lightness($mainmenu-mobile-font-color, -30%);
+$mainmenu-mobile-border-color: #666;
+$mainmenu-mobile-height: 4em;
+$mainmenu-mobile-padding: 0 1.4em;
+$mainmenu-mobile-background: #333;
+// Mobile Submenu
+$submenu-mobile-font-color: $font-link-color;
+$submenu-mobile-font-color-hover: $font-link-hover-color;
+$submenu-mobile-border: #CCC;
+$submenu-mobile-background: #DDD;
+//  Mobile Navigation 
+$mobile-navigation-color: #666;
+$mobile-navigation-color-hover: scale-lightness(#666, 30%);
+
+
+/*  Mobile Navigation  */
+#mobile-navigation {
+	position: absolute;
+	top: 1.8em;
+	right: 0.4em;
+	.no-js & {
+		display: none;
+	}
+}
+#mobile-menu, #mobile-search {
+	display: inline;
+	span {
+		position: relative;
+		cursor: pointer;
+		display: block;
+		float: left;
+		width: 50px;	
+		color: $mobile-navigation-color;
+		font-size: 2em;
+		text-align: center;
+		&:hover {
+			background: transparentize(#FFF, .8);
+			color: $mobile-navigation-color-hover;
+		}
+	}	
+}
+#mobile-menu {
+	span {
+		.is-menu-open & {
+			color: $mobile-navigation-color-hover;
+		}		
+	}
+}
+#mobile-search {
+	span {
+		.is-search-open & {
+			color: $mobile-navigation-color-hover;
+		}		
+	}
+}
+@include MQ(MLplus) {
+	#mobile-navigation {
+		display: none;
+	}	
+}
+
+/*  Header Menu  */
+#header-menu {
+	z-index: 3;
+	position: relative;
+	font-size: $menu-font-size;
+	a {
+		text-decoration: none;
+	}
+	// Hide menu (if js is enabled)
+	.js & {
+		display: none;
+	}	
+	// Display menu
+	.is-menu-open & {
+		display: block;
+	}	
+	> ul {
+		margin: 0;
+		padding: 0;
+		> li {
+			display: inline;
+			&.is-expanded {
+				ul {
+					display: block;	
+				}
+				// Submenu expanded icon (-)
+				> a span.icon:before {
+					content: "\f068";
+				}
+			}
+			> a {
+				position: relative;
+				display: block;		
+				height: $mainmenu-mobile-height;
+				line-height: $mainmenu-mobile-height;	
+				padding: $mainmenu-mobile-padding;				
+				border-top: 1px solid scale-lightness($mainmenu-mobile-border-color, -30%);
+				border-bottom: 1px solid scale-lightness($mainmenu-mobile-border-color, -80%);
+				background: $mainmenu-mobile-background;
+				@include background(linear-gradient(color-stops($mainmenu-mobile-background, $mainmenu-mobile-background 50%)));
+				color: $mainmenu-mobile-font-color;		
+				&:hover {
+					color: $mainmenu-mobile-font-color-hover;
+				}
+				span {
+					cursor: default;
+					display: block;
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: $mainmenu-mobile-height - 0.1;
+					height: $mainmenu-mobile-height - 0.1;
+					line-height: $mainmenu-mobile-height;
+					border-left: 1px solid scale-lightness($mainmenu-mobile-border-color, -40%);
+					color: scale-lightness($mainmenu-mobile-border-color, 20%);
+					text-align: center;
+					// Submenu non expanded icon (+)
+					&.icon:before {				
+						content: "\f067";	
+						font-size: 1.4em;						
+					}			
+					&:hover {
+						background: transparentize(#FFF, .95);						
+					}
+				}			
+			}
+		}
+	}
+}
+@include MQ(MLplus) {
+	#header-menu { 
+		display: block !important;
+		margin: 0;
+		padding: 0;
+		background: $mainmenu-background;
+		@include border-radius(3px);
+		> ul {
+			padding: 0 1em;
+			> li {
+				display: inline-block;
+				*display: inline;
+				zoom: 1;				
+				position: relative;	
+				margin: 0 1em;
+				> a {		
+					height: auto;
+					line-height: normal;					
+					margin: 0 -4px 0 0;
+					padding: 1em 0;
+					border: none;
+					background: $mainmenu-background-link;		
+					color: $mainmenu-font-color;					
+					i, span {
+						display: none;
+					}					
+				}					
+				&.has-children {
+					> a { 
+						padding-right: 0.8em;
+						// Arrows
+						&:after {
+							content: '';
+							position: absolute;
+							top: 1.4em;
+							right: 0;
+							border-left: 5px solid transparent;
+							border-right: 5px solid transparent;
+							border-top: 5px solid $mainmenu-font-color-arrow;						
+						}
+					}
+					&:hover {
+						> a:after {
+							border-top: 5px solid $mainmenu-font-color-hover;
+						}
+					}					
+				} 	
+			}
+			li.hovering ul,
+			li:hover ul { display: block !important; }
+			> li.hovering > a,
+			> li > a:hover {
+				color: $mainmenu-font-color-hover;
+			}		
+		}	
+	}
+}
+/*  Header Submenu  */
+.header-submenu {
+	margin: 0;
+	padding: 0;
+	.js & {
+		display: none;
+	}	
+	li {
+		display: inline;
+		a {
+			position: relative;
+			display: block;
+			color: $submenu-mobile-font-color;
+			padding: 0.6em 0.6em 0.6em 1.4em;
+			border: 1px solid $submenu-mobile-border;
+			background: $submenu-mobile-background;
+			&:hover {
+				color: $submenu-mobile-font-color-hover;
+			}
+			[data-icon]:before {
+				top: 0.1em;
+				margin: 0 0.4em 0 0;					
+			}			
+		}
+	}
+}
+@include MQ(MLplus) {
+	.header-submenu {
+		display: none !important;
+		position: absolute;
+		top: 3em;
+		left: 0;
+		width: 260px;
+		border-top: 4px solid $submenu-arrow-color;
+		text-align: left;		
+		@include box-shadow(#666 0 3px 7px);
+		@include border-corner-radius(bottom, left, 5px);		
+		@include border-corner-radius(bottom, right, 5px);	
+		// Top Arrow
+		&:after {
+			content: '';
+			position: absolute;
+			top: -11px;
+			left: 1em;
+			content: '';
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-bottom: 7px solid $submenu-arrow-color;		
+		}
+		li {
+			a {
+				padding: 0.6em 0 0.6em 1em;
+				border-top: 1px solid $submenu-border;
+				border-bottom: 1px solid scale-lightness($submenu-border, 40%);
+				color: $submenu-font-color;
+				font-weight: normal;
+				[data-icon]:before {
+					top: 0;				
+				}	
+				&:hover {
+					background: scale-lightness(#DDD, 30%);
+					color: $submenu-font-color-hover;				
+				}
+			}			
+		}
+	}	
+}	

@@ -1,0 +1,100 @@
+/***************************************************************/
+/*  Header                                                     */
+/***************************************************************/
+.wrapper-header {
+	@extend %wrapper;
+}
+#header-main {
+	z-index: 100;
+	position: relative;
+	border-bottom: 3px solid $border-color;
+	// Hide border when mobile menu is open
+	&.is-menu-open {
+		border: none;
+	}		
+}
+@include MQ(MLplus) {
+	// Hide border when in desktop view
+	#header-main {
+		border: none;
+	}	
+}
+/*  Login  */
+#header-login {
+	position: absolute;
+	top: 0.3em;
+	right: 0;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	
+}
+/*  Logo  */
+#header-logo {
+	z-index: 2;
+	display: inline-block;
+	position: relative;
+	padding: 2em 0;
+	a {
+		display: inline-block;
+    width: image-width("general/logo.png");
+		height: image-height("general/logo.png");
+		background: image-url("general/logo.png") no-repeat left top;
+		text-indent: -9999px;	
+		&:hover,&:focus {
+			@include opacity(0.8);		
+		}	
+	}
+}
+/*  Header Search  */
+#header-search {
+	position: relative;
+	padding: 0 0 1em;
+	.js & {
+		display: none;
+	}
+	#header-main.is-search-open & {
+		display: block !important;
+	}
+	input[type="text"] {
+		z-index: 1;
+		position: relative;
+		width: 100%;	
+		height: 3em;
+		line-height: 3em;		
+		padding: 0 5.2em 0 1em;
+		border: 1px solid #CCC;
+		@include box-shadow(#DDD 0 0 6px inset);
+		color: #666;
+		font-size: 1.2em;
+		@include border-radius(5px);	
+	}
+	input[type="submit"] {
+		z-index: 1;
+		position: absolute;
+		top: 0.2em;
+		right: 0;
+		height: 4.6em;
+		margin: 0;
+		padding: 0 1.4em;
+		font-size: 0.75em;
+		color: #666;
+		text-transform: uppercase;
+		border: 0;	
+		border-left: 1px solid #DDD;
+		@include background(linear-gradient(color-stops(scale-lightness(#CCC, 60%), #CCC 50%)));
+		@include border-corner-radius(top, left, 0);
+		@include border-corner-radius(bottom, left, 0);
+		&:hover {
+			@include opacity(0.8);
+		}		
+	}	
+}
+@include MQ(MLplus) {
+	#header-search {
+		display: block !important;
+		position: absolute;
+		top: 1.35em;
+		right: 0.05em;
+		width: 30%;
+	}
+}

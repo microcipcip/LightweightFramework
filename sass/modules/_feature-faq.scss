@@ -1,0 +1,63 @@
+@if $faq-active == true {
+// FAQ Variables [Custom]
+// ====================================================================
+$faq-title-padding: 0.3em;
+$faq-content-margin: 0;
+$faq-content-padding: 1em $faq-title-padding 0;
+$faq-font-size: 1.2em;
+$faq-border-style: solid;
+$faq-border-color: $border-color;
+$faq-icon-close-value: "\f067";
+$faq-icon-open-value: "\f068";
+$faq-color-link: $font-link-color;
+
+
+
+/***************************************************************/
+/*  FAQ                                                        */
+/***************************************************************/
+.faqRoot {
+	clear: both;
+	margin: 0 0 1em;
+	.accordion-title {
+		cursor: pointer;
+		position: relative;
+		h3 {
+			margin: 0;
+			padding: $faq-title-padding;
+			border-bottom: 1px $faq-border-style $faq-border-color;
+			font-size: $faq-font-size;
+			font-style: normal;
+			font-weight: bold;
+			@include text-shadow(#666 0 0 0);
+			.icon:before {
+				content: $faq-icon-close-value;
+				margin: 0 0.3em 0 0;
+				font-size: 0.75em;				
+			}				
+		}
+		&.faqopened h3 { 
+			color: $faq-color-link;
+			.icon:before {
+				content: $faq-icon-open-value;				
+			}			
+		}	
+		&.faqclosed h3:hover {
+			color: $faq-color-link;
+		}
+	}
+	.accordion-content {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		> div {
+			margin: $faq-content-margin;
+			padding: $faq-content-padding;
+			> {
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}	
+}
+} // end if

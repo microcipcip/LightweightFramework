@@ -1,0 +1,77 @@
+@if $responsive-slides-active == true {
+/*! http://responsiveslides.com v1.54 by @viljamis */
+.rslides {
+	position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 1em;
+	li {
+		-webkit-backface-visibility: hidden;
+		position: absolute;
+		display: none;
+		width: 100%;
+		left: 0;
+		top: 0;
+		&:first-child {
+			position: relative;
+			display: block;
+			float: left;
+		}
+  }
+	img {
+		display: block;
+		height: auto;
+		float: left;
+		width: 100%;
+		border: 0;
+  }
+}
+/***************************************************************/
+/*  Responsive Slides Custom Styling                           */
+/***************************************************************/
+#slide-rslides {
+	.rslides {
+		@include border-radius(3px);
+	}
+	// Caption Styling
+	.slide-caption {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 1em;
+		background: transparentize(#FFF, .1);
+		.slide-title {
+			font-size: 1.2em;
+			font-weight: bold;
+		}
+		.slide-content {
+			margin: 0.6em 0;
+		}
+	}
+	// Prev/Next Styling
+	.rslides_nav {
+		font-weight: bold;
+		&.prev {
+			float: left;
+		}
+		&.next {
+			float: right;
+		}
+	}
+	// Pagination Styling
+	.rslides_tabs {
+		clear: both;
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline;
+			a {
+				font-weight: bold;
+			}
+		}
+	} 
+}
+} // end if

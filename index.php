@@ -4,30 +4,30 @@
 	require_once 'engine.php';
 	
 ?>
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title><?php echo e($page_title) ?></title>
-	<?php echo loadCSS() ?>
-</head>
-
+<?php include("_include/head.php") ?>
 <body class="<?php echo (empty($body_class) ? '' : $body_class) ?>">
 
-	<?php include("include/header.php") ?>
+	<?php include("_include/header.php") ?>
+
+<!-- [Content] -->
+<div class="wrapper-content">
+	<div id="content">	
+		
+		<?php echo loadSection('slideshow') ?>
 	
-	<?php echo loadMenu() ?>
-	
-	<?php echo loadSection('slideshow') ?>
-	
-	<div class="content">
-		<?php echo loadContent(); ?>
-		<?php echo loadSection('sidebar1') ?> 
-		<?php echo loadSection('sidebar2') ?>
+		<!-- [Text] -->
+		<div id="text">	
+			<?php echo loadContent(); ?>
+		</div>
+		<!-- [/End Text] -->
+		
+		<?php echo loadSection('sidebar') ?> 
+
 	</div>
+</div>
+<!-- [/End Content] -->
 	
-	<?php include("include/footer.php") ?> 
+<?php include("_include/footer.php") ?> 
 
 </body>
-
 </html>

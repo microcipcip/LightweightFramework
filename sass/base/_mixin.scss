@@ -1,0 +1,127 @@
+// Susy (http://susy.oddbird.net/)
+// ====================================================================
+@import "susy";
+// Susy - Grid layout variables 
+$total-columns  : 12;             // a 12-column grid
+$column-width   : 5em;            // each column is 5em wide
+$gutter-width   : 3em;            // 1em gutters between columns
+$grid-padding   : 0;  						// grid-padding equal to gutters
+
+// Use this variable if you want a fully fluid grid
+$container-style: fluid;
+
+// Use this variable if you want to set a width for the fluid container
+//$container-width: 80%;
+
+// Use this variable for a fixed grid
+//$container-style: static;
+
+//Switch off support for legacy Internet Explorer
+$legacy-support-for-ie  : false;
+$legacy-support-for-ie6 : $legacy-support-for-ie;
+$legacy-support-for-ie7 : $legacy-support-for-ie;
+
+
+
+// Media Query mixin
+// ====================================================================
+@mixin MQ($canvas) {
+	@if $canvas == XXXS {
+		@media only screen and (min-width: $XXXS) and (max-width: $XXS - 1) { @content; }
+	}
+	@if $canvas == XXS {
+		@media only screen and (min-width: $XXS) and (max-width: $XS - 1) { @content; }
+	}
+	@if $canvas == XS {
+		@media only screen and (min-width: $XS) and (max-width: $S - 1) { @content; }
+	}
+	@else if $canvas == S {
+		@media only screen and (min-width: $S) and (max-width: $M - 1) { @content; }
+	}
+	@else if $canvas == M {
+		@media only screen and (min-width: $M) and (max-width: $ML - 1) { @content; }
+	}
+	@else if $canvas == ML {
+		@media only screen and (min-width: $ML) and (max-width: $L - 1) { @content; }
+	}		
+	@else if $canvas == L {
+		@media only screen and (min-width: $L) and (max-width: $XL - 1) { @content; }
+	}
+	@else if $canvas == XL {
+		@media only screen and (min-width: $XL) and (max-width: $XXL - 1) { @content; }
+	}
+	@else if $canvas == XXL {
+		@media only screen and (min-width: $XXL) and (max-width: $XXXL - 1) { @content; }
+	}	
+	@else if $canvas == XXXL {
+		@media only screen and (min-width: $XXXL) and (max-width: $XXXXL - 1) { @content; }
+	}		
+
+	@else if $canvas == XXXSplus {
+		@media only screen and (min-width: $XXXS) { @content; }
+	}	
+	@else if $canvas == XXSplus {
+		@media only screen and (min-width: $XXS) { @content; }
+	}	
+	@else if $canvas == XSplus {
+		@media only screen and (min-width: $XS) { @content; }
+	}
+	@else if $canvas == Splus {
+		@media only screen and (min-width: $S) { @content; }
+	}
+	@else if $canvas == Mplus {
+		@media only screen and (min-width: $M) { @content; }
+	}
+	@else if $canvas == MLplus {
+		@media only screen and (min-width: $ML) { @content; }
+	}	
+	@else if $canvas == Lplus {
+		@media only screen and (min-width: $L) { @content; }
+	}
+	@else if $canvas == XLplus {
+		@media only screen and (min-width: $XL) { @content; }
+	}
+	@else if $canvas == XXLplus {
+		@media only screen and (min-width: $XXL) { @content; }
+	}	
+	@else if $canvas == XXXLplus {
+		@media only screen and (min-width: $XXXL) { @content; }
+	}	
+	@else if $canvas == XXXXLplus {
+		@media only screen and (min-width: $XXXXL) { @content; }
+	}		
+	
+	@else if $canvas == XXXSneg {
+		@media only screen and (max-width: $XXXS) { @content; }
+	}	
+	@else if $canvas == XXSneg {
+		@media only screen and (max-width: $XXS) { @content; }
+	}	
+	@else if $canvas == XSneg {
+		@media only screen and (max-width: $XS) { @content; }
+	}
+	@else if $canvas == Sneg {
+		@media only screen and (max-width: $S) { @content; }
+	}
+	@else if $canvas == Mneg {
+		@media only screen and (max-width: $M) { @content; }
+	}
+	@else if $canvas == MLneg {
+		@media only screen and (max-width: $ML) { @content; }
+	}	
+	@else if $canvas == Lneg {
+		@media only screen and (max-width: $L) { @content; }
+	}
+	@else if $canvas == XLneg {
+		@media only screen and (max-width: $XL) { @content; }
+	}
+	@else if $canvas == XXLneg {
+		@media only screen and (max-width: $XXL) { @content; }
+	}	
+	@else if $canvas == XXXLneg {
+		@media only screen and (max-width: $XXXL) { @content; }
+	}	
+	@else if $canvas == XXXXLneg {
+		@media only screen and (max-width: $XXXXL) { @content; }
+	}		
+}

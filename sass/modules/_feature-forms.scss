@@ -1,0 +1,386 @@
+// Forms Variables [Custom]
+// ====================================================================
+$form-colorscheme: light; // light or dark
+// Font
+$form-font-size: 1em !default;
+// Width
+$form-width-small: 18em !default;
+$form-width-medium: 76% !default;
+$form-width-large: 100% !default;
+//  Color Forms
+$form-border: #848484 #c1c1c1 #e1e1e1 !default;
+$form-bg: #FFF !default;
+$form-font-color: #333 !default;
+$form-shadow-inset: #DDD !default;
+$form-error-color: #C60F13 !default;
+// Color Alerts
+$form-alertbox-default-color: #DDD !default;
+$form-alertbox-default-border-color: #CCC !default;
+$form-alertbox-text-color: #333;
+$form-alertbox-alert-color: $form-error-color !default;
+$form-alertbox-alert-text-color: #FFF !default;
+$form-alertbox-alert-text-link-color: orange !default;
+$form-alertbox-success-color: #5DA423 !default;
+$form-alertbox-success-text-color: #FFF !default;
+$form-alertbox-success-text-link-color: #990000 !default;
+$form-alertbox-secondary-color: #137899 !default;
+$form-alertbox-secondary-text-color: #FFF !default;
+$form-alertbox-secondary-text-link-color: #C0C0C0 !default;
+// Color Buttons
+$form-button-font-color: #333 !default;
+$form-button-alert-color: $form-error-color !default;
+$form-button-secondary-color: #CCC !default;
+$form-button-success-color: #0D6455 !default;
+$form-button-info-color: #2F96B4 !default;
+$form-button-inverse-color: #333 !default;
+// Dark Colorscheme
+@if $form-colorscheme == dark {
+	$form-border: #666;
+	$form-bg: #333;
+	$form-font-color: #CCC;
+	$form-shadow-inset: #444;
+	$placeholder-color: #DDD;
+}
+
+
+
+@if $form-active == true {
+/***************************************************************/
+/*  Form                                                       */
+/***************************************************************/
+/*  Form  */
+form {
+	fieldset {
+		padding: 1em;
+		border-color: $border-color;
+		legend {
+			font-weight: bold;
+			small {
+				margin: 0 0 0 0.2em;
+				font-size: 0.7em;
+				font-weight: normal;
+				font-style: italic;
+			}
+		}			
+	}
+}
+textarea,
+select,
+input[type="file"],
+input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
+	display: block;
+	height: auto;
+	margin: 0 0 0.4em;		
+	padding: 0.4em 0.6em;
+  border-color: $form-border;	
+	background: $form-bg;
+  color: $form-font-color;
+	font-size: $form-font-size;
+	@include box-shadow($form-shadow-inset 0 0 4px inset);
+}
+optgroup {
+	font-weight: bold;
+}
+input[type="file"] {
+	display: inline !important;
+	padding-left: 0;
+	@include box-shadow(#DDD 0 0 0 inset !important);
+}
+small {
+	font-size: $form-font-size;
+}
+.form {
+	margin: 0;
+	padding: 0;
+	> li {
+		list-style: none;
+		// Labels
+		> label {
+			vertical-align: top;
+			padding: 0 0 0.8em;
+			i {
+				font-style: normal;
+				color: $form-error-color;
+			}
+		}		
+	}		
+	// Fields
+	select,
+	input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
+		width: 100%;
+		max-width: $form-width-small;
+		@include border-radius(3px);
+	}
+	textarea {
+		width: 100%;
+		height: 150px;
+	}	
+	// Errors
+	.error {
+		select,
+		input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
+			border-color: $form-error-color;
+			@include border-corner-radius(bottom, right, 0);
+			@include border-corner-radius(bottom, left, 0);
+		}
+		> small {
+			display: block;
+			width: 100%;			
+			background: $form-error-color;
+			margin: -0.40em 0 0.4em;
+			padding: 0.2em 0.6em;
+			color: #FFF;	
+			font-weight: bold;	
+		}
+		&.field-small small {
+			max-width: $form-width-small;
+		}
+	}	
+	// Simple Form
+	&.form-simple {
+		label {
+			display: none;
+		}
+	}
+	// Advanced Form	
+	&.form-advanced {
+		> li {
+			@extend %clearfix;
+			margin: 0.5em 0 1em;
+			padding: 0 0 1em;
+			border-bottom: 1px dotted #CCC;
+			&:last-child {
+				margin-bottom: 0;
+				border: none;
+			}	
+			> label {
+				display: block;
+				padding: 0 0 0.2em;
+			}
+			> fieldset {
+				padding: 0;
+				border: 0;
+				label {
+					&:after {
+						content: "\A"; 
+						white-space: pre;
+					}						
+					// Fields
+					input[type="checkbox"],
+					input[type="radio"] {
+						display: inline;
+						margin: 0 0.3em 0.3em 0;
+					}		
+					// Errors
+					small {
+						display: inline;
+						margin: 0 0 0 0.3em;
+						color: $form-error-color;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}		
+}
+@include MQ(Mplus) {
+	%form-advanced {
+		display: block;
+		margin-left: 24%;	
+	}	
+	/*  Form  */
+	.form {		
+		&.form-advanced {
+			> li {
+				margin: 0.5em 0;
+				padding: 0;
+				// Labels
+				> label {
+					float: left;				
+					width: 22%;
+					margin: 0.5em 2% 0.4em 0;
+					padding: 0;
+					text-align: right;		
+					font-weight: bold;
+				}
+				// Fields
+				select,
+				input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
+					@extend %form-advanced;
+				}
+				textarea {					
+					max-width: $form-width-medium;		
+				}
+				// Fields [checkboxes, radios]
+				fieldset {
+					@extend %form-advanced;	
+					width: $form-width-medium;				
+					margin: 0 0 0.5em;	
+					label {
+						display: inline;					
+					}
+				}
+				&.field-nolabel {
+					margin-left: 24%;
+				}
+				small {
+					@extend %form-advanced;
+					max-width: $form-width-medium;
+				}				
+			}
+		}	
+	}	
+}
+// Hide HoneyPot
+.last__name {
+	display: none !important;	
+}
+} // end if [form]
+
+@if $form-alerts-active == true {
+/***************************************************************/
+/*  Alert Box                                                  */
+/***************************************************************/
+%alert-box {
+	margin: 0 0 1em;
+	padding: 0.6em;
+	border: 1px solid $form-alertbox-default-border-color;
+	background: $form-alertbox-default-color;
+	color: $font-color;
+	font-weight: bold;
+}
+.alert-box {
+	@extend %alert-box;
+	color: $form-alertbox-text-color;
+	a:hover {
+		text-decoration: underline;
+	}
+	&.alert {
+		border-color: scale-lightness($form-alertbox-alert-color, -30%);
+		background: $form-alertbox-alert-color;	
+		color: $form-alertbox-alert-text-color;
+		a {
+			color: orange;
+		}
+	}
+	&.success {
+		border-color: scale-lightness($form-alertbox-success-color, -30%);
+		background: $form-alertbox-success-color;	
+		color: $form-alertbox-success-text-color;
+		a {
+			color: $form-alertbox-success-text-link-color;
+		}		
+	}
+	&.secondary {
+		border-color: scale-lightness($form-alertbox-secondary-color, -30%);
+		background: $form-alertbox-secondary-color;	
+		color: $form-alertbox-secondary-text-color;
+		a {
+			color: $form-alertbox-secondary-text-link-color;
+		}		
+	}	
+}
+} // end if [alert box]
+
+@if $form-buttons-active == true {
+/***************************************************************/
+/*  Buttons                                                    */
+/***************************************************************/
+.button, 
+a.button, 
+input[type="reset"], 
+input[type="submit"], 
+input[type="button"] {
+	padding: 0.4em 0.9em;
+  background: #dddddd image-url("general/button.png") repeat-x;
+  @include background-image(linear-gradient(white, #dddddd));	
+	color: $form-button-font-color;
+	font-size: 0.9em;
+	font-weight: normal;	
+	@include box-shadow(transparentize(#FFF, .7) 0 1px 0 inset);
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    transition: background-color 300ms ease-out;
+	&:hover {
+		@include background-image(linear-gradient(#F9F9F9, #CCC));
+		color: $form-button-font-color;
+	}
+}
+.button {
+	&.strong {
+		font-weight: bold;
+	}
+	&.tiny {
+		font-size: 0.6em;
+	}
+	&.small {
+		font-size: 0.8em;
+	}
+	&.large {
+		font-size: 1.1em;
+		padding: 0.5em 1.2em;
+	}
+	&.secondary {
+		background: scale-lightness($form-button-secondary-color, 10%);
+		&:hover {
+			background: scale-lightness($form-button-secondary-color, -10%);
+		}
+	}
+	&.success {
+		border: 1px solid scale-lightness($form-button-success-color, 5%);	
+		background: scale-lightness($form-button-success-color, 0%);
+		color: #FFF;
+		@include text-shadow(#666 0 0 0);
+		&:hover {
+			background: scale-lightness($form-button-success-color, -20%);
+			color: #FFF;
+		}		
+	}
+	&.info {
+		border: 1px solid scale-lightness($form-button-info-color, 5%);	
+		background: scale-lightness($form-button-info-color, 10%);
+		color: #FFF;
+		@include text-shadow(#666 0 0 0);
+		&:hover {
+			background: scale-lightness($form-button-info-color, -10%);
+			color: #FFF;
+		}		
+	}
+	&.alert {
+		border: 1px solid scale-lightness($form-button-alert-color, 5%);	
+		background: scale-lightness($form-button-alert-color, 0%);
+		color: #FFF;
+		@include text-shadow(#666 0 0 0);	
+		&:hover {
+			background: scale-lightness($form-button-alert-color, -20%);
+			color: #FFF;
+		}		
+	}
+	&.inverse {
+		border: 1px solid scale-lightness($form-button-inverse-color, 5%);	
+		background: scale-lightness($form-button-inverse-color, 10%);
+		color: #FFF;
+		@include text-shadow(#666 0 0 0);	
+		&:hover {
+			background: scale-lightness($form-button-inverse-color, -10%);
+			color: #FFF;
+		}		
+	}
+	&.disabled {
+		@include opacity(0.6);
+	}
+	&.no-style {
+		margin: 0;
+		padding: 0;
+		background: none;
+		border: none;
+		color: $font-link-color;
+		&:focus {
+			@include box-shadow(#666 0 0 0);
+		}
+		&:hover {
+			color: $font-link-hover-color;
+		}
+	}
+}
+} // end if [buttons]
