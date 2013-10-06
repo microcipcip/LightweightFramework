@@ -37,12 +37,7 @@
 		
 		<!-- [Menu] -->
 		<nav id="header-menu">		
-			<?php echo loadMenu(
-				$wrapper = 'ul',
-				$items = 'li',
-				$active = 'active',
-				$max_depth = null
-			) ?>
+			<?php echo loadMenu() ?>
 		</nav>
 		<!-- [/End Menu] -->
 		

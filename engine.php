@@ -48,49 +48,33 @@
 		return htmlentities($string, ENT_COMPAT, 'UTF-8'); 
 	}
 	
-	// List files in a directory (used by loadMenu())
-	function ls($path, $show_folders = false, $show_hidden = false, $recursive = false) {
-		$ls = array();
-		if (($dh = @opendir($path)) === false) return $ls;
-		$path = substr($path, -1) == '/' ? $path : $path . '/';
-		while (($file = readdir($dh)) !== false) {
-			if (!$show_hidden) if (substr($file, 0, 1) == '.') continue;
-			if (!$show_folders) if (is_dir($path.$file)) continue;
-			if ($recursive && ($file != '.') && ($file != '..') && is_dir($path.$file)) $ls[$file] = ls($path.$file, $show_folders, $show_hidden, $recursive);
-			else $ls[] = $file;
-		}
-		return $ls;
-	}
-	
 	// Return an HTML menu reading files structure in pages/
-	// - $wrapper Wrapper tag for menu, default "ul" 
-	// - $items Items tag, default "li"
-	// - $active Class name for active item, default is "active"
-	// - $max_depth Max depth for menu (1 to n), default is NULL (no maximum)
-	function loadMenu($wrapper = "ul", $items = "li", $active = 'active', $max_depth = null) {
+	function loadMenu() {
 		global $root;
 		global $page;
+		global $menu;
 		$h = "";
-		loadMenuRecursion($h, ls("$root/pages", true, false, true), '', $wrapper, $items, $active, $page, $max_depth);
+		loadMenuRecursion($h, ls("$root/pages", true, false, true), '', $page, $menu);
 		return $h;
 	}
 	
 	// Menu recursive builder
-	function loadMenuRecursion(&$h, $menu, $prefix = '', $wrapper = "ul", $items = "li", $active = 'active', $active_page = null, $max_depth = null) {
-		if (!is_null($max_depth) && $max_depth == 0) return;
-		$h .= "<$wrapper>";
-		foreach ($menu as $m) {
+	function loadMenuRecursion(&$h, $files, $prefix = '', $active_page, $o) {
+		if (!is_null($o['max_depth']) && $o['max_depth'] == 0) return;
+		$h .= "<{$o[wrapper]}>";
+		foreach ($files as $m) {
 			if (is_array($m)) continue;
-			$h .= "<$items>";
-			$pagename = substr($m, 0, -4);
-			$pagelink = e(substr($m, 0, -4));
-			$pagetitle = e(ucfirst(trim(str_replace("_", " ", substr($m, 0, -4)))));
-			$c = "$prefix$pagename" == $active_page ? " class=\"$active\"" : "";
-			$h .= "<a$c href=\"index.php?page=$prefix$pagelink\">$pagetitle</a>";
-			if (!empty($menu[$pagename])) loadMenuRecursion($h, $menu[$pagename], "$prefix$pagename/", $wrapper, $items, $active, $active_page, is_null($max_depth) ? null : $max_depth - 1);
+			$page = parsePageFile("$prefix$m");
+			$c = $page[1] == $active_page ? ' class="$active"' : '';
+			$h .= "<{$o[items]}$c>";
+			$h .= '<a href="index.php?page=' . e($page[1]) . '">' . $o['pre_html'] . e($page[2]) . $o['post_html'] . '</a>';
+			if (!empty($files[$page[0]])) {
+				$o['max_depth'] = is_null($o['max_depth']) ? null : $o['max_depth'] - 1;
+				loadMenuRecursion($h, $files[$page[0]], $page[1] . '/', $active_page, $o);
+			}
 			$h .= "</$items>";
 		} 
-		$h .= "</$wrapper>";
+		$h .= "</{$o[wrapper]}>";
 	}
 	
 	// Returns page content
@@ -121,6 +105,12 @@
 		return $h;
 	}
 	
+	// Re-defines menu options over default ones
+	function overrideMenuOptions($options) {
+		global $menu;
+		foreach ($options as $k => $s) if ($s != 'inherit') $menu[$k] = $s;
+	}
+	
 	// Re-defines sections over default ones
 	function overrideSections($array) {
 		global $sections;
@@ -130,6 +120,32 @@
 				if ($s[1] == 'inherit') $s[1] = $sections[$k][1]; // Inherit path
 			}
 			$sections[$k] = $s;
+		}
+	}
+	
+	// List files in a directory (used by loadMenu())
+	function ls($path, $show_folders = false, $show_hidden = false, $recursive = false) {
+		$ls = array();
+		if (($dh = @opendir($path)) === false) return $ls;
+		$path = substr($path, -1) == '/' ? $path : $path . '/';
+		while (($file = readdir($dh)) !== false) {
+			if (!$show_hidden) if (substr($file, 0, 1) == '.') continue;
+			if (!$show_folders) if (is_dir($path.$file)) continue;
+			if ($recursive && ($file != '.') && ($file != '..') && is_dir($path.$file)) $ls[$file] = ls($path.$file, $show_folders, $show_hidden, $recursive);
+			else $ls[] = $file;
+		}
+		return $ls;
+	}
+	
+	// Parse a page file retrieving page name, full name, title and sorting. If path is an array, returns an array.
+	function parsePageFile($path) {
+		if (is_array($path)) {
+			$ret = array();
+			foreach ($path as $p) $ret[] = parsePageFile($p);
+		} else {
+			$m = array();
+			preg_match('|^(.+/)?([^/.]+)(?:\\.([0-9]+))?\\.php$|', $path, $m);
+			return array($m[2], $m[1] . $m[2], ucfirst(trim(str_replace("_", " ", $m[2]))), intval($m[3]));
 		}
 	}
 	

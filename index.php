@@ -8,26 +8,26 @@
 <body class="<?php echo (empty($body_class) ? '' : $body_class) ?>">
 
 	<?php include("_include/header.php") ?>
-
-<!-- [Content] -->
-<div class="wrapper-content">
-	<div id="content">	
-		
-		<?php echo loadSection('slideshow') ?>
 	
-		<!-- [Text] -->
-		<div id="text">	
-			<?php echo loadContent(); ?>
+	<!-- [Content] -->
+	<div class="wrapper-content">
+		<div id="content">	
+			
+			<?php echo loadSection('slideshow') ?>
+		
+			<!-- [Text] -->
+			<div id="text">	
+				<?php echo loadContent(); ?>
+			</div>
+			<!-- [/End Text] -->
+			
+			<?php echo loadSection('sidebar') ?> 
+	
 		</div>
-		<!-- [/End Text] -->
-		
-		<?php echo loadSection('sidebar') ?> 
-
 	</div>
-</div>
-<!-- [/End Content] -->
-	
-<?php include("_include/footer.php") ?> 
+	<!-- [/End Content] -->
+		
+	<?php include("_include/footer.php") ?> 
 
 </body>
 </html>
