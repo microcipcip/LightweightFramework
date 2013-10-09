@@ -11,16 +11,43 @@
 </p>
 
 <!-- [Tabs] -->
-<div class="tabs minimal hide-title" id="tabs-default">
+<div id="tabs-horizontal">
 
+	<ul class="resp-tabs-list">
 	<?php	for ($x=1; $x<=4; $x++) : ?>	
-	<section>
-		<span>Title <?php echo $x; ?></span>	
-		<p>
-			<strong>Tab <?php echo $x; ?>:</strong> Lorem ipsum dolor sit amet, libero turpis non cras ligula, id commodo, aenean est in volutpat amet sodales, porttitor bibendum facilisi suspendisse, aliquam ipsum ante morbi sed ipsum mollis. Sollicitudin viverra, vel varius eget sit mollis. Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis velit nibh. Consectetuer porttitor feugiat vestibulum sit feugiat, voluptates dui eros libero. Etiam vestibulum at lectus.
-		</p>
-	</section>	
+		<li>Tab <?php echo $x; ?></li>
+	<?php endfor; ?>
+	</ul>	
+
+	<div class="resp-tabs-container">
+	<?php	for ($x=1; $x<=4; $x++) : ?>	
+		<div>
+			<p><strong>Tab <?php echo $x; ?>:</strong> Lorem ipsum dolor sit amet, libero turpis non cras ligula, id commodo, aenean est in volutpat amet sodales, porttitor bibendum facilisi suspendisse, aliquam ipsum ante morbi sed ipsum mollis. Sollicitudin viverra, vel varius eget sit mollis. Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis velit nibh. Consectetuer porttitor feugiat vestibulum sit feugiat, voluptates dui eros libero. Etiam vestibulum at lectus.</p>
+		</div>	
 	<?php endfor; ?>	
-			
+	</div>
+	
+</div>			   
+<!-- [/End Tabs] -->
+
+<br /><br />
+
+<!-- [Tabs] -->
+<div id="tabs-vertical">
+
+	<ul class="resp-tabs-list">
+	<?php	for ($x=1; $x<=4; $x++) : ?>	
+		<li>Tab <?php echo $x; ?></li>
+	<?php endfor; ?>
+	</ul>	
+
+	<div class="resp-tabs-container">
+	<?php	for ($x=1; $x<=4; $x++) : ?>	
+		<div>
+			<p><strong>Tab <?php echo $x; ?>:</strong> Lorem ipsum dolor sit amet, libero turpis non cras ligula, id commodo, aenean est in volutpat amet sodales, porttitor bibendum facilisi suspendisse, aliquam ipsum ante morbi sed ipsum mollis. Sollicitudin viverra, vel varius eget sit mollis. Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut, orci in adipiscing felis velit nibh. Consectetuer porttitor feugiat vestibulum sit feugiat, voluptates dui eros libero. Etiam vestibulum at lectus.</p>
+		</div>	
+	<?php endfor; ?>	
+	</div>
+	
 </div>			   
 <!-- [/End Tabs] -->

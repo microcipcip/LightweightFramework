@@ -533,213 +533,163 @@ optgroup::-moz-focus-inner {
 }
 
 /***************************************************************/
-/*  Tabs                                                       */
+/*  General                                                    */
 /***************************************************************/
-.accordion > section {
-  display: block;
-}
-.accordion > section > :first-child + * {
-  overflow: hidden;
-  -webkit-transition-property: height;
-  -moz-transition-property: height;
-  -o-transition-property: height;
-  transition-property: height;
-  -webkit-transition-duration: 0.25s;
-  -moz-transition-duration: 0.25s;
-  -o-transition-duration: 0.25s;
-  transition-duration: 0.25s;
-}
-.js .accordion > section > :first-child {
-  cursor: pointer;
-}
-
-.tabs {
-  overflow-y: hidden;
-  position: relative;
-}
-.tabs.cross-fade.transition {
-  -webkit-transition-duration: 0.25s;
-  -moz-transition-duration: 0.25s;
-  -o-transition-duration: 0.25s;
-  transition-duration: 0.25s;
-}
-.tabs.cross-fade.transition > section {
-  -webkit-transition-duration: 0.25s;
-  -moz-transition-duration: 0.25s;
-  -o-transition-duration: 0.25s;
-  transition-duration: 0.25s;
-}
-.js .tabs.hide-title > section > :first-child {
+h2.resp-accordion {
   display: none;
 }
-.tabs > section {
-  width: 100%;
-}
-.js .tabs > section {
-  opacity: 0;
-  position: absolute;
-  visibility: hidden;
-}
-.tabs > section[aria-expanded="true"] {
-  opacity: 1;
-  visibility: visible;
-}
-.tabs > ul {
-  position: relative;
-  z-index: 99;
-}
-.tabs > ul > li {
-  cursor: pointer;
-}
 
-/* nested intance z-index visbility fix */
-.js .tabs .tabs > section {
-  visibility: hidden;
+@media only screen and (max-width: 50em) {
+  .resp-tabs-list {
+    display: none;
+  }
 }
-.js .tabs > section[aria-expanded="true"] .tabs > section[aria-expanded="true"] {
-  visibility: visible;
-}
-
-.minimal {
-  margin: 1.4em 0;
-}
-.minimal:focus {
-  outline: none;
-}
-.minimal.accordion > section {
-  padding: 1.4em;
-  border: 1px solid #cccccc;
-  background: white;
-}
-.minimal.accordion > section * {
-  max-width: 100%;
-}
-.minimal.accordion > section > :first-child {
-  display: block;
-  margin-top: 0;
-  background: #dddddd;
-}
-.minimal.accordion > section > :first-child:hover {
-  background: #e0e0e0 !important;
-}
-.minimal.accordion > section:after {
-  content: '';
-  position: absolute;
-  top: 1em;
-  right: 1em;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-}
-.minimal.accordion > section[aria-expanded="true"] > :first-child {
-  background: #dddddd;
-}
-.minimal.accordion > section[aria-expanded="true"]:after {
-  top: 1.1em;
-  border-top: 8px solid #666666;
-}
-.minimal.accordion > section[aria-expanded="false"]:after {
-  border-bottom: 8px solid #666666;
-}
-.js .minimal.accordion > section {
-  position: relative;
+/***************************************************************/
+/*  Tabs horizontal                                            */
+/***************************************************************/
+.resp-tabs-list {
+  margin: 0;
   padding: 0;
 }
-.js .minimal.accordion > section > :first-child {
-  font-size: inherit;
-  font-weight: inherit;
-  margin: 0;
-  padding: 0.8em 1.4em;
-}
-.js .minimal.accordion > section > :first-child + * > * {
-  padding: 1.4em;
-}
-.js .minimal.accordion > section > :first-child + * > * > * {
-  max-width: 100%;
-}
-.js .minimal.accordion > section > :first-child + * > * > :first-child {
-  margin-top: 0;
-}
-.js .minimal.accordion > section > :first-child + * > * > :last-child {
-  margin-bottom: 0;
-}
-.minimal.accordion > section > :last-child {
-  margin-bottom: 0;
-}
-.minimal.accordion > section + section {
-  margin-top: -1px;
-}
-.js .minimal.tabs.hide-title > section > :first-child + * {
-  margin-top: 0;
-}
-.minimal.tabs > section {
-  border: 1px solid #dddddd;
-  background: #e6e6e6;
-  padding: 1.4em;
-}
-.minimal.tabs > section > * {
-  max-width: 100%;
-}
-.minimal.tabs > section > :first-child {
-  margin-top: 0;
-}
-.js .minimal.tabs > section > * > * {
-  margin-top: 0;
-}
-.js .minimal.tabs > section > * > * > * {
-  max-width: 100%;
-}
-.js .minimal.tabs > section > * > * > :first-child {
-  margin-top: 0;
-}
-.js .minimal.tabs > section > * > * > :last-child {
-  margin-bottom: 0;
-}
-.minimal.tabs > section > :last-child {
-  margin-bottom: 0;
-}
-.minimal.tabs > section + section {
-  margin-top: -1px;
-}
-.js .minimal.tabs > section + section {
-  margin-top: 0;
-}
-.minimal.tabs > ul {
-  zoom: 1;
-  display: table;
+.resp-tabs-list li {
+  cursor: pointer;
+  float: left;
+  display: inline-block;
   list-style: none;
   margin: 0;
-  padding: 0;
-}
-.minimal.tabs > ul:after {
-  clear: both;
-}
-.minimal.tabs > ul:after, .minimal.tabs > ul:before {
-  display: table;
-  content: "";
-}
-.minimal.tabs > ul > li {
-  background: white;
-  border: 1px solid #dddddd;
+  padding: 0.8em 1em;
+  border: 1px solid transparent;
   border-bottom: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+.resp-tabs-list li.resp-tab-active {
+  border-color: #dddddd;
+  margin-bottom: -1px !important;
+  padding: 0.75em 1em 0.875em 1em;
+  background: white;
+}
+
+/***************************************************************/
+/*  Vertical Tabs                                              */
+/***************************************************************/
+.resp-vtabs .resp-tabs-list {
   float: left;
-  padding: 0.8em 1.4em;
+  width: 30%;
 }
-.minimal.tabs > ul > li.current {
+.resp-vtabs .resp-tabs-list li {
+  z-index: 1;
+  display: block;
   position: relative;
-  background: #e6e6e6;
-  pointer-events: none;
+  padding: 1em !important;
+  margin: 0 -1px -1px 0;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-right: none;
+  float: none;
 }
-.minimal.tabs > ul > li.current:after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  right: 0;
-  width: 100%;
-  height: 1px;
-  background: #e6e6e6;
+.resp-vtabs .resp-tabs-list li.resp-tab-active {
+  border-color: #dddddd;
+  background: white;
 }
-.minimal.tabs > ul > li + li {
-  border-left: none;
+.resp-vtabs .resp-tabs-container {
+  clear: none;
+  float: left;
+  width: 70%;
+  min-height: 350px;
+  padding: 0;
+  border: 1px solid #dddddd;
+  background: white;
+}
+.resp-vtabs .resp-tab-content {
+  border: none;
+  border-top: none !important;
+}
+
+@media only screen and (max-width: 50em) {
+  .resp-vtabs .resp-tab-content {
+    border: 1px solid #dddddd;
+  }
+  .resp-vtabs .resp-tab-content:last-child {
+    border-bottom: 1px solid #dddddd !important;
+  }
+  .resp-vtabs .resp-tabs-container {
+    clear: none;
+    float: none;
+    width: 100%;
+    min-height: initial;
+    border: none;
+  }
+}
+/***************************************************************/
+/*  Accordion                                                  */
+/***************************************************************/
+h2.resp-accordion {
+  cursor: pointer;
+  margin: 0;
+  padding: 0.6em 1em;
+  border: 1px solid #c7c7c7;
+  border-top: none;
+  background: #dddddd;
+  font-size: 1em;
+}
+h2.resp-accordion:first-child {
+  border-top: 1px solid #c7c7c7 !important;
+}
+h2.resp-tab-active {
+  margin-bottom: 0 !important;
+  padding: 0.6em 1em !important;
+  background: #dddddd !important;
+}
+h2 .resp-arrow {
+  width: 0;
+  height: 0;
+  float: right;
+  margin-top: 3px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 12px solid #9b9797;
+}
+h2.resp-tab-active span.resp-arrow {
+  border: none;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid #9b9797;
+}
+
+@media only screen and (max-width: 50em) {
+  h2.resp-accordion {
+    display: block;
+  }
+
+  .resp-accordion-closed {
+    display: none !important;
+  }
+}
+/***************************************************************/
+/*  Content                                                    */
+/***************************************************************/
+.resp-tabs-container {
+  clear: left;
+  padding: 0;
+  background: white;
+}
+
+.resp-tab-content {
+  display: none;
+  padding: 1em;
+  border: 1px solid #dddddd;
+}
+
+@media only screen and (max-width: 50em) {
+  .resp-tab-content {
+    border-top: none;
+  }
+}
+.resp-content-active,
+.resp-accordion-active,
+.resp-tab-content-active {
+  display: block;
 }
 
 /***************************************************************/
@@ -1933,7 +1883,7 @@ p {
   text-align: justify;
 }
 
-.clearfix, .form.form-advanced > li, #slide-rslides.wrapper-slide, #footer, #pagination, .b {
+.form.form-advanced > li, #slide-rslides.wrapper-slide, #footer, #pagination, .b {
   overflow: hidden;
 }
 
@@ -2280,6 +2230,10 @@ p {
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
     border-bottom: 7px solid #949494;
+  }
+  .header-submenu li {
+    display: inline-block;
+    width: 100%;
   }
   .header-submenu li a {
     padding: 0.6em 0 0.6em 1em;

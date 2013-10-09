@@ -236,7 +236,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 		left: 0;
 		width: 260px;
 		border-top: 4px solid $submenu-arrow-color;
-		text-align: left;		
+		text-align: left;	
 		@include box-shadow(#666 0 3px 7px);
 		@include border-corner-radius(bottom, left, 5px);		
 		@include border-corner-radius(bottom, right, 5px);	
@@ -252,6 +252,8 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 			border-bottom: 7px solid $submenu-arrow-color;		
 		}
 		li {
+			display: inline-block;
+			width: 100%;
 			a {
 				padding: 0.6em 0 0.6em 1em;
 				border-top: 1px solid $submenu-border;
@@ -268,4 +270,4 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 			}			
 		}
 	}	
-}	
+}
