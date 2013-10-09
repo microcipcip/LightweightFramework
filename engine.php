@@ -24,11 +24,13 @@
 	}
 	
 	// Return an HTML menu reading files structure in pages/
-	function loadMenu($from = null) {
+	function loadMenu($options = null) {
 		global $root;
 		global $page;
 		global $menu;
-		return loadMenuRecursion(ls("$root/pages", true, false, true), '', $page, $menu);
+		$menu_local = $menu;
+		if (!empty($options)) foreach ($options as $k => $s) if ($s != 'inherit') $menu_local[$k] = $s;
+		return loadMenuRecursion(ls("$root/pages", true, false, true), '', $page, $menu_local);
 	}
 	
 	// Returns page content
@@ -140,7 +142,7 @@
 	// Menu recursive builder (used by loadMenu())
 	function loadMenuRecursion($files, $prefix = '', $active_page, $o, $level = 0, &$active_flag = null) {
 		$h = '';
-		if (!is_null($o['max_depth']) && $o['max_depth'] == 0) return $h;
+		if (!is_null($o['max_depth']) && $level >= $o['max_depth']) return $h;
 		$l = '';
 		if (!empty($o['1st_level_class']) && $level == 0) $l = ' class="' . $o['1st_level_class'] . '"';
 		if (!empty($o['2nd_level_class']) && $level == 1) $l = ' class="' . $o['2nd_level_class'] . '"';
@@ -152,10 +154,7 @@
 			$page = parsePageFile("$prefix$m");
 			$h_children = '';
 			$active_flag_local = false;
-			if (!empty($files[$page[0]])) {
-				$o['max_depth'] = is_null($o['max_depth']) ? null : $o['max_depth'] - 1;
-				$h_children = loadMenuRecursion($files[$page[0]], $page[1] . '/', $active_page, $o, $level + 1, $active_flag_local);
-			}
+			if (!empty($files[$page[0]])) $h_children = loadMenuRecursion($files[$page[0]], $page[1] . '/', $active_page, $o, $level + 1, $active_flag_local);
 			$active_flag_local = ($active_flag_local && $o['copy_active_class_to_parent']) || $page[1] == $active_page;
 			$active_flag = $active_flag || $active_flag_local;
 			$c = $active_flag_local ? ' class="' . $o['active_class'] . '"' : '';
