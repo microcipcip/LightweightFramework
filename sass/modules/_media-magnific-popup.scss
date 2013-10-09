@@ -48,6 +48,13 @@ $magnific-popup-size-fullscreen: 100%;
 // 1. General styles
 ////////////////////////
 
+// Fix for normalize button 
+.mfp-arrow:active,
+.mfp-arrow:focus,
+.mfp-close:active,
+.mfp-close:focus {
+	@include box-shadow(#666 0 0 0);
+}
 
 // Transluscent overlay
 .mfp-bg {
@@ -568,11 +575,11 @@ button::-moz-focus-inner {
 	min-width: 20em;
 	margin: 2em auto;
 	border: 4px solid #333;
-	background: $background-color;
+	background: #FFF;
 	@include box-shadow(rgba(0,0,0,0.7) 0 0 27px);
 	.mfp-content & {
 		display: block;
-	}	
+	}
 	&.popup-small {
 		max-width: $magnific-popup-size-small;
 	}		
@@ -601,7 +608,10 @@ button::-moz-focus-inner {
 		}
 	}			
 	.popup-content { 
-		padding: 1.4em;		
+		padding: 1.4em;	
+		.lt-ie8 & {
+			padding-top: 0;
+		}				
 	}
 	.mfp-close { 
 		top: 0.2em;

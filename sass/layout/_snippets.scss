@@ -55,7 +55,7 @@ img { display: block; }
 /***************************************************************/
 /*  Video                                                      */
 /***************************************************************/
-#video {
+.video {
 	span {
 		display: block;
 		margin: 1em 0 0;
@@ -172,7 +172,7 @@ img { display: block; }
 /***************************************************************/
 /*  Box				                                                 */
 /***************************************************************/
-.box {
+.b {
 	@extend %clearfix;
 	display: block;
 	margin: 1em 0 0;
@@ -182,46 +182,46 @@ img { display: block; }
 	&:first-child {
 		border: none;
 	}
-	.box-img {	
+	.b-img {	
 		img {
 			float: left;
 			margin: 0 1em 0 0;
 			@include border-radius(3px);		
 		}
 	}
-	.box-content {	
+	.b-content {	
 	
 	}
-		.box-title {
+		.b-title {
 			h2 {
 				font-size: 1.8em;
 				margin: 0 0 0.2em;			
 			}
 		}
-		.box-text {
+		.b-text {
 			margin: 0;
 			padding: 0;
 		}
-		.box-btn {
+		.b-btn {
 			
 		}
 }
-.box-big {
-	.box-img {
+.b-big {
+	.b-img {
 		img {
 			float: left;
 			margin: 0 1em 0 0;
 			@include border-radius(3px);
 		}
 	}
-	.box-socials {
+	.b-socials {
 		float: right;
 		margin: 0 0 0 1em;
 	}
 }
 @include MQ(MLneg) {
-	.box {
-		.box-img {
+	.b {
+		.b-img {
 			img {
 				max-width: 30%;
 			}

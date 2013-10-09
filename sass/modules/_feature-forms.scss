@@ -98,11 +98,7 @@ small {
 		> label {
 			vertical-align: top;
 			padding: 0 0 0.8em;
-			i {
-				font-style: normal;
-				color: $form-error-color;
-			}
-		}		
+		}
 	}		
 	// Fields
 	select,
@@ -115,7 +111,11 @@ small {
 		width: 100%;
 		height: 150px;
 	}	
-	// Errors
+	// Errors & Required
+	i {
+		color: $form-error-color;
+		font-style: normal;
+	}	
 	.error {
 		select,
 		input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
@@ -138,9 +138,18 @@ small {
 	}	
 	// Simple Form
 	&.form-simple {
-		label {
-			display: none;
-		}
+		li {
+			label {
+				display: none;
+			}		
+			> fieldset {
+				padding: 0;
+				border: 0;
+				label {
+					display: block;
+				}
+			}				
+		}	
 	}
 	// Advanced Form	
 	&.form-advanced {
@@ -323,12 +332,12 @@ input[type="button"] {
 	&.secondary {
 		background: scale-lightness($form-button-secondary-color, 10%);
 		&:hover {
-			background: scale-lightness($form-button-secondary-color, -10%);
+			background: scale-lightness($form-button-secondary-color, -20%);
 		}
 	}
 	&.success {
 		border: 1px solid scale-lightness($form-button-success-color, 5%);	
-		background: scale-lightness($form-button-success-color, 0%);
+		background: scale-lightness($form-button-success-color, 10%);
 		color: #FFF;
 		@include text-shadow(#666 0 0 0);
 		&:hover {
@@ -342,13 +351,13 @@ input[type="button"] {
 		color: #FFF;
 		@include text-shadow(#666 0 0 0);
 		&:hover {
-			background: scale-lightness($form-button-info-color, -10%);
+			background: scale-lightness($form-button-info-color, -20%);
 			color: #FFF;
 		}		
 	}
 	&.alert {
 		border: 1px solid scale-lightness($form-button-alert-color, 5%);	
-		background: scale-lightness($form-button-alert-color, 0%);
+		background: scale-lightness($form-button-alert-color, 10%);
 		color: #FFF;
 		@include text-shadow(#666 0 0 0);	
 		&:hover {
