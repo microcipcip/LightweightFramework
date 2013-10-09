@@ -14,7 +14,7 @@
 <!-- [Popup Login] -->
 <div class="popup-container popup-small" id="popup-login">
   <div class="popup-header">
-    <span>Area Clienti</span>
+    <span>Login Area</span>
   </div>
   <div class="popup-content">
 		<!-- login form section-->

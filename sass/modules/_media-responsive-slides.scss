@@ -32,16 +32,16 @@
 /*  Responsive Slides Custom Styling                           */
 /***************************************************************/
 #slide-rslides {
+	&.wrapper-slide {
+		@extend %wrapper;
+		@extend %clearfix;
+	}
 	.rslides {
 		@include border-radius(3px);
 	}
 	// Caption Styling
 	.slide-caption {
-		position: absolute;
-		bottom: 0;
-		left: 0;
 		width: 100%;
-		padding: 1em;
 		background: transparentize(#FFF, .1);
 		.slide-title {
 			font-size: 1.2em;
@@ -73,5 +73,15 @@
 			}
 		}
 	} 
+}
+@include MQ(Mplus) {
+	#slide-rslides {
+		.slide-caption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding: 1em;
+		}
+	}	
 }
 } // end if

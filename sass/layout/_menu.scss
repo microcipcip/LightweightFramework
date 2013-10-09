@@ -3,9 +3,9 @@
 $menu-font-size: 1em;
 // Mainmenu
 $mainmenu-font-color: #FFF;
-$mainmenu-font-color-hover: scale-lightness(#FFF, -30%);
+$mainmenu-font-color-hover: scale-lightness($mainmenu-font-color, -30%);
 $mainmenu-font-color-arrow: scale-lightness($mainmenu-font-color, -20%);
-$mainmenu-font-color-arrow-hover: scale-lightness($mainmenu-font-color-hover, -20%);
+$mainmenu-font-color-arrow-hover: $mainmenu-font-color-hover;
 $mainmenu-background: #333;
 $mainmenu-background-link: transparent;
 //  Submenu 

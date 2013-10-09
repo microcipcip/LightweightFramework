@@ -27,3 +27,4 @@ local.properties
 
 # BTSync
 .Sync*
+/.sass-cache/
