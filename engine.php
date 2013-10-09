@@ -138,13 +138,13 @@
 	// =========================================
 	
 	// Menu recursive builder (used by loadMenu())
-	function loadMenuRecursion($files, $prefix = '', $active_page, $o, $level = 0, &$active_flag) {
+	function loadMenuRecursion($files, $prefix = '', $active_page, $o, $level = 0, &$active_flag = null) {
 		$h = '';
 		if (!is_null($o['max_depth']) && $o['max_depth'] == 0) return $h;
 		$l = '';
 		if (!empty($o['1st_level_class']) && $level == 0) $l = ' class="' . $o['1st_level_class'] . '"';
 		if (!empty($o['2nd_level_class']) && $level == 1) $l = ' class="' . $o['2nd_level_class'] . '"';
-		$h .= "<{$o[wrapper]}$l>";
+		$h .= "<{$o['wrapper']}$l>";
 		$active_flag = false;
 		uasort($files, 'loadMenuSort');
 		foreach ($files as $m) {
@@ -159,12 +159,12 @@
 			$active_flag_local = ($active_flag_local && $o['copy_active_class_to_parent']) || $page[1] == $active_page;
 			$active_flag = $active_flag || $active_flag_local;
 			$c = $active_flag_local ? ' class="' . $o['active_class'] . '"' : '';
-			$h .= "<{$o[items]}$c>";
+			$h .= "<{$o['items']}$c>";
 			$h .= '<a href="index.php?page=' . e($page[1]) . '">' . $o['pre_html'] . e($page[2]) . $o['post_html'] . '</a>';
 			$h .= $h_children;
-			$h .= "</{$o[items]}>";
+			$h .= "</{$o['items']}>";
 		} 
-		$h .= "</{$o[wrapper]}>";
+		$h .= "</{$o['wrapper']}>";
 		return $h;
 	}
 	
@@ -201,7 +201,7 @@
 		} else {
 			$m = array();
 			preg_match('|^(.+/)?([^/.]+)(?:\\.([0-9]+))?\\.php$|', $path, $m);
-			return array($m[2], $m[1] . $m[2], ucfirst(trim(str_replace("_", " ", $m[2]))), intval($m[3]));
+			return @array($m[2], $m[1] . $m[2], ucfirst(trim(str_replace("_", " ", $m[2]))), intval($m[3]));
 		}
 	}
 	
