@@ -1,4 +1,4 @@
-Light PHP Framework
+Lightweight Framework
 ==============
 
-Light PHP Framework for rapid website development
+Lightweight PHP Framework for rapid website development
