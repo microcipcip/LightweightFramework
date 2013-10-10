@@ -3,9 +3,9 @@
 	// WEBSITE CONFIGURATION
 	
 	// Site and page
-	$site_name = "SiteName";
-	$page_title = "Welcome to SiteName";
-	$page_h1 = "Welcome to SiteName";
+	$site_name = "Lightweight Framework";
+	$page_title = "Welcome to Lightweight Framework";
+	$page_h1 = "Welcome to Lightweight Framework";
 	$page = 'home'; // Default page file name (homepage)
 	
 	// Body class
@@ -26,8 +26,7 @@
 	
 	// Sections
 	$sections = array(
-		'sidebar'   => array('enabled', '_include/sidebar-main.php'),
-		'slideshow' => array('disabled', '_include/slideshow.php')
+		'sidebar'   => array('enabled', '_include/sidebar-main.php')
 	);
 	
 	// JS files
