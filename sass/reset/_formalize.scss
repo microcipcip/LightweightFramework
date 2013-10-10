@@ -14,7 +14,7 @@ input[type="search"]::-webkit-search-decoration {
 
 input,
 button,
-a.button,
+a.btn,
 select,
 textarea {
   // Suppress red glow that Firefox
@@ -31,7 +31,7 @@ textarea {
 }
 
 button,
-a.button,
+a.btn,
 input[type="reset"],
 input[type="submit"],
 input[type="button"] {
@@ -68,7 +68,7 @@ input[type="button"] {
   }
 }
 
-a.button {
+a.btn {
   // IE7
   *padding-bottom: 3px;
 }
@@ -112,7 +112,7 @@ select[disabled],
 select[disabled] option,
 select[disabled] optgroup,
 textarea[disabled],
-a.button_disabled {
+a.btn_disabled {
   @include box-shadow(none);
   -moz-user-select: -moz-none;
   -webkit-user-select: none;

@@ -37,7 +37,7 @@
 			<textarea placeholder="Text*" name="message" ></textarea>							
 		</li>
 		<li>
-			<input type="submit" class="button large success" name="submit" value="Send">
+			<input type="submit" class="btn btn-large btn-success" name="submit" value="Send">
 		</li>
 	</ul>
 	
@@ -114,7 +114,7 @@
 			<textarea name="textarea" id="textarea"></textarea>								
 		</li>								
 		<li class="field-nolabel">
-			<input type="submit" class="button large success" name="submit" value="Send">
+			<input type="submit" class="btn btn-large btn-success" name="submit" value="Send">
 		</li>
 	</ul>
 	
@@ -197,7 +197,7 @@
 			<small>Error lore ipsa ipsum</small>
 		</li>								
 		<li class="field-nolabel">
-			<input type="submit" class="button large success" name="submit" value="Send">
+			<input type="submit" class="btn btn-large btn-success" name="submit" value="Send">
 		</li>
 	</ul>
 	

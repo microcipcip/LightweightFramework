@@ -29,7 +29,7 @@
 					<input type="password" name="password" tabindex="2" value="" placeholder="Password*" />						
 				</li>
 				<li>
-					<input type="submit" name="#" value="Login" class="button large success" />
+					<input type="submit" name="#" value="Login" class="btn btn-large btn-success" />
 				</li>
 			</ul>
 		</form>   

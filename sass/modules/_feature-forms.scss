@@ -250,7 +250,7 @@ small {
 /***************************************************************/
 /*  Alert Box                                                  */
 /***************************************************************/
-%alert-box {
+%alert-b {
 	margin: 0 0 1em;
 	padding: 0.6em;
 	border: 1px solid $form-alertbox-default-border-color;
@@ -258,13 +258,13 @@ small {
 	color: $font-color;
 	font-weight: bold;
 }
-.alert-box {
-	@extend %alert-box;
+.alert-b {
+	@extend %alert-b;
 	color: $form-alertbox-text-color;
 	a:hover {
 		text-decoration: underline;
 	}
-	&.alert {
+	&.alert-wrong {
 		border-color: scale-lightness($form-alertbox-alert-color, -30%);
 		background: $form-alertbox-alert-color;	
 		color: $form-alertbox-alert-text-color;
@@ -272,7 +272,7 @@ small {
 			color: orange;
 		}
 	}
-	&.success {
+	&.alert-success {
 		border-color: scale-lightness($form-alertbox-success-color, -30%);
 		background: $form-alertbox-success-color;	
 		color: $form-alertbox-success-text-color;
@@ -280,7 +280,7 @@ small {
 			color: $form-alertbox-success-text-link-color;
 		}		
 	}
-	&.secondary {
+	&.alert-secondary {
 		border-color: scale-lightness($form-alertbox-secondary-color, -30%);
 		background: $form-alertbox-secondary-color;	
 		color: $form-alertbox-secondary-text-color;
@@ -295,8 +295,8 @@ small {
 /***************************************************************/
 /*  Buttons                                                    */
 /***************************************************************/
-.button, 
-a.button, 
+.btn, 
+a.btn, 
 input[type="reset"], 
 input[type="submit"], 
 input[type="button"] {
@@ -315,27 +315,27 @@ input[type="button"] {
 		color: $form-button-font-color;
 	}
 }
-.button {
-	&.strong {
+.btn {
+	&.btn-strong {
 		font-weight: bold;
 	}
-	&.tiny {
+	&.btn-tiny {
 		font-size: 0.6em;
 	}
-	&.small {
+	&.btn-small {
 		font-size: 0.8em;
 	}
-	&.large {
+	&.btn-large {
 		font-size: 1.1em;
 		padding: 0.5em 1.2em;
 	}
-	&.secondary {
+	&.btn-secondary {
 		background: scale-lightness($form-button-secondary-color, 10%);
 		&:hover {
 			background: scale-lightness($form-button-secondary-color, -20%);
 		}
 	}
-	&.success {
+	&.btn-success {
 		border: 1px solid scale-lightness($form-button-success-color, 5%);	
 		background: scale-lightness($form-button-success-color, 10%);
 		color: #FFF;
@@ -345,7 +345,7 @@ input[type="button"] {
 			color: #FFF;
 		}		
 	}
-	&.info {
+	&.btn-info {
 		border: 1px solid scale-lightness($form-button-info-color, 5%);	
 		background: scale-lightness($form-button-info-color, 10%);
 		color: #FFF;
@@ -355,7 +355,7 @@ input[type="button"] {
 			color: #FFF;
 		}		
 	}
-	&.alert {
+	&.btn-alert {
 		border: 1px solid scale-lightness($form-button-alert-color, 5%);	
 		background: scale-lightness($form-button-alert-color, 10%);
 		color: #FFF;
@@ -365,7 +365,7 @@ input[type="button"] {
 			color: #FFF;
 		}		
 	}
-	&.inverse {
+	&.btn-inverse {
 		border: 1px solid scale-lightness($form-button-inverse-color, 5%);	
 		background: scale-lightness($form-button-inverse-color, 10%);
 		color: #FFF;
@@ -375,10 +375,10 @@ input[type="button"] {
 			color: #FFF;
 		}		
 	}
-	&.disabled {
+	&.btn-disabled {
 		@include opacity(0.6);
 	}
-	&.no-style {
+	&.btn-no-style {
 		margin: 0;
 		padding: 0;
 		background: none;
