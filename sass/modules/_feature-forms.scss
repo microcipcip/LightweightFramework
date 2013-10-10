@@ -28,11 +28,11 @@ $form-alertbox-secondary-text-color: #FFF !default;
 $form-alertbox-secondary-text-link-color: #C0C0C0 !default;
 // Color Buttons
 $form-button-font-color: #333 !default;
-$form-button-alert-color: $form-error-color !default;
+$form-button-alert-color: scale-lightness($form-error-color, -10%) !default;
 $form-button-secondary-color: #CCC !default;
 $form-button-success-color: #0D6455 !default;
 $form-button-info-color: #2F96B4 !default;
-$form-button-inverse-color: #333 !default;
+$form-button-inverse-color: scale-lightness(#333, -10%) !default;
 // Dark Colorscheme
 @if $form-colorscheme == dark {
 	$form-border: #666;
