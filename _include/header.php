@@ -7,7 +7,7 @@
 	
 		<!-- [Logo] -->
 		<div id="header-logo">
-			<a href="index.php">Site Name</a>
+			<a href="index.php"><?php echo e($site_name) ?></a>
 		</div>
 		<!-- [/End Logo] -->
 		
