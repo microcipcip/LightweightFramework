@@ -25,12 +25,5 @@
 // Example: .element { content: "\e000"; }
 // ====================================================================
 .icon {
-	font-family: '#{$font-family-icons}';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
+	@extend %icons;
 }

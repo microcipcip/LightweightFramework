@@ -250,7 +250,7 @@ small {
 /***************************************************************/
 /*  Alert Box                                                  */
 /***************************************************************/
-%alert-b {
+%alert {
 	margin: 0 0 1em;
 	padding: 0.6em;
 	border: 1px solid $form-alertbox-default-border-color;
@@ -258,8 +258,8 @@ small {
 	color: $font-color;
 	font-weight: bold;
 }
-.alert-b {
-	@extend %alert-b;
+.alert {
+	@extend %alert;
 	color: $form-alertbox-text-color;
 	a:hover {
 		text-decoration: underline;
