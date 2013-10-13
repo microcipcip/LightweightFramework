@@ -13,8 +13,6 @@
 	<div class="wrapper-content">
 		<div id="content">	
 			
-			<?php echo loadSection('slideshow') ?>
-		
 			<!-- [Text] -->
 			<div id="text">	
 				<?php echo loadContent(); ?>

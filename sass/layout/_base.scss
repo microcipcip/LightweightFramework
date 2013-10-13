@@ -58,7 +58,7 @@ p {
 	margin: $font-paragraph-margin;	
 }
 
-/*  Placeholders  */
+//  Input Placeholders
 ::-webkit-input-placeholder { color: $placeholder-color; }
 :-moz-placeholder { color: $placeholder-color; } /* Firefox 18- */ 
 ::-moz-placeholder { color: $placeholder-color; }  /* Firefox 19+ */
