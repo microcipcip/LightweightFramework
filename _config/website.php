@@ -22,6 +22,7 @@
 		'2nd_level_class' => 'header-submenu', // Class name for the first-level submenus wrappers
 		'pre_html' => '', // HTML code to be injected before text inside links
 		'post_html' => '', // HTML code to be injected after text inside links
+		'hide_items' => array() // An array with page full-names that should be not printed, ex: array('home', 'page/subpage')
 	);
 	
 	// Sections

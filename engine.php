@@ -152,6 +152,7 @@
 		foreach ($files as $m) {
 			if (is_array($m)) continue;
 			$page = parsePageFile("$prefix$m");
+			if (in_array($page[1], $o['hide_items'])) continue;
 			$h_children = '';
 			$active_flag_local = false;
 			if (!empty($files[$page[0]])) $h_children = loadMenuRecursion($files[$page[0]], $page[1] . '/', $active_page, $o, $level + 1, $active_flag_local);
@@ -173,6 +174,8 @@
 		if (is_array($b)) return -1;
 		$ap = parsePageFile($a);
 		$bp = parsePageFile($b);
+		if (empty($ap[3])) $ap[3] = PHP_INT_MAX;
+		if (empty($bp[3])) $bp[3] = PHP_INT_MAX;
 		if ($ap[3] == $bp[3]) return strcmp($a, $b);
 		elseif ($ap[3] >= $bp[3]) return 1;
 		else return -1;
