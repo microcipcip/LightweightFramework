@@ -174,8 +174,8 @@
 		$ap = parsePageFile($a);
 		$bp = parsePageFile($b);
 		if ($ap[3] == $bp[3]) return strcmp($a, $b);
-		elseif ($ap[3] >= $bp[3]) return -1;
-		else return 1;
+		elseif ($ap[3] >= $bp[3]) return 1;
+		else return -1;
 	}
 	
 	// List files in a directory (used by loadMenu())
