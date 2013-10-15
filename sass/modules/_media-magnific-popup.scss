@@ -599,7 +599,6 @@ button::-moz-focus-inner {
 		background: #DDD;
 		@include background(linear-gradient(color-stops(white, #FFF 50%, #DDD 80%)));
 		font-size: 1em;
-		@include box-shadow(scale-lightness(#666, 50%) 0 0 8px);
 		span {
 			display: block;
 			padding: 0.4em 0.6em;

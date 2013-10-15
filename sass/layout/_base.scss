@@ -96,3 +96,8 @@ p {
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;	
 }
+%transition { // http://www.w3schools.com/css3/css3_transitions.asp
+	@include transition-property(all); // none|all|background|opacity|width|height 
+	@include transition-duration(.2s);
+	@include transition-timing-function(ease-in-out); // linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n) 
+}
