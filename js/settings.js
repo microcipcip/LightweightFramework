@@ -52,12 +52,12 @@ $(document).ready(function(){
 	/* [/End FitVids] */	
 	
 	/* [Magnific Popup [Lightbox]] */
-	$('.gallery-custom.lightbox-single').magnificPopup({
+	$('.lightbox-single').magnificPopup({
 		delegate: 'a',
 		type:'image',
 		gallery:{enabled:false}
 	});	
-	$('.gallery-custom.lightbox-multiple').magnificPopup({
+	$('.lightbox-multiple').magnificPopup({
 		delegate: 'a',
 		type:'image',
 		gallery:{enabled:true}
