@@ -9,8 +9,8 @@ $magnific-popup-padding-left-mobile: 6px; // Same as above, but is applied when 
 $magnific-z-index-base: 1040; // Base z-index of popup
 $magnific-include-arrows: true; // include styles for nav arrows
 $magnific-controls-opacity: 0.65;
-$magnific-arrow-color: #FFF; // Color of arrow
-$magnific-arrow-border-color: #3f3f3f; // Color of arrow border
+$magnific-arrow-color: #444; // Color of arrow
+$magnific-arrow-border-color: #FFF; // Color of arrow border
 $magnific-controls-color: #FFF;
 $magnific-inner-close-icon-color: #333;
 $magnific-controls-text-color: #CCC; // Color of preloader and "1 of X" indicator
@@ -517,10 +517,6 @@ button::-moz-focus-inner {
 
 // Scale navigation arrows and reduce padding from sides
 @media all and (max-width: 900px) {
-  .mfp-arrow {
-    -webkit-transform: scale(0.75);
-    transform: scale(0.75);
-  }
   .mfp-arrow-left {
     -webkit-transform-origin: 0;
     transform-origin: 0;
