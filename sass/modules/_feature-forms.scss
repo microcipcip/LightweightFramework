@@ -305,6 +305,7 @@ input[type="button"] {
   @include background-image(linear-gradient(white, #dddddd));	
 	color: $form-button-font-color;
 	font-size: 0.9em;
+	text-align: center;
 	font-weight: normal;	
 	@include box-shadow(transparentize(#FFF, .7) 0 1px 0 inset);
     -webkit-transition: background-color 300ms ease-out;
