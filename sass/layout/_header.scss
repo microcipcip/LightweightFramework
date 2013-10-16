@@ -20,7 +20,7 @@
 	}	
 }
 /*  Login  */
-#header-login {
+#header-main_login {
 	position: absolute;
 	top: 0.3em;
 	right: 0;
@@ -29,7 +29,7 @@
 	
 }
 /*  Logo  */
-#header-logo {
+#header-main_logo {
 	z-index: 2;
 	display: inline-block;
 	position: relative;
@@ -46,7 +46,7 @@
 	}
 }
 /*  Header Search  */
-#header-search {
+#header-main_search {
 	position: relative;
 	padding: 0 0 1em;
 	.js & {
@@ -90,7 +90,7 @@
 	}	
 }
 @include MQ(MLplus) {
-	#header-search {
+	#header-main_search {
 		display: block !important;
 		position: absolute;
 		top: 1.35em;

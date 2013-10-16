@@ -31,7 +31,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 
 
 /*  Mobile Navigation  */
-#mobile-navigation {
+#mobile-nav {
 	position: absolute;
 	top: 1.8em;
 	right: 0.4em;
@@ -39,7 +39,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 		display: none;
 	}
 }
-#mobile-menu, #mobile-search {
+#mobile-nav_menu, #mobile-nav_search {
 	display: inline;
 	span {
 		position: relative;
@@ -56,14 +56,14 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 		}
 	}	
 }
-#mobile-menu {
+#mobile-nav_menu {
 	span {
 		.is-menu-open & {
 			color: $mobile-navigation-color-hover;
 		}		
 	}
 }
-#mobile-search {
+#mobile-nav_search {
 	span {
 		.is-search-open & {
 			color: $mobile-navigation-color-hover;
@@ -71,13 +71,13 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 	}
 }
 @include MQ(MLplus) {
-	#mobile-navigation {
+	#mobile-nav {
 		display: none;
 	}	
 }
 
 /*  Header Menu  */
-#header-menu {
+#header-main_menu {
 	z-index: 3;
 	position: relative;
 	font-size: $menu-font-size;
@@ -146,7 +146,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 	}
 }
 @include MQ(MLplus) {
-	#header-menu { 
+	#header-main_menu { 
 		display: block !important;
 		margin: 0;
 		padding: 0;
@@ -203,7 +203,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 	}
 }
 /*  Header Submenu  */
-.header-submenu {
+.header-main_submenu {
 	margin: 0;
 	padding: 0;
 	.js & {
@@ -229,7 +229,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 	}
 }
 @include MQ(MLplus) {
-	.header-submenu {
+	.header-main_submenu {
 		display: none !important;
 		position: absolute;
 		top: 3em;

@@ -137,11 +137,11 @@ $(document).ready(function(){
 		$('#header-main').addClass('is-menu-open');
 		if($("#header-main.is-menu-open")[0]) { 
 			var escape = $('<div/>').html('&#xe006;').text();
-			$('#mobile-menu span').attr("data-icon", escape);		
+			$('#mobile-nav_menu span').attr("data-icon", escape);		
 		} 
 		else {
 			var escape = $('<div/>').html('&#xf039;').text();
-			$('#mobile-menu span').attr("data-icon", escape);					
+			$('#mobile-nav_menu span').attr("data-icon", escape);					
 		}	
 	});		
 	/* [/End Back to top] */
@@ -169,39 +169,39 @@ $(document).ready(function(){
 	/* [/End Social Networks] */	
 
 	// Add Class "has-children" if parent "li" has children "ul"
-	$("#header-menu > ul > li:has(ul)").addClass('has-children');
+	$("#header-main_menu > ul > li:has(ul)").addClass('has-children');
 	// Add span to "a" if parent "li" has children "ul", this will be used to build
 	// a button to expand the menu when viewing the website on Mobiles phones
-	$("#header-menu > ul > li:has(ul) > a").append('<span aria-hidden="true" class="icon"></span>');	
+	$("#header-main_menu > ul > li:has(ul) > a").append('<span aria-hidden="true" class="icon"></span>');	
 	
 	/* [Media Queries] */
 	enquire.register("only screen and (min-width: 0) and (max-width: 50em)", {
 		setup : function() {
 			// Show/Hide Mobile Menu	
-			$('#mobile-menu span').click(function () {
+			$('#mobile-nav_menu span').click(function () {
 				// Toggle is-menu-open class
 				$('#header-main').toggleClass('is-menu-open');
 			});
-			$('#mobile-search span').click(function () {
+			$('#mobile-nav_search span').click(function () {
 				// Toggle is-search-open class
 				$('#header-main').toggleClass('is-search-open');				
 			});				
 		},
 		match : function() {
 			// Slide Down/Up the secondary nav for mobile
-			$('#header-menu > ul > li.has-children a span').click(function(e) {
+			$('#header-main_menu > ul > li.has-children a span').click(function(e) {
 				e.preventDefault();
 				$(this).parent().parent().toggleClass('is-expanded');				
 			});			
 		},
 		unmatch : function() {
 			// Disable Slide Down/Up if you exit Mobile view
-			$('#header-menu > ul > li.has-children a span').unbind();
+			$('#header-main_menu > ul > li.has-children a span').unbind();
 		}  
 	}).register("only screen and (min-width: 50em)", {
 		match : function() {
 			// Dropdown Menu (delay)
-			$("#header-menu > ul > li").hover(function () { 
+			$("#header-main_menu > ul > li").hover(function () { 
 				$(this).addClass('hovering'); 
 			},
 			function () { 
@@ -210,7 +210,7 @@ $(document).ready(function(){
 		},
 		unmatch : function() {
 			// Disable dropdown menu (for mobile)
-			$("#header-menu > ul > li").unbind('mouseenter mouseleave');
+			$("#header-main_menu > ul > li").unbind('mouseenter mouseleave');
 		} 
     });
 	/* [/End Media Queries] */
