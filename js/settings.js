@@ -24,16 +24,16 @@ $(document).ready(function(){
 	
 	/* [Tabs] */
 	$('#tabs-horizontal').easyResponsiveTabs({
-			type: 'default', // Types: default, vertical, accordion
-			width: 'auto', // auto or any width like 600px
-			fit: true, // 100% fit in a container
-			closed: false // Start closed if in accordion view
+		type: 'default', // Types: default, vertical, accordion
+		width: 'auto', // auto or any width like 600px
+		fit: true, // 100% fit in a container
+		closed: false // Start closed if in accordion view
 	});	
 	
 	$('#tabs-vertical').easyResponsiveTabs({
-			type: 'vertical', // Types: default, vertical, accordion
-			width: 'auto', // auto or any width like 600px
-			fit: true // 100% fit in a container
+		type: 'vertical', // Types: default, vertical, accordion
+		width: 'auto', // auto or any width like 600px
+		fit: true // 100% fit in a container
 	});		
 	/* [/End Accordion Tabs] */
 	
@@ -51,18 +51,18 @@ $(document).ready(function(){
 	 $("#video").fitVids();
 	/* [/End FitVids] */	
 	
-	/* [Magnific Popup [Lightbox]] */
-	$('.lightbox-single').magnificPopup({
+	/* [Magnific Popup] */
+	$('.popup-single').magnificPopup({
 		delegate: 'a',
 		type:'image',
 		gallery:{enabled:false}
 	});	
-	$('.lightbox-multiple').magnificPopup({
+	$('.popup-multiple').magnificPopup({
 		delegate: 'a',
 		type:'image',
 		gallery:{enabled:true}
 	});		
-	$(".popup").magnificPopup({
+	$(".popup-inline").magnificPopup({
 		type:"inline",
 		midClick: true,
 		closeOnBgClick: false 
@@ -72,7 +72,7 @@ $(document).ready(function(){
 		midClick: true,
 		closeOnBgClick: false 
 	});	
-	/* [/End Magnific Popup [Lightbox]] */		
+	/* [/End Magnific Popup] */		
 
 	/* [jQuery Form Validation] */
 	// Contact form	

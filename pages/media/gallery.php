@@ -11,7 +11,7 @@
 </p>
 
 <!-- [Gallery] -->	
-<div class="gallery-custom lightbox-multiple">
+<div class="gallery-custom popup-multiple">
 	<?php	for ($x=1; $x<=11; $x++) : ?>
 	<a href="img/_test/pics/gal<?php echo $x; ?>.jpg"><img src="img/_test/pics/gal<?php echo $x; ?>.jpg" alt="#" /></a>
 	<?php endfor; ?>			

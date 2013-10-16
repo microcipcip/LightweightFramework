@@ -13,7 +13,7 @@
 		
     <!-- [/End LogIn] -->
     <div id="header-login">
-     	<a href="#popup-login" class="popup">
+     	<a href="#popup-login" class="popup-inline">
         Login
       </a>
     </div>

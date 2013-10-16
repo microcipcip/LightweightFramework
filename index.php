@@ -19,7 +19,7 @@
 			</div>
 			<!-- [/End Text] -->
 			
-			<?php echo loadSection('sidebar') ?> 
+			<?php echo loadSection('sidebar1') ?> 
 	
 		</div>
 	</div>

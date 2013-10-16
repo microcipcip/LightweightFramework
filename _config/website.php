@@ -27,7 +27,7 @@
 	
 	// Sections
 	$sections = array(
-		'sidebar'   => array('enabled', '_include/sidebar-main.php')
+		'sidebar1'   => array('enabled', '_include/sidebar.php')
 	);
 	
 	// JS files

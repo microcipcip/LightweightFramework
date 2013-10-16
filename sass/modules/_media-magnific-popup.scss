@@ -32,7 +32,7 @@ $magnific-include-mobile-layout-for-image: true; // Removes paddings from top an
 $magnific-caption-title-color: #F3F3F3;
 $magnific-caption-subtitle-color: #BDBDBD;
 // Popup Sizes
-$magnific-popup-size-small: 22em;
+$magnific-popup-size-small: 25em;
 $magnific-popup-size-medium: 32em;
 $magnific-popup-size-large: 42em;
 $magnific-popup-size-fullscreen: 100%;
@@ -597,7 +597,7 @@ button::-moz-focus-inner {
 		font-size: 1em;
 		span {
 			display: block;
-			padding: 0.4em 0.6em;
+			padding: 0.4em 1.4em;
 			font-size: 1.6em;
 			font-weight: bold;
 		}
