@@ -17,9 +17,13 @@
 		<li>
 			<img src="img/_test/slide/<?php echo $x; ?>.jpg" alt="#" />
 			<div class="slide-caption">
-				<div class="slide-content">
-					<strong>Slide <?php echo $x; ?></strong> 
-					Lore ipsa ipsum is dummy text that I use here as an example
+				<div class="slide-caption_title">
+					Slide <?php echo $x; ?> 
+				</div>			
+				<div class="slide-caption_content">
+					<p>
+						Slide <?php echo $x; ?>:	Lore ipsa ipsum is dummy text that I use here as an example
+					</p>
 				</div>
 			</div>
 		</li>

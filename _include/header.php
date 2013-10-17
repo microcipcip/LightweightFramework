@@ -13,7 +13,7 @@
 		
     <!-- [/End LogIn] -->
     <div id="header-main_login">
-     	<a href="#popup-login" class="popup-inline">
+     	<a href="#popup-login" class="popup-inline" data-effect="mfp-zoom-in">
         Login
       </a>
     </div>

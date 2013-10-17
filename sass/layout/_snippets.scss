@@ -172,7 +172,7 @@ img { display: block; }
 /***************************************************************/
 /*  Box				                                                 */
 /***************************************************************/
-.b {
+.box {
 	@extend %clearfix;
 	display: block;
 	margin: 1em 0 0;
@@ -182,46 +182,46 @@ img { display: block; }
 	&:first-child {
 		border: none;
 	}
-	.b-img {	
+	.box_img {	
 		img {
 			float: left;
 			margin: 0 1em 0 0;
 			@include border-radius(3px);		
 		}
 	}
-	.b-content {	
+	.box_content {	
 	
 	}
-		.b-title {
+		.box_title {
 			h2 {
 				font-size: 1.8em;
 				margin: 0 0 0.2em;			
 			}
 		}
-		.b-text {
+		.box_text {
 			margin: 0;
 			padding: 0;
 		}
-		.b-btn {
+		.box_btn {
 			
 		}
 }
-.b-big {
-	.b-img {
+.box_big {
+	.box_img {
 		img {
 			float: left;
 			margin: 0 1em 0 0;
 			@include border-radius(3px);
 		}
 	}
-	.b-socials {
+	.box_socials {
 		float: right;
 		margin: 0 0 0 1em;
 	}
 }
 @include MQ(MLneg) {
-	.b {
-		.b-img {
+	.box {
+		.box_img {
 			img {
 				max-width: 30%;
 			}

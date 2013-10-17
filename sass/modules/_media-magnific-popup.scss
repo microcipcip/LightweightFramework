@@ -65,8 +65,7 @@ $magnific-popup-size-fullscreen: 100%;
   z-index: $magnific-z-index-base + 2;
   overflow: hidden;
   position: fixed;
-
-  background: $magnific-overlay-color;
+  background: $magnific-overlay-color image-url("_modules/magnific-popup/bg.png") repeat center top;
   opacity: $magnific-overlay-opacity;
   @if $magnific-IE7support {
     filter: alpha(opacity=$magnific-overlay-opacity*100);
@@ -560,6 +559,42 @@ button::-moz-focus-inner {
     }
   }
 }
+
+// Zoom-in Effect
+@include MQ(Lplus) {
+	.mfp-zoom-in {  
+		/* start state */
+		.mfp-with-anim {
+			@include opacity(0);
+			transition: all 0.2s ease-in-out; 
+			transform: scale(0.8); 
+		} 
+		&.mfp-bg {
+			@include opacity(0);
+			transition: all 0.5s ease-out;
+		}  
+		/* animate in */
+		&.mfp-ready {
+			.mfp-with-anim {
+				@include opacity(1);
+				transform: scale(1); 
+			}
+			&.mfp-bg {
+				@include opacity(0.8);
+			}
+		}
+		/* animate out */
+		&.mfp-removing {    
+			.mfp-with-anim { 
+				@include opacity(0);
+				transform: scale(0.8);
+			}
+			&.mfp-bg {
+				@include opacity(0);
+			}   
+		}
+	}
+}
 /***************************************************************/
 /*  Magnific Popup Custom Styling                              */
 /***************************************************************/
@@ -570,7 +605,6 @@ button::-moz-focus-inner {
 	max-width: 24em;
 	min-width: 20em;
 	margin: 2em auto;
-	border: 4px solid #333;
 	background: #FFF;
 	@include box-shadow(rgba(0,0,0,0.7) 0 0 27px);
 	.mfp-content & {
@@ -590,14 +624,14 @@ button::-moz-focus-inner {
 	}		
 	.popup-header {
 		margin: 0 0 0.2em;
-		padding: 0.2em 1.1em 0.2em 0;
+		padding: 0.2em 1.6em;
 		border-bottom: 1px solid #CCC;
 		background: #DDD;
 		@include background(linear-gradient(color-stops(white, #FFF 50%, #DDD 80%)));
 		font-size: 1em;
 		span {
 			display: block;
-			padding: 0.4em 1.4em;
+			padding: 0.4em 0;
 			font-size: 1.6em;
 			font-weight: bold;
 		}

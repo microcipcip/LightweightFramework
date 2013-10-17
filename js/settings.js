@@ -38,13 +38,11 @@ $(document).ready(function(){
 	/* [/End Accordion Tabs] */
 	
 	/* [Accordion FAQ] */
-	$('.accordion-faq').makeFAQ({
+	$('.accordion').makeFAQ({
 		indexTitle: "My Index",
 		displayIndex: false,
-		faqHeader: ".accordion-title"
+		faqHeader: ".accordion_title"
 	});
-	// Hide last border if this is last element
-	$('#faqs .faq-box-title').last().addClass('last');
 	/* [/End Accordion FAQ] */		
 	
 	/* [FitVids] */
@@ -55,22 +53,42 @@ $(document).ready(function(){
 	$('.popup-single').magnificPopup({
 		delegate: 'a',
 		type:'image',
-		gallery:{enabled:false}
+		gallery:{enabled:false},
+		removalDelay: 500,
+		callbacks: {
+			beforeOpen: function() {
+				// just a hack that adds mfp-anim class to markup 
+				this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+				this.st.mainClass = this.st.el.attr('data-effect');
+			}
+		}
 	});	
 	$('.popup-multiple').magnificPopup({
 		delegate: 'a',
 		type:'image',
-		gallery:{enabled:true}
+		gallery:{enabled:true},
+		removalDelay: 500,
+		callbacks: {
+			beforeOpen: function() {
+				// just a hack that adds mfp-anim class to markup 
+				this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+				this.st.mainClass = this.st.el.attr('data-effect');
+			}
+		}
 	});		
 	$(".popup-inline").magnificPopup({
 		type:"inline",
 		midClick: true,
-		closeOnBgClick: false 
+		closeOnBgClick: false,
+		removalDelay: 100,
+		callbacks: {beforeOpen: function() {this.st.mainClass = this.st.el.attr('data-effect');}}
 	});
 	$(".popup-external").magnificPopup({
 		type:"ajax",
 		midClick: true,
-		closeOnBgClick: false 
+		closeOnBgClick: false,
+		removalDelay: 100,
+		callbacks: {beforeOpen: function() {this.st.mainClass = this.st.el.attr('data-effect');}}
 	});	
 	/* [/End Magnific Popup] */		
 

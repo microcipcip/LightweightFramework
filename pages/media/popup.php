@@ -11,8 +11,8 @@
 </p>
 
 <p>
-	<a href="popup/small.php" class="popup-external">Popup Example [small]</a><br />
-	<a href="popup/medium.php" class="popup-external">Popup Example [medium]</a><br />
-	<a href="popup/large.php" class="popup-external">Popup Example [large]</a><br />
-	<a href="popup/fullscreen.php" class="popup-external">Popup Example [fullscreen]</a>
+	<a href="popup/small.php" class="popup-external" data-effect="mfp-zoom-in">Popup Example [small]</a><br />
+	<a href="popup/medium.php" class="popup-external" data-effect="mfp-zoom-in">Popup Example [medium]</a><br />
+	<a href="popup/large.php" class="popup-external" data-effect="mfp-zoom-in">Popup Example [large]</a><br />
+	<a href="popup/fullscreen.php" class="popup-external" data-effect="mfp-zoom-in">Popup Example [fullscreen]</a>
 </p>

@@ -5,13 +5,13 @@
 	&:last-child {
 		border-bottom: 0;
 	}
-	.side-title {
+	.side_title {
 		margin: 0 0 0.8em;
 		color: $font-heading-color;
 		font-size: $font-heading-h2-size;
 		font-weight: bold;
 	}
-	.side-content {
+	.side_content {
 		> *:last-child {
 			margin-bottom: 0;
 			padding-bottom: 0;

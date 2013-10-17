@@ -11,12 +11,12 @@
 </p>
 
 <!-- [Accordion] -->
-<div class="accordion-faq">
+<div class="accordion">
 					 
 	<?php	for ($x=1; $x<=10; $x++) : ?>
 	<!-- [Accordion Box] -->
-	<div class="accordion-title"><h3><span aria-hidden="true" class="icon"></span>Accordion Title <?php echo $x; ?></h3></div>
-	<div class="accordion-content">
+	<div class="accordion_title"><h3><span aria-hidden="true" class="icon"></span>Accordion Title <?php echo $x; ?></h3></div>
+	<div class="accordion_content">
 		<div>
 			<p>
 				<strong>Accordion content <?php echo $x; ?>:</strong> lorem ipsum dolor sit amet, libero turpis non cras ligula, id commodo, aenean est in volutpat amet sodales, porttitor bibendum facilisi suspendisse, aliquam ipsum ante morbi sed ipsum mollis. Sollicitudin viverra, vel varius eget sit mollis. Commodo enim aliquam suspendisse tortor cum diam, commodo facilisis, rutrum et duis nisl porttitor, vel eleifend odio ultricies ut.

@@ -19,7 +19,7 @@ $faq-color-link: $font-link-color;
 .faqRoot {
 	clear: both;
 	margin: 0 0 1em;
-	.accordion-title {
+	.accordion_title {
 		cursor: pointer;
 		position: relative;
 		h3 {
@@ -46,7 +46,7 @@ $faq-color-link: $font-link-color;
 			color: $faq-color-link;
 		}
 	}
-	.accordion-content {
+	.accordion_content {
 		position: relative;
 		margin: 0;
 		padding: 0;

@@ -43,12 +43,15 @@
 	.slide-caption {
 		width: 100%;
 		background: transparentize(#FFF, .1);
-		.slide-title {
+		.slide-caption_title {
 			font-size: 1.2em;
 			font-weight: bold;
 		}
-		.slide-content {
-			margin: 0.6em 0;
+		.slide-caption_content {
+			margin: 0;
+			p {
+				margin: 0;
+			}
 		}
 	}
 	// Prev/Next Styling
