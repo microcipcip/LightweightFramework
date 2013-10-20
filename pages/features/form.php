@@ -13,7 +13,7 @@
 <!-- [Form] -->										
 <form id="contactform" method="post" action="submit.action">
 <fieldset>
-	<legend>Contact Form <small>[Simple]</small></legend>
+	<legend>Contact Form <i>[Simple]</i></legend>
 	
 	<ul class="form form-simple">
 		<li class="field-small">
@@ -50,7 +50,7 @@
 <!-- [Form] -->										
 <form id="contactform2" method="post" action="submit.action">
 <fieldset>
-	<legend>Contact Form <small>[Advanced]</small></legend>
+	<legend>Contact Form <i>[Advanced]</i></legend>
 	
 	<ul class="form form-advanced">
 		<li class="field-small">
@@ -127,7 +127,7 @@
 <!-- [Form] -->										
 <form id="contactform3" method="post" action="submit.action">
 <fieldset>
-	<legend>Contact Form <small>[Advanced Errors]</small></legend>
+	<legend>Contact Form <i>[Advanced Errors]</i></legend>
 	
 	<ul class="form form-advanced">
 		<li class="field-small error">

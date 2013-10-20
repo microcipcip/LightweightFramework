@@ -1,12 +1,4 @@
 /***************************************************************/
-/*  Breadcrumbs                                                */
-/***************************************************************/
-.crumbBox {
-	display: block;
-	margin: 1em 0 0;
-	font-size: 0.9em;
-}
-/***************************************************************/
 /*  Images                                                     */
 /***************************************************************/
 img { display: block; }
@@ -44,130 +36,33 @@ img { display: block; }
 	}	
 }
 /***************************************************************/
-/*  Popup Login                                                */
+/*  Breadcrumbs                                                */
 /***************************************************************/
-.popup-forgot-pass {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	font-weight: bold;
-}
-/***************************************************************/
-/*  Video                                                      */
-/***************************************************************/
-.video {
-	span {
-		display: block;
-		margin: 1em 0 0;
-		color: $font-heading-color;
-		font-size: $font-heading-h3-size;
-		font-weight: bold;
-		
-	}
-	iframe {
-		max-width: 100%;
-		border: none;
-	}	
-}
-/***************************************************************/
-/*  Pagination                                                 */
-/***************************************************************/
-%pagination {
+.crumbBox {
 	display: block;
-	float: left;
-	min-width: 1.8em;
-	min-height: 1.8em;
-	line-height: 1.8em;
-	margin: 0 0.2em 0 0;
-	text-align: center;
-	@include border-radius(3px);
-}
-#pagination {
-	@extend %clearfix;
 	margin: 1em 0 0;
-	padding: 2em 0 0;
-	border-top: 1px dotted $border-color;	
-	.pagination-title {
-		@extend %pagination;
-		margin: 0 0.4em 0 0;
-	}
-	.page {
-		@extend %pagination;
-		border: 1px solid $border-color;
-		background: scale-lightness($border-color, 80%);	
-		color: $font-color;
-		&:hover {
-			background: scale-lightness($border-color, 30%); 
-		}
-	}
-	.pagination-current {
-		@extend %pagination;	
-		border: 1px solid $border-color;	
-		background: scale-lightness($border-color, 30%);
-		color: $font-color;			
-	}
+	font-size: 0.9em;
 }
 /***************************************************************/
 /*  Login & Register                                           */
 /***************************************************************/
+
 .popup-container {
-	.button {
-		&.button-forgot-password {
-			margin: 0.4em 0 0 1em;
-			font-weight: bold;
-		}	
+	.btn {
+		margin: 1em 0 0;	
 	}	
+	.btn-forgot-password {
+		margin: 1.4em 0 0 1em;
+		font-weight: bold;
+		&:hover {
+			text-decoration: underline;
+		}	
+	}
 }
 .wlpeMessage {
-	:only-child {
-		margin: 0;
-		padding: 0;
-	}
-	:last-child {
+	p:only-child {
 		margin: 0;
 	}
-}
-/***************************************************************/
-/*  Search                                                     */
-/***************************************************************/
-.ajaxSearch_highlight {
-	background: #FCF8CF;
-	color: #002;
-	font-weight: bold;
-}
-.ajaxSearch_resultsInfos {
-	clear: both;
-	margin: 0;
-	font-weight: normal;
-}
-.ajaxSearch_resultsDisplayed { 
-	margin: 0 0 0 0.4em; 
-}
-.ajaxSearch_grpResultName,
-.paging1 { 
-	display: inline-block; 
-	color: scale-lightness($font-color, 30%);
-	font-size: 0.8em;	
-	font-style: italic;
-}
-.ajaxSearch_result {
-	padding: 0.6em 0 1em; 
-	border-bottom: 1px dotted $border-color;		
-}
-.ajaxSearch_resultLink {
-	word-wrap: break-word;
-	clear: both;
-	display: block;
-	margin: 1em 0 0.2em;	
-	font-size: $font-heading-h2-size;
-	font-weight: bold;	
-}
-.ajaxSearch_resultDescription { 
-	line-height: 1.4em; 
-}
-.ajaxSearch_result + .paging1 {	
-	margin-top: 2em; 
-	margin-bottom: 2em; 
 }
 /***************************************************************/
 /*  Box				                                                 */
@@ -227,4 +122,101 @@ img { display: block; }
 			}
 		}
 	}	
+}
+/***************************************************************/
+/*  Pagination                                                 */
+/***************************************************************/
+%pagination {
+	display: block;
+	float: left;
+	min-width: 1.8em;
+	min-height: 1.8em;
+	line-height: 1.8em;
+	margin: 0 0.2em 0 0;
+	text-align: center;
+	@include border-radius(3px);
+}
+#pagination {
+	@extend %clearfix;
+	margin: 1em 0 0;
+	padding: 2em 0 0;
+	border-top: 1px dotted $border-color;	
+	.pagination-title {
+		@extend %pagination;
+		margin: 0 0.4em 0 0;
+	}
+	.page {
+		@extend %pagination;
+		border: 1px solid $border-color;
+		background: scale-lightness($border-color, 80%);	
+		color: $font-color;
+		&:hover {
+			background: scale-lightness($border-color, 30%); 
+		}
+	}
+	.pagination-current {
+		@extend %pagination;	
+		border: 1px solid $border-color;	
+		background: scale-lightness($border-color, 30%);
+		color: $font-color;			
+	}
+}
+/***************************************************************/
+/*  Video                                                      */
+/***************************************************************/
+.video {
+	span {
+		display: block;
+		margin: 1em 0 0;
+		color: $font-heading-color;
+		font-size: $font-heading-h3-size;
+		font-weight: bold;
+		
+	}
+	iframe {
+		max-width: 100%;
+		border: none;
+	}	
+}
+/***************************************************************/
+/*  Search                                                     */
+/***************************************************************/
+.ajaxSearch_highlight {
+	background: #FCF8CF;
+	color: #002;
+	font-weight: bold;
+}
+.ajaxSearch_resultsInfos {
+	clear: both;
+	margin: 0;
+	font-weight: normal;
+}
+.ajaxSearch_resultsDisplayed { 
+	margin: 0 0 0 0.4em; 
+}
+.ajaxSearch_grpResultName,
+.paging1 { 
+	display: inline-block; 
+	color: scale-lightness($font-color, 30%);
+	font-size: 0.8em;	
+	font-style: italic;
+}
+.ajaxSearch_result {
+	padding: 0.6em 0 1em; 
+	border-bottom: 1px dotted $border-color;		
+}
+.ajaxSearch_resultLink {
+	word-wrap: break-word;
+	clear: both;
+	display: block;
+	margin: 1em 0 0.2em;	
+	font-size: $font-heading-h2-size;
+	font-weight: bold;	
+}
+.ajaxSearch_resultDescription { 
+	line-height: 1.4em; 
+}
+.ajaxSearch_result + .paging1 {	
+	margin-top: 2em; 
+	margin-bottom: 2em; 
 }

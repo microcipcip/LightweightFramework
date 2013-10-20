@@ -13,11 +13,12 @@
 		
     <!-- [/End LogIn] -->
     <div id="header-main_login">
-     	<a href="#popup-login" class="popup-inline" data-effect="mfp-zoom-in">
-        Login
-      </a>
+			<ul>
+				<li><a href="#">Register</a></li>
+				<li><a href="#" class="popup-external" data-effect="mfp-zoom-in">LogIn</a></li>
+			</ul>
     </div>
-    <!-- [/End LogIn] -->		
+    <!-- [/End LogIn] -->	
 		
 		<!-- [Header Search] -->			
 		<div id="header-main_search">

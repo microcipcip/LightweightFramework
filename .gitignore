@@ -28,3 +28,7 @@ local.properties
 # BTSync
 .Sync*
 /.sass-cache/
+
+# Ignore Specific LightWeightFramework files
+compass_app_log.txt
+/popup/login.php

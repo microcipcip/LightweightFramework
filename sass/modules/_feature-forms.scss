@@ -52,14 +52,13 @@ $form-button-inverse-color: scale-lightness(#333, -10%) !default;
 form {
 	fieldset {
 		padding: 1em;
-		border-color: $border-color;
+		border: 1px solid scale-lightness($border-color, 30%);
 		legend {
 			font-weight: bold;
-			small {
+			i {
 				margin: 0 0 0 0.2em;
 				font-size: 0.7em;
 				font-weight: normal;
-				font-style: italic;
 			}
 		}			
 	}
