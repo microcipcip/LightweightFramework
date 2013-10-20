@@ -22,11 +22,20 @@
 /*  Login  */
 #header-main_login {
 	position: absolute;
-	top: 0.3em;
+	top: 0.1em;
 	right: 0;
 	font-size: 0.7em;
 	text-transform: uppercase;
-	
+	ul {
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline;
+			a {
+				margin: 0 0 0 0.8em;
+			}
+		}
+	}
 }
 /*  Logo  */
 #header-main_logo {

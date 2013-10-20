@@ -2,7 +2,7 @@
 $(document).ready(function(){
 	
 	/* [Slideshow] */
-	$("#slide-rslides .rslides").responsiveSlides({
+	$('#slide-rslides .rslides').responsiveSlides({
 		auto: true,             // Boolean: Animate automatically, true or false
 		speed: 500,            // Integer: Speed of the transition, in milliseconds
 		timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
@@ -11,12 +11,12 @@ $(document).ready(function(){
 		random: false,          // Boolean: Randomize the order of the slides, true or false
 		pause: false,           // Boolean: Pause on hover, true or false
 		pauseControls: true,    // Boolean: Pause when hovering controls, true or false
-		prevText: "Previous",   // String: Text for the "previous" button
-		nextText: "Next",       // String: Text for the "next" button
-		maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
-		navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
-		manualControls: "",     // Selector: Declare custom pager navigation
-		namespace: "rslides",   // String: Change the default namespace used
+		prevText: 'Previous',   // String: Text for the "previous" button
+		nextText: 'Next',       // String: Text for the "next" button
+		maxwidth: '',           // Integer: Max-width of the slideshow, in pixels
+		navContainer: '',       // Selector: Where controls should be appended to, default is after the 'ul'
+		manualControls: '',     // Selector: Declare custom pager navigation
+		namespace: 'rslides',   // String: Change the default namespace used
 		before: function(){},   // Function: Before callback
 		after: function(){}     // Function: After callback
 	});	
@@ -39,14 +39,14 @@ $(document).ready(function(){
 	
 	/* [Accordion FAQ] */
 	$('.accordion').makeFAQ({
-		indexTitle: "My Index",
+		indexTitle: 'My Index',
 		displayIndex: false,
-		faqHeader: ".accordion_title"
+		faqHeader: '.accordion_title'
 	});
 	/* [/End Accordion FAQ] */		
 	
 	/* [FitVids] */
-	 $("#video").fitVids();
+	 $('#video').fitVids();
 	/* [/End FitVids] */	
 	
 	/* [Magnific Popup] */
@@ -76,25 +76,35 @@ $(document).ready(function(){
 			}
 		}
 	});		
-	$(".popup-inline").magnificPopup({
-		type:"inline",
+	$('.popup-inline').magnificPopup({
+		type:'inline',
 		midClick: true,
 		closeOnBgClick: false,
 		removalDelay: 100,
 		callbacks: {beforeOpen: function() {this.st.mainClass = this.st.el.attr('data-effect');}}
 	});
-	$(".popup-external").magnificPopup({
-		type:"ajax",
+	$('.popup-external').magnificPopup({
+		type:'ajax',
 		midClick: true,
 		closeOnBgClick: false,
 		removalDelay: 100,
 		callbacks: {beforeOpen: function() {this.st.mainClass = this.st.el.attr('data-effect');}}
 	});	
+	$('#header-main .popup-external').magnificPopup({
+		items: {
+			src: 'login.html',
+			type: 'ajax'
+		},
+		midClick: true,
+		closeOnBgClick: false,
+		removalDelay: 100,
+		callbacks: {beforeOpen: function() {this.st.mainClass = this.st.el.attr('data-effect');}}
+	});
 	/* [/End Magnific Popup] */		
 
 	/* [jQuery Form Validation] */
 	// Contact form	
-	$("#contactform").validate({
+	$('#contactform').validate({
 		rules: {
 			name: {
 				required: true,
@@ -153,13 +163,13 @@ $(document).ready(function(){
 	$('#toTop').click(function () { 
 		$('body,html').animate({ scrollTop: 0 }, 800);
 		$('#header-main').addClass('is-menu-open');
-		if($("#header-main.is-menu-open")[0]) { 
+		if($('#header-main.is-menu-open')[0]) { 
 			var escape = $('<div/>').html('&#xe006;').text();
-			$('#mobile-nav_menu span').attr("data-icon", escape);		
+			$('#mobile-nav_menu span').attr('data-icon', escape);		
 		} 
 		else {
 			var escape = $('<div/>').html('&#xf039;').text();
-			$('#mobile-nav_menu span').attr("data-icon", escape);					
+			$('#mobile-nav_menu span').attr('data-icon', escape);					
 		}	
 	});		
 	/* [/End Back to top] */
@@ -180,17 +190,17 @@ $(document).ready(function(){
 		  load('//apis.google.com/js/plusone.js', 'gplus1js');
 		  load('//platform.twitter.com/widgets.js', 'tweetjs');
 		 }
-		 if (w.addEventListener) { w.addEventListener("load", go, false); }
-		  else if (w.attachEvent) { w.attachEvent("onload",go); }
+		 if (w.addEventListener) { w.addEventListener('load', go, false); }
+		  else if (w.attachEvent) { w.attachEvent('onload',go); }
 		 }(window, document, 'script'));	
 	}	
 	/* [/End Social Networks] */	
 
 	// Add Class "has-children" if parent "li" has children "ul"
-	$("#header-main_menu > ul > li:has(ul)").addClass('has-children');
+	$('#header-main_menu > ul > li:has(ul)').addClass('has-children');
 	// Add span to "a" if parent "li" has children "ul", this will be used to build
 	// a button to expand the menu when viewing the website on Mobiles phones
-	$("#header-main_menu > ul > li:has(ul) > a").append('<span aria-hidden="true" class="icon"></span>');	
+	$('#header-main_menu > ul > li:has(ul) > a').append('<span aria-hidden="true" class="icon"></span>');	
 	
 	/* [Media Queries] */
 	enquire.register("only screen and (min-width: 0) and (max-width: 50em)", {
@@ -219,7 +229,7 @@ $(document).ready(function(){
 	}).register("only screen and (min-width: 50em)", {
 		match : function() {
 			// Dropdown Menu (delay)
-			$("#header-main_menu > ul > li").hover(function () { 
+			$('#header-main_menu > ul > li').hover(function () { 
 				$(this).addClass('hovering'); 
 			},
 			function () { 
@@ -228,7 +238,7 @@ $(document).ready(function(){
 		},
 		unmatch : function() {
 			// Disable dropdown menu (for mobile)
-			$("#header-main_menu > ul > li").unbind('mouseenter mouseleave');
+			$('#header-main_menu > ul > li').unbind('mouseenter mouseleave');
 		} 
     });
 	/* [/End Media Queries] */
