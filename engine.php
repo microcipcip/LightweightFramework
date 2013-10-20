@@ -15,7 +15,7 @@
 	require_once "$root/_config/javascript.php";
 	
 	// =========================================
-	// LIGHTWEIGHTFRAMEWORK - Public functions
+	// LIGHTWEIGHTFRAMEWORK - Public functions  
 	// =========================================
 	
 	// Strings escaping (UTF-8 to HTML)
@@ -62,14 +62,18 @@
 	}
 	
 	// Re-defines menu options over default ones
-	function overrideMenuOptions($options) {
+	function overrideMenuOptions($options, $hereditary = true) {
 		global $menu;
+		global $includingParent;
+		if ($includingParent && !$hereditary) return;
 		foreach ($options as $k => $s) if ($s != 'inherit') $menu[$k] = $s;
 	}
 	
 	// Re-defines sections over default ones
-	function overrideSections($array) {
+	function overrideSections($array, $hereditary = true) {
 		global $sections;
+		global $includingParent;
+		if ($includingParent && !$hereditary) return;
 		foreach ($array as $k => $s) {
 			if (!empty($sections[$k])) { // Overrides
 				if ($s[0] != 'enabled' && $s[0] != 'disabled') $s[0] = $sections[$k][0]; // Inherit enable/disable
@@ -80,7 +84,7 @@
 	}
 	
 	// =========================================
-	// LIGHTWEIGHTFRAMEWORK - Pages setup
+	// LIGHTWEIGHTFRAMEWORK - Pages setup       
 	// =========================================
 	
 	// UTF-8 stuffs
@@ -112,13 +116,16 @@
 	if (!empty($_GET['page'])) $page = str_replace('/..', '', $_GET['page']); // Remove .. from path for security
 	ob_start();
 	$page_path = explode('/', $page);
+	$includingParent = false;
 	foreach (array_slice($page_path, 0, -1) as $i => $page_parent) { // For each parent path
 		$page_parent_folder = "$root/pages/" . implode('/', array_slice($page_path, 0, $i));
 		foreach (ls($page_parent_folder) as $page_parent_candidate) { // Search for parent file
 			if ($page_parent . '.' == substr($page_parent_candidate, 0, strlen($page_parent) + 1)) {
 				$page_parent_path = str_replace('//', '/', $page_parent_folder . '/' . $page_parent_candidate);
 				ob_start();
+				$includingParent = true;
 				include "$page_parent_path"; // Include parent to make configuration overriding
+				$includingParent = false;
 				ob_end_clean(); // Discard parent output
 			}
 		}
@@ -136,7 +143,7 @@
 	$content_buffer = ob_get_clean(); // Fill page content buffer
 	
 	// =========================================
-	// LIGHTWEIGHTFRAMEWORK - Private functions
+	// LIGHTWEIGHTFRAMEWORK - Private functions 
 	// =========================================
 	
 	// Menu recursive builder (used by loadMenu())
