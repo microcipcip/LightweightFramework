@@ -1,10 +1,10 @@
 /***************************************************************/
 /*  Header                                                     */
 /***************************************************************/
-.wrapper-header {
+.header-wrapper {
 	@extend %wrapper;
 }
-#header-main {
+#header {
 	z-index: 100;
 	position: relative;
 	border-bottom: 3px solid $border-color;
@@ -15,17 +15,15 @@
 }
 @include MQ(MLplus) {
 	// Hide border when in desktop view
-	#header-main {
+	#header {
 		border: none;
 	}	
 }
 /*  Login  */
-#header-main_login {
+#header_signup {
 	position: absolute;
 	top: 0.1em;
 	right: 0;
-	font-size: 0.7em;
-	text-transform: uppercase;
 	ul {
 		margin: 0;
 		padding: 0;
@@ -33,6 +31,18 @@
 			display: inline;
 			a {
 				margin: 0 0 0 0.8em;
+				font-size: 0.75em;
+				text-transform: uppercase;
+				&.header_signup_register {
+					[data-icon]:before {
+						top: 0.15em;
+						font-size: 1.1em;
+					}
+				}
+				&:hover {
+					text-decoration: none;
+					@include opacity(0.7);
+				}
 			}
 		}
 	}
@@ -45,7 +55,7 @@
 	}
 }
 /*  Logo  */
-#header-main_logo {
+#header_logo {
 	z-index: 2;
 	display: inline-block;
 	position: relative;
@@ -62,13 +72,13 @@
 	}
 }
 /*  Header Search  */
-#header-main_search {
+#header_search {
 	position: relative;
 	padding: 0 0 1em;
 	.js & {
 		display: none;
 	}
-	#header-main.is-search-open & {
+	#header.is-search-open & {
 		display: block !important;
 	}
 	input[type="text"] {
@@ -106,10 +116,10 @@
 	}	
 }
 @include MQ(MLplus) {
-	#header-main_search {
+	#header_search {
 		display: block !important;
 		position: absolute;
-		top: 1.35em;
+		top: 1.6em;
 		right: 0.05em;
 		width: 30%;
 	}

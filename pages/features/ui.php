@@ -12,22 +12,22 @@
 
 <h2>Alert Boxes</h2>
 <div class="alert">
-	This is a standard alert (div.alert-box).
+	This is a standard alert (.alert).
 	 <a href="#">test</a>
 </div>
 
 <div class="alert alert-success">
-	This is a success alert (div.alert-box.success).
+	This is a success alert (.alert.alert-success).
 	<a href="#">test</a>
 </div>
 
 <div class="alert alert-wrong">
-	This is an alert (div.alert-box.alert).
+	This is an alert (.alert.alert-wrong).
 	 <a href="#">test</a>
 </div>
 
 <div class="alert alert-secondary">
-	This is a secondary alert (div.alert-box.secondary).
+	This is a secondary alert (.alert.alert-secondary).
 	 <a href="#">test</a>
 </div>
 <br />

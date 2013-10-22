@@ -23,14 +23,14 @@ $(document).ready(function(){
 	/* [/End Slideshow] */
 	
 	/* [Tabs] */
-	$('#tabs-horizontal').easyResponsiveTabs({
+	$('.tabs-horizontal').easyResponsiveTabs({
 		type: 'default', // Types: default, vertical, accordion
 		width: 'auto', // auto or any width like 600px
 		fit: true, // 100% fit in a container
 		closed: false // Start closed if in accordion view
 	});	
 	
-	$('#tabs-vertical').easyResponsiveTabs({
+	$('.tabs-vertical').easyResponsiveTabs({
 		type: 'vertical', // Types: default, vertical, accordion
 		width: 'auto', // auto or any width like 600px
 		fit: true // 100% fit in a container
@@ -46,7 +46,7 @@ $(document).ready(function(){
 	/* [/End Accordion FAQ] */		
 	
 	/* [FitVids] */
-	 $('#video').fitVids();
+	 $('.video').fitVids();
 	/* [/End FitVids] */	
 	
 	/* [Magnific Popup] */
@@ -90,7 +90,7 @@ $(document).ready(function(){
 		removalDelay: 100,
 		callbacks: {beforeOpen: function() {this.st.mainClass = this.st.el.attr('data-effect');}}
 	});	
-	$('#header-main .popup-external').magnificPopup({
+	$('#header .popup-external').magnificPopup({
 		items: {
 			src: 'login.html',
 			type: 'ajax'
@@ -157,22 +157,7 @@ $(document).ready(function(){
 			$(element).parent('li').removeClass('error');
 		}	
 	});		
-	/* [/End jQuery Form Validation] */			
-
-    /* [Back to top] */
-	$('#toTop').click(function () { 
-		$('body,html').animate({ scrollTop: 0 }, 800);
-		$('#header-main').addClass('is-menu-open');
-		if($('#header-main.is-menu-open')[0]) { 
-			var escape = $('<div/>').html('&#xe006;').text();
-			$('#mobile-nav_menu span').attr('data-icon', escape);		
-		} 
-		else {
-			var escape = $('<div/>').html('&#xf039;').text();
-			$('#mobile-nav_menu span').attr('data-icon', escape);					
-		}	
-	});		
-	/* [/End Back to top] */
+	/* [/End jQuery Form Validation] */
 	
 	/* [Social Networks] */	
 	if ($('.box-big .box-socials').is('*')) {
@@ -197,10 +182,10 @@ $(document).ready(function(){
 	/* [/End Social Networks] */	
 
 	// Add Class "has-children" if parent "li" has children "ul"
-	$('#header-main_menu > ul > li:has(ul)').addClass('has-children');
+	$('#header_menu > ul > li:has(ul)').addClass('has-children');
 	// Add span to "a" if parent "li" has children "ul", this will be used to build
 	// a button to expand the menu when viewing the website on Mobiles phones
-	$('#header-main_menu > ul > li:has(ul) > a').append('<span aria-hidden="true" class="icon"></span>');	
+	$('#header_menu > ul > li:has(ul) > a').append('<span aria-hidden="true" class="icon"></span>');	
 	
 	/* [Media Queries] */
 	enquire.register("only screen and (min-width: 0) and (max-width: 50em)", {
@@ -208,28 +193,28 @@ $(document).ready(function(){
 			// Show/Hide Mobile Menu	
 			$('#mobile-nav_menu span').click(function () {
 				// Toggle is-menu-open class
-				$('#header-main').toggleClass('is-menu-open');
+				$('#header').toggleClass('is-menu-open');
 			});
 			$('#mobile-nav_search span').click(function () {
 				// Toggle is-search-open class
-				$('#header-main').toggleClass('is-search-open');				
+				$('#header').toggleClass('is-search-open');				
 			});				
 		},
 		match : function() {
 			// Slide Down/Up the secondary nav for mobile
-			$('#header-main_menu > ul > li.has-children a span').click(function(e) {
+			$('#header_menu > ul > li.has-children a span').click(function(e) {
 				e.preventDefault();
 				$(this).parent().parent().toggleClass('is-expanded');				
 			});			
 		},
 		unmatch : function() {
 			// Disable Slide Down/Up if you exit Mobile view
-			$('#header-main_menu > ul > li.has-children a span').unbind();
+			$('#header_menu > ul > li.has-children a span').unbind();
 		}  
 	}).register("only screen and (min-width: 50em)", {
 		match : function() {
 			// Dropdown Menu (delay)
-			$('#header-main_menu > ul > li').hover(function () { 
+			$('#header_menu > ul > li').hover(function () { 
 				$(this).addClass('hovering'); 
 			},
 			function () { 
@@ -238,7 +223,7 @@ $(document).ready(function(){
 		},
 		unmatch : function() {
 			// Disable dropdown menu (for mobile)
-			$('#header-main_menu > ul > li').unbind('mouseenter mouseleave');
+			$('#header_menu > ul > li').unbind('mouseenter mouseleave');
 		} 
     });
 	/* [/End Media Queries] */

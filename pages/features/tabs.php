@@ -11,7 +11,7 @@
 </p>
 
 <!-- [Tabs] -->
-<div id="tabs-horizontal">
+<div class="tabs-horizontal">
 
 	<ul class="resp-tabs-list">
 	<?php	for ($x=1; $x<=4; $x++) : ?>	
@@ -33,7 +33,7 @@
 <br /><br />
 
 <!-- [Tabs] -->
-<div id="tabs-vertical">
+<div class="tabs-vertical">
 
 	<ul class="resp-tabs-list">
 	<?php	for ($x=1; $x<=4; $x++) : ?>	

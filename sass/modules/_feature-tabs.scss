@@ -59,7 +59,8 @@ h2 {
 		font-size: $tab-font-size;
 		&.resp-tab-active {
 			border-color: $tab-border;
-			margin-bottom: -1px !important;
+			margin-top: 1px;
+			margin-bottom: -1px;
 			padding: $tab-horizontal-padding-active;
 			background: $tab-horizontal-tab-bg;
 		}

@@ -38,16 +38,20 @@
 	}
 	.rslides {
 		@include border-radius(3px);
+		img {
+			margin: 0 0 1em;	
+			@extend %clearfix;		
+		}
 	}
 	// Caption Styling
-	.slide-caption {
+	.caption {
 		width: 100%;
 		background: transparentize(#FFF, .1);
-		.slide-caption_title {
+		.caption_title {
 			font-size: 1.2em;
 			font-weight: bold;
 		}
-		.slide-caption_content {
+		.caption_content {
 			margin: 0;
 			p {
 				margin: 0;
@@ -79,7 +83,12 @@
 }
 @include MQ(Mplus) {
 	#slide-rslides {
-		.slide-caption {
+		.rslides {
+			img {
+				margin: 0;	
+			}
+		}	
+		.caption {
 			position: absolute;
 			bottom: 0;
 			left: 0;

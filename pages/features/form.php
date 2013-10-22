@@ -18,23 +18,23 @@
 	<ul class="form form-simple">
 		<li class="field-small">
 			<label for="name">Name<i>*</i></label>
-			<input type="text" maxlength="60" placeholder="Name*" name="name">		
+			<input type="text" maxlength="60" placeholder="Name*" name="name" id="name" />		
 		</li>
 		<li class="field-small last__name">
-			<label for="last-name">Last Name<i>*</i></label>
+			<label for="LastName">Last Name<i>*</i></label>
 			<input type="text" maxlength="60" placeholder="Last Name*" name="Last__Name" id="LastName" tabindex="50" autocomplete="off">		
 		</li>							
 		<li class="field-small">
 			<label for="email">Email<i>*</i></label>	
-			<input type="text" maxlength="60" placeholder="Email*" name="email">							
+			<input type="text" maxlength="60" placeholder="Email*" name="email" id="email" />							
 		</li>
 		<li class="field-small">
 			<label for="subjected">Subject<i>*</i></label>	
-			<input type="text" maxlength="60" placeholder="Subject*" name="subjected">											
+			<input type="text" maxlength="60" placeholder="Subject*" name="subjected" id="subjected" />											
 		</li>
 		<li>
 			<label for="message">Message<i>*</i></label>	
-			<textarea placeholder="Text*" name="message" ></textarea>							
+			<textarea placeholder="Text*" name="message" id="message"></textarea>							
 		</li>
 		<li>
 			<input type="submit" class="btn btn-large btn-success" name="submit" value="Send">

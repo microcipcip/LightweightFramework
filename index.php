@@ -10,7 +10,7 @@
 	<?php include("_include/header.php") ?>
 	
 	<!-- [Content] -->
-	<div class="wrapper-content">
+	<div class="content-wrapper">
 		<div id="content">	
 			
 			<!-- [Text] -->
