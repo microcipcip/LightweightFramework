@@ -11,16 +11,6 @@
 		</div>
 		<!-- [/End Logo] -->
 		
-<<<<<<< 7a058007c6330143bd640e1c9bf7e1eb20526b34
-    <!-- [/End LogIn] -->
-    <div id="header-main_login">
-			<ul>
-				<li><a href="#">Register</a></li>
-				<li><a href="#" class="popup-external" data-effect="mfp-zoom-in">LogIn</a></li>
-			</ul>
-    </div>
-    <!-- [/End LogIn] -->	
-=======
     <!-- [SignUp] -->
     <div id="header_signup">
 			<ul>
@@ -29,7 +19,6 @@
 			</ul>
     </div>
     <!-- [/End SignUp] -->	
->>>>>>> b23032f377f6b97b68f09b35e66b32085fafa8e0
 		
 		<!-- [Header Search] -->			
 		<div id="header_search">
