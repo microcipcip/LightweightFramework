@@ -11,14 +11,14 @@
 		</div>
 		<!-- [/End Logo] -->
 		
-    <!-- [SignUp] -->
-    <div id="header_signup">
+		<!-- [SignUp] -->
+		<div id="header_signup">
 			<ul>
 				<li><a href="#" class="header_signup_register"><span aria-hidden="true" data-icon="&#xe60d;"></span> Register</a></li>
 				<li><a href="#" class="popup-external header_signup_login" data-effect="mfp-zoom-in"><span aria-hidden="true" data-icon="&#xe610;"></span> LogIn</a></li>
 			</ul>
-    </div>
-    <!-- [/End SignUp] -->	
+		</div>
+		<!-- [/End SignUp] -->	
 		
 		<!-- [Header Search] -->			
 		<div id="header_search">
