@@ -11,16 +11,16 @@
 </p>
 
 <!-- [Slideshow Responsive] -->
-<div id="slide-rslides">
+<div id="rslides">
 	<ul class="rslides">
 		<?php	for ($x=1; $x<=4; $x++) : ?>
 		<li>
 			<img src="img/_test/slide/<?php echo $x; ?>.jpg" alt="#" />
-			<div class="caption">
-				<div class="caption_title">
+			<div class="rslides-caption">
+				<div class="rslides-caption_title">
 					Slide <?php echo $x; ?> 
 				</div>			
-				<div class="caption_content">
+				<div class="rslides-caption_content">
 					<p>
 						Slide <?php echo $x; ?>:	Lore ipsa ipsum is dummy text that I use here as an example
 					</p>

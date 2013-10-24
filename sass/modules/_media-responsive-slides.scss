@@ -31,8 +31,8 @@
 /***************************************************************/
 /*  Responsive Slides Custom Styling                           */
 /***************************************************************/
-#slide-rslides {
-	&.wrapper-slide {
+#rslides {
+	&.rslides-wrapper {
 		@extend %wrapper;
 		@extend %clearfix;
 	}
@@ -44,14 +44,14 @@
 		}
 	}
 	// Caption Styling
-	.caption {
+	.rslides-caption {
 		width: 100%;
 		background: transparentize(#FFF, .1);
-		.caption_title {
+		.rslides-caption_title {
 			font-size: 1.2em;
 			font-weight: bold;
 		}
-		.caption_content {
+		.rslides-caption_content {
 			margin: 0;
 			p {
 				margin: 0;
@@ -82,13 +82,13 @@
 	} 
 }
 @include MQ(Mplus) {
-	#slide-rslides {
+	#rslides {
 		.rslides {
 			img {
 				margin: 0;	
 			}
 		}	
-		.caption {
+		.rslides-caption {
 			position: absolute;
 			bottom: 0;
 			left: 0;
