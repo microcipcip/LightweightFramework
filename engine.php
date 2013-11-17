@@ -43,6 +43,7 @@
 	function loadSection($name) {
 		global $root;
 		global $sections;
+		extract($GLOBALS, EXTR_SKIP);
 		if (empty($sections[$name]) || $sections[$name][0] != 'enabled') return;
 		ob_start();
 		include "$root/{$sections[$name][1]}";
