@@ -1,10 +1,10 @@
 // Global Variables
 // ====================================================================
 // Base
-$base-font-size: 1em;
-$base-line-height: 1.5em;
+$base-font-size: 1.4rem;
+$base-line-height: 1.4rem;
 // Fonts
-$font-size: 1em !default;
+$font-size: 1rem !default;
 $font-color: #666 !default;
 $font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !default;
 $font-family-icons: icomoon2 !default;
@@ -14,15 +14,15 @@ $font-link-hover-color: scale-lightness($font-link-color, -30%) !default;
 $font-link-hover-decoration: underline !default;
 // Headings
 $font-heading-color: #444 !default;
-$font-heading-h1-size: 2.0em !default;
-$font-heading-h2-size: 1.8em !default;
-$font-heading-h3-size: 1.6em !default;
-$font-heading-h4-size: 1.4em !default;
-$font-heading-h5-size: 1.2em !default;
-$font-heading-h6-size: 1.1em !default;
+$font-heading-h1-size: 2.0rem !default;
+$font-heading-h2-size: 1.8rem !default;
+$font-heading-h3-size: 1.6rem !default;
+$font-heading-h4-size: 1.4rem !default;
+$font-heading-h5-size: 1.2rem !default;
+$font-heading-h6-size: 1.1rem !default;
 // Paragraphs
 $font-paragraph-line-height: $base-line-height !default;
-$font-paragraph-margin: 0 0 1em !default;
+$font-paragraph-margin: 0 0 1rem !default;
 // Placeholders
 $placeholder-color: #666 !default;
 //  Borders
@@ -33,9 +33,9 @@ $image-caption-color-hover: scale-lightness(#444, 30%) !default;
 // Backgrounds
 $background-color: #FFF !default;
 // Device
-$device-width-max: 70em;
-$device-width-min: 20em;
-// Media Query
+$device-width-max: 70rem;
+$device-width-min: 20rem;
+// Media Query - don't change this to Rem because some browsers do not recognize it!
 $XXXS: 0 !default;       // 0px
 $XXS: 18em !default;     // 288px
 $XS: 23.75em !default;   // 380px

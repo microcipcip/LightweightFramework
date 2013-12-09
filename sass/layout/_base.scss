@@ -3,12 +3,16 @@
 	@include box-sizing(border-box); 
 }
 
+// HTML
+html {
+	font: $font-size $font-family;	
+}
+
 // Body
 body {
 	min-width: $device-width-min;
 	background: $background-color;
 	color: $font-color;
-	font: $font-size $font-family;
 }
 
 // Links 
@@ -28,7 +32,7 @@ a {
 
 // Headings
 h1, h2, h3, h4, h5, h6 {
-	margin-bottom: 0.3em;
+	margin-bottom: 0.3rem;
 	color: $font-heading-color;
 	font-weight: normal;
 }
@@ -86,7 +90,7 @@ p {
 	position: relative;
 	max-width: $device-width-max;
 	margin: 0 auto;
-	padding: 0 1em 0;		
+	padding: 0 1rem 0;		
 }
 %icons {
 	font-family: '#{$font-family-icons}';

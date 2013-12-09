@@ -3,8 +3,8 @@
 @import "susy";
 // Susy - Grid layout variables 
 $total-columns  : 12;             // a 12-column grid
-$column-width   : 5em;            // each column is 5em wide
-$gutter-width   : 3em;            // 1em gutters between columns
+$column-width   : 5rem;            // each column is 5em wide
+$gutter-width   : 1rem;            // 1em gutters between columns
 $grid-padding   : 0;  						// grid-padding equal to gutters
 
 // Use this variable if you want a fully fluid grid

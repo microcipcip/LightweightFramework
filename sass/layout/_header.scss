@@ -1,7 +1,7 @@
 /***************************************************************/
 /*  Header                                                     */
 /***************************************************************/
-.header-wrapper {
+.header-wrap {
 	@extend %wrapper;
 }
 #header {
@@ -19,10 +19,10 @@
 		border: none;
 	}	
 }
-/*  Login  */
-#header_signup {
+//  Login
+#header-signup {
 	position: absolute;
-	top: 0.1em;
+	top: 0.1rem;
 	right: 0;
 	ul {
 		margin: 0;
@@ -30,13 +30,13 @@
 		li {
 			display: inline;
 			a {
-				margin: 0 0 0 0.8em;
-				font-size: 0.75em;
+				margin: 0 0 0 0.8rem;
+				font-size: 0.75rem;
 				text-transform: uppercase;
-				&.header_signup_register {
+				&.header-signup-register {
 					[data-icon]:before {
-						top: 0.15em;
-						font-size: 1.1em;
+						top: 0.1rem;
+						font-size: 0.8rem;
 					}
 				}
 				&:hover {
@@ -49,17 +49,17 @@
 	form {
 		display: inline;
 		.btn {
-			margin-top: 0.1em;
-			font-size: 1em;
+			margin-top: 0.1rem;
+			font-size: 1rem;
 		}		
 	}
 }
-/*  Logo  */
-#header_logo {
+//  Logo
+#header-logo {
 	z-index: 2;
 	display: inline-block;
 	position: relative;
-	padding: 2em 0;
+	padding: 2rem 0;
 	a {
 		display: inline-block;
     width: image-width("general/logo.png");
@@ -71,10 +71,10 @@
 		}	
 	}
 }
-/*  Header Search  */
-#header_search {
+//  Header Search
+#header-search {
 	position: relative;
-	padding: 0 0 1em;
+	padding: 0 0 1rem;
 	.js & {
 		display: none;
 	}
@@ -85,24 +85,24 @@
 		z-index: 1;
 		position: relative;
 		width: 100%;	
-		height: 3em;
-		line-height: 3em;		
-		padding: 0 5.2em 0 1em;
+		height: 3.8rem;
+		line-height: 3.8rem;		
+		padding: 0 5.2rem 0 1rem;
 		border: 1px solid #CCC;
 		@include box-shadow(#DDD 0 0 6px inset);
 		color: #666;
-		font-size: 1.2em;
+		font-size: 1.2rem;
 		@include border-radius(5px);	
 	}
 	input[type="submit"] {
 		z-index: 1;
 		position: absolute;
-		top: 0.2em;
-		right: 0;
-		height: 4.6em;
+		top: 0.08rem;
+		right: 0.05em;
+		height: 3.7rem;
 		margin: 0;
-		padding: 0 1.4em;
-		font-size: 0.75em;
+		padding: 0 1.4rem;
+		font-size: 0.75rem;
 		color: #666;
 		text-transform: uppercase;
 		border: 0;	
@@ -116,11 +116,11 @@
 	}	
 }
 @include MQ(MLplus) {
-	#header_search {
+	#header-search {
 		display: block !important;
 		position: absolute;
-		top: 1.6em;
-		right: 0.05em;
+		top: 1.6rem;
+		right: 0.05rem;
 		width: 30%;
 	}
 }

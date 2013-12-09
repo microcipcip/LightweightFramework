@@ -32,9 +32,9 @@ $magnific-include-mobile-layout-for-image: true; // Removes paddings from top an
 $magnific-caption-title-color: #F3F3F3;
 $magnific-caption-subtitle-color: #BDBDBD;
 // Popup Sizes
-$magnific-popup-size-small: 25em;
-$magnific-popup-size-medium: 32em;
-$magnific-popup-size-large: 42em;
+$magnific-popup-size-small: 25rem;
+$magnific-popup-size-medium: 32rem;
+$magnific-popup-size-large: 42rem;
 $magnific-popup-size-fullscreen: 100%;
 
 
@@ -178,7 +178,7 @@ $magnific-popup-size-fullscreen: 100%;
   top: 50%;
   width: auto;
   text-align: center;
-  margin-top: -0.8em;
+  margin-top: -0.8rem;
   left: 8px;
   right: 8px;
   z-index: $magnific-z-index-base + 4;
@@ -602,9 +602,9 @@ button::-moz-focus-inner {
 	display: none;
 	position: relative;
 	width: 100%;
-	max-width: 24em;
-	min-width: 20em;
-	margin: 2em auto;
+	max-width: 24rem;
+	min-width: 20rem;
+	margin: 2rem auto;
 	background: #FFF;
 	@include box-shadow(rgba(0,0,0,0.7) 0 0 27px);
 	.mfp-content & {
@@ -623,29 +623,29 @@ button::-moz-focus-inner {
 		max-width: $magnific-popup-size-fullscreen;
 	}		
 	.popup-header {
-		margin: 0 0 0.2em;
-		padding: 0.2em 1.6em;
+		margin: 0 0 0.2rem;
+		padding: 0.2rem 1.6rem;
 		border-bottom: 1px solid #CCC;
 		background: #DDD;
 		@include background(linear-gradient(color-stops(white, #FFF 50%, #DDD 80%)));
-		font-size: 1em;
+		font-size: 1rem;
 		span {
 			display: block;
-			padding: 0.4em 0;
-			font-size: 1.6em;
+			padding: 0.4rem 0;
+			font-size: 1.6rem;
 			font-weight: bold;
 		}
 	}			
 	.popup-content { 
-		padding: 1.4em;	
+		padding: 1.4rem;	
 		.lt-ie8 & {
 			padding-top: 0;
 		}				
 	}
 	.mfp-close { 
-		top: 0.2em;
-		right: 0.2em; 
-		font-size: 2.2em;
+		top: 0.2rem;
+		right: 0.2rem; 
+		font-size: 2.2rem;
 		@include border-radius(0);
 	}
 }

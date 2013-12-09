@@ -4,28 +4,10 @@
 	require_once 'engine.php';
 	
 ?>
-<?php include("_include/head.php") ?>
+<?php echo loadSection('head') ?> 
 <body class="<?php echo (empty($body_class) ? '' : $body_class) ?>">
-
-	<?php include("_include/header.php") ?>
-	
-	<!-- [Content] -->
-	<div class="content-wrapper">
-		<div id="content">	
-			
-			<!-- [Text] -->
-			<div id="text">	
-				<?php echo loadContent(); ?>
-			</div>
-			<!-- [/End Text] -->
-			
-			<?php echo loadSection('sidebar1') ?> 
-	
-		</div>
-	</div>
-	<!-- [/End Content] -->
-		
-	<?php include("_include/footer.php") ?> 
-
+	<?php echo loadSection('header') ?> 
+	<?php echo loadSection('content') ?> 
+	<?php echo loadSection('footer') ?> 
 </body>
 </html>

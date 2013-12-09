@@ -195,7 +195,7 @@ h1 {
         @include adjust-font-size-to( $font-heading-h1-size );
     }
     @else {
-        font-size: 1em * ($font-heading-h1-size / $base-font-size);
+        font-size: 1rem * ($font-heading-h1-size / $base-font-size);
     }
 
     /* Set 1 unit of vertical rhythm on the top and bottom margins. */
@@ -291,7 +291,7 @@ samp {
         _font-family: 'courier new', monospace;
     }
     @if $strict-normalize {
-        font-size: 1em;
+        font-size: 1rem;
     }
     @else {
         @include adjust-font-size-to( $base-font-size );
@@ -342,11 +342,11 @@ sup {
 }
 
 sup {
-    top: -0.5em;
+    top: -0.5rem;
 }
 
 sub {
-    bottom: -0.25em;
+    bottom: -0.25rem;
 }
 
 /* ==========================================================================

@@ -14,7 +14,7 @@ $gallery-img-max-height: 246px;
 	@include container;
 	a {	
 		display: block;
-		margin-bottom: 1em;
+		margin-bottom: 1rem;
 		img {
 			width: $gallery-img-width;
 			height: auto;

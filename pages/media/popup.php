@@ -11,8 +11,12 @@
 </p>
 
 <p>
-	<a href="popup/small.php" class="popup-external" data-effect="mfp-zoom-in">Popup Example [small]</a><br />
-	<a href="popup/medium.php" class="popup-external" data-effect="mfp-zoom-in">Popup Example [medium]</a><br />
-	<a href="popup/large.php" class="popup-external" data-effect="mfp-zoom-in">Popup Example [large]</a><br />
-	<a href="popup/fullscreen.php" class="popup-external" data-effect="mfp-zoom-in">Popup Example [fullscreen]</a>
+	<a href="popup/small.php" class="popup-ajax" data-effect="mfp-zoom-in">Popup Ajax Example [small]</a><br />
+	<a href="popup/medium.php" class="popup-ajax" data-effect="mfp-zoom-in">Popup Ajax Example [medium]</a><br />
+	<a href="popup/large.php" class="popup-ajax" data-effect="mfp-zoom-in">Popup Ajax Example [large]</a><br />
+	<a href="popup/fullscreen.php" class="popup-ajax" data-effect="mfp-zoom-in">Popup Ajax Example [fullscreen]</a>
+</p>
+
+<p>
+	<a href="http://www.wikipedia.com" class="popup-iframe" data-effect="mfp-zoom-in">Popup Iframe Example</a><br />
 </p>

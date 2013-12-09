@@ -7,11 +7,11 @@ img { display: block; }
 }
 .img-left {
 	float: left;
-	margin: 0 0.6em 0 0;
+	margin: 0 0.6rem 0 0;
 }
 .img-right {
 	float: right;
-	margin: 0 0 0 0.6em;
+	margin: 0 0 0 0.6rem;
 }	
 .figimage {
 	border: 1px solid $border-color;
@@ -24,11 +24,11 @@ img { display: block; }
 			left: 0;
 			bottom: 0;
 			width: 100%;
-			padding: 0.3em;
+			padding: 0.3rem;
 			background: #DDD;
 			background: transparentize(#DDD, .1);
 			color: $image-caption-color-hover;
-			font-size: 0.9em;
+			font-size: 0.9rem;
 			span {
 				color: $image-caption-color;
 			}
@@ -40,8 +40,8 @@ img { display: block; }
 /***************************************************************/
 .crumbBox {
 	display: block;
-	margin: 1em 0 0;
-	font-size: 0.9em;
+	margin: 1rem 0 0;
+	font-size: 0.9rem;
 }
 /***************************************************************/
 /*  Login & Register                                           */
@@ -49,10 +49,10 @@ img { display: block; }
 
 .popup-container {
 	.btn {
-		margin: 1em 0 0;	
+		margin: 1rem 0 0;	
 	}	
 	.btn-forgot-password {
-		margin: 2.9em 0 0 1em;
+		margin: 2.5rem 0 0 1rem;
 		font-weight: bold;
 		&:hover {
 			text-decoration: underline;
@@ -70,53 +70,53 @@ img { display: block; }
 .box {
 	@extend %clearfix;
 	display: block;
-	margin: 1em 0 0;
-	padding: 2em 0 1em;
+	margin: 1rem 0 0;
+	padding: 2rem 0 1rem;
 	border-top: 1px dotted $border-color;
-	font-size: 0.9em;
+	font-size: 0.9rem;
 	&:first-child {
 		border: none;
 	}
-	.box_img {	
+	.box-img {	
 		img {
 			float: left;
-			margin: 0 1em 0 0;
+			margin: 0 1rem 0 0;
 			@include border-radius(3px);		
 		}
 	}
-	.box_content {	
+	.box-content {	
 	
 	}
-		.box_title {
+		.box-title {
 			h2 {
-				font-size: 1.8em;
-				margin: 0 0 0.2em;			
+				font-size: 1.8rem;
+				margin: 0 0 0.2rem;			
 			}
 		}
-		.box_text {
+		.box-text {
 			margin: 0;
 			padding: 0;
 		}
-		.box_btn {
+		.box-btn {
 			
 		}
 }
-.box_big {
-	.box_img {
+.box-big {
+	.box-img {
 		img {
 			float: left;
-			margin: 0 1em 0 0;
+			margin: 0 1rem 0 0;
 			@include border-radius(3px);
 		}
 	}
-	.box_socials {
+	.box-socials {
 		float: right;
-		margin: 0 0 0 1em;
+		margin: 0 0 0 1rem;
 	}
 }
 @include MQ(MLneg) {
 	.box {
-		.box_img {
+		.box-img {
 			img {
 				max-width: 30%;
 			}
@@ -129,21 +129,21 @@ img { display: block; }
 %pagination {
 	display: block;
 	float: left;
-	min-width: 1.8em;
-	min-height: 1.8em;
-	line-height: 1.8em;
-	margin: 0 0.2em 0 0;
+	min-width: 1.8rem;
+	min-height: 1.8rem;
+	line-height: 1.8rem;
+	margin: 0 0.2rem 0 0;
 	text-align: center;
 	@include border-radius(3px);
 }
 #pagination {
 	@extend %clearfix;
-	margin: 1em 0 0;
-	padding: 2em 0 0;
+	margin: 1rem 0 0;
+	padding: 2rem 0 0;
 	border-top: 1px dotted $border-color;	
 	.pagination-title {
 		@extend %pagination;
-		margin: 0 0.4em 0 0;
+		margin: 0 0.4rem 0 0;
 	}
 	.page {
 		@extend %pagination;
@@ -167,7 +167,7 @@ img { display: block; }
 .video {
 	span {
 		display: block;
-		margin: 1em 0 0;
+		margin: 1rem 0 0;
 		color: $font-heading-color;
 		font-size: $font-heading-h3-size;
 		font-weight: bold;
@@ -192,31 +192,31 @@ img { display: block; }
 	font-weight: normal;
 }
 .ajaxSearch_resultsDisplayed { 
-	margin: 0 0 0 0.4em; 
+	margin: 0 0 0 0.4rem; 
 }
 .ajaxSearch_grpResultName,
 .paging1 { 
 	display: inline-block; 
 	color: scale-lightness($font-color, 30%);
-	font-size: 0.8em;	
+	font-size: 0.8rem;	
 	font-style: italic;
 }
 .ajaxSearch_result {
-	padding: 0.6em 0 1em; 
+	padding: 0.6rem 0 1rem; 
 	border-bottom: 1px dotted $border-color;		
 }
 .ajaxSearch_resultLink {
 	word-wrap: break-word;
 	clear: both;
 	display: block;
-	margin: 1em 0 0.2em;	
+	margin: 1rem 0 0.2rem;	
 	font-size: $font-heading-h2-size;
 	font-weight: bold;	
 }
 .ajaxSearch_resultDescription { 
-	line-height: 1.4em; 
+	line-height: 1.4rem; 
 }
 .ajaxSearch_result + .paging1 {	
-	margin-top: 2em; 
-	margin-bottom: 2em; 
+	margin-top: 2rem; 
+	margin-bottom: 2rem; 
 }

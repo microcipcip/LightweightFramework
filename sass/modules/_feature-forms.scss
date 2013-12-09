@@ -2,11 +2,9 @@
 // ====================================================================
 $form-colorscheme: light; // light or dark
 // Font
-$form-font-size: 1em !default;
+$form-font-size: 1rem !default;
 // Width
-$form-width-small: 18em !default;
-$form-width-medium: 76% !default;
-$form-width-large: 100% !default;
+$form-width-max: 22rem !default;
 //  Color Forms
 $form-border: #848484 #c1c1c1 #e1e1e1 !default;
 $form-bg: #FFF !default;
@@ -46,212 +44,238 @@ $form-button-inverse-color: scale-lightness(#333, -10%) !default;
 
 @if $form-active == true {
 /***************************************************************/
-/*  Form                                                       */
+/*  Form General                                               */
 /***************************************************************/
-/*  Form  */
 form {
 	fieldset {
-		padding: 1em;
+		padding: 1rem;
 		border: 1px solid scale-lightness($border-color, 30%);
 		legend {
 			font-weight: bold;
 			i {
-				margin: 0 0 0 0.2em;
-				font-size: 0.7em;
+				margin: 0 0 0 0.2rem;
+				font-size: 0.7rem;
 				font-weight: normal;
 			}
-		}			
+		}	
 	}
 }
 textarea,
 select,
 input[type="file"],
 input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
-	display: block;
+	display: inline;
 	height: auto;
-	margin: 0 0 0.4em;		
-	padding: 0.4em 0.6em;
+	margin: 0 0 0.4rem;		
+	padding: 0.6rem;
   border-color: $form-border;	
 	background: $form-bg;
   color: $form-font-color;
-	font-size: $form-font-size;
+	font-size: $form-font-size;			
+	@include border-radius(3px);
 	@include box-shadow($form-shadow-inset 0 0 4px inset);
 }
-optgroup {
-	font-weight: bold;
-}
-input[type="file"] {
-	display: inline !important;
-	padding-left: 0;
-	@include box-shadow(#DDD 0 0 0 inset !important);
-}
-small {
-	font-size: $form-font-size;
-}
+/***************************************************************/
+/*  Form Styling                                               */
+/***************************************************************/
 .form {
 	margin: 0;
 	padding: 0;
 	> li {
+		@extend %clearfix;
 		list-style: none;
-		// Labels
-		> label {
-			vertical-align: top;
-			padding: 0 0 0.8em;
-		}
-	}		
-	// Fields
+		padding: .5rem 0 0;
+	}
+	// Fields & fieldset
 	select,
+	input[type="file"],
 	input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
 		width: 100%;
-		max-width: $form-width-small;
-		@include border-radius(3px);
+		max-width: $form-width-max;
 	}
 	textarea {
 		width: 100%;
-		height: 150px;
-	}	
+		height: 150px;	
+	}
+	optgroup {
+		font-weight: bold;
+	}
+	input[type="file"] {
+		padding-left: 0;
+		@include box-shadow(#DDD 0 0 0 inset !important);
+	}
+	fieldset {
+		margin: .5rem 0 0;
+		padding: 0;
+		border: 0;
+		label {
+			&:after {
+				content: "\A"; 
+				white-space: pre;
+			}
+			input[type="checkbox"],
+			input[type="radio"] {
+				display: inline;
+				margin: 0 0.3rem 0.3rem 0;
+			}
+		}
+	}
+	// Labels 
+	.form-label {
+		vertical-align: top;
+		margin: 0 0 0.6rem;
+	}
+}
+@include MQ(Splus) {
+	.form {
+		// Fields styling
+		.form-fields {
+			@include container;
+			margin: 0;		
+		}
+			.form-fields-col2 {
+				textarea,
+				select,
+				input[type="file"],
+				input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file'])	{
+					@include span-columns(6,12);
+					&:nth-child(2n) { @include omega; }
+				}		
+			}
+			.form-fields-col3 {
+				textarea,
+				select,
+				input[type="file"],
+				input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file'])	{
+					@include span-columns(4,12);
+					&:nth-child(3n) { @include omega; }
+				}					
+			}
+			.form-fields-col4 {
+				textarea,
+				select,
+				input[type="file"],
+				input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file'])	{
+					@include span-columns(3,12);
+					&:nth-child(4n) { @include omega; }
+				}					
+			}
+			.form-fields-col5 {
+				textarea,
+				select,
+				input[type="file"],
+				input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file'])	{
+					@include span-columns(2.28,12);
+					&:nth-child(5n) { @include omega; }
+				}					
+			}
+			.form-fields-col6 {
+				textarea,
+				select,
+				input[type="file"],
+				input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file'])	{
+					@include span-columns(2,12);
+					&:nth-child(6n) { @include omega; }
+				}					
+			}		
+		/***************************************************************/
+		/*   Form with no label                                        */
+		/***************************************************************/
+		&.form-nolabel {
+			> li {
+				> fieldset {
+					padding: 0;
+					border: 0;
+					label {
+						display: block;
+					}
+				}		
+			}
+				.form-label {
+					display: none;
+				}
+		}
+		/***************************************************************/
+		/*   Form advanced, with two columns                           */
+		/***************************************************************/
+		&.form-advanced {
+			> li {
+				border-bottom: 1px solid #DDD;
+				&:last-child {
+					border-bottom: none;
+				}						
+			}
+			@include container;
+			.form-label {
+				@include span-columns(3,12);	
+				text-align: right;
+			}
+			.form-fields {
+				@include span-columns(9 omega,12);
+			}			
+		}		
+	}
+}
+/***************************************************************/
+/*  Form Errors                                                */
+/***************************************************************/
+.form {
 	// Errors & Required
 	i {
 		color: $form-error-color;
 		font-style: normal;
 	}	
 	.error {
-		select,
-		input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
-			border-color: $form-error-color;
-			@include border-corner-radius(bottom, right, 0);
-			@include border-corner-radius(bottom, left, 0);
+		small {
+			font-size: $form-font-size;
 		}
-		> small {
-			display: block;
-			width: 100%;			
-			background: $form-error-color;
-			margin: -0.40em 0 0.4em;
-			padding: 0.2em 0.6em;
-			color: #FFF;	
-			font-weight: bold;	
-		}
-		&.field-small small {
-			max-width: $form-width-small;
-		}
-	}	
-	// Simple Form
-	&.form-simple {
-		li {
-			label {
-				display: none;
-			}		
-			> fieldset {
-				padding: 0;
-				border: 0;
-				label {
-					display: block;
-				}
-			}				
-		}	
-	}
-	// Advanced Form	
-	&.form-advanced {
-		> li {
-			@extend %clearfix;
-			margin: 0.5em 0 1em;
-			padding: 0 0 1em;
-			border-bottom: 1px dotted #CCC;
-			&:last-child {
-				margin-bottom: 0;
-				border: none;
-			}	
-			> label {
-				display: block;
-				padding: 0 0 0.2em;
+		.form-fields {
+			select,
+			input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
+				border-color: $form-error-color;
+				@include border-corner-radius(bottom, right, 0);
+				@include border-corner-radius(bottom, left, 0);
+			}
+			> small {
+				display: block !important;
+				width: 100%;
+				max-width: $form-width-max;
+				background: $form-error-color;
+				margin: -0.40rem 0 0.4rem;
+				padding: 0.2rem 0.6rem;
+				color: #FFF;
+				font-weight: bold;
 			}
 			> fieldset {
-				padding: 0;
-				border: 0;
-				label {
-					&:after {
-						content: "\A"; 
-						white-space: pre;
-					}						
-					// Fields
-					input[type="checkbox"],
-					input[type="radio"] {
-						display: inline;
-						margin: 0 0.3em 0.3em 0;
-					}		
-					// Errors
-					small {
-						display: inline;
-						margin: 0 0 0 0.3em;
-						color: $form-error-color;
-						font-weight: bold;
-					}
-				}
-			}
-		}
-	}		
-}
-@include MQ(Mplus) {
-	%form-advanced {
-		display: block;
-		margin-left: 24%;	
-	}	
-	/*  Form  */
-	.form {		
-		&.form-advanced {
-			> li {
-				margin: 0.5em 0;
-				padding: 0;
-				// Labels
-				> label {
-					float: left;				
-					width: 22%;
-					margin: 0.5em 2% 0.4em 0;
-					padding: 0;
-					text-align: right;		
-					font-weight: bold;
-				}
-				// Fields
-				select,
-				input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='submit']):not([type='button']):not([type='file']) {
-					@extend %form-advanced;
-				}
-				textarea {					
-					max-width: $form-width-medium;		
-				}
-				// Fields [checkboxes, radios]
-				fieldset {
-					@extend %form-advanced;	
-					width: $form-width-medium;				
-					margin: 0 0 0.5em;	
-					label {
-						display: inline;					
-					}
-				}
-				&.field-nolabel {
-					margin-left: 24%;
-				}
 				small {
-					@extend %form-advanced;
-					max-width: $form-width-medium;
+					display: inline;
+					margin: 0 0 0 0.3rem;
+					color: $form-error-color;
+					font-weight: bold;
 				}				
 			}
-		}	
+			&.form-fields-fullwidth {
+				small {
+					max-width: 100%;
+				}
+			}			
+		}
 	}	
 }
 // Hide HoneyPot
 .last__name {
 	display: none !important;	
 }
-} // end if [form]
-
+} // end if [form]	
+	
+	
 @if $form-alerts-active == true {
 /***************************************************************/
 /*  Alert Box                                                  */
 /***************************************************************/
 %alert {
-	margin: 0 0 1em;
-	padding: 0.6em;
+	margin: 0 0 1rem;
+	padding: 0.6rem;
 	border: 1px solid $form-alertbox-default-border-color;
 	background: $form-alertbox-default-color;
 	color: $font-color;
@@ -299,11 +323,11 @@ a.btn,
 input[type="reset"], 
 input[type="submit"], 
 input[type="button"] {
-	padding: 0.4em 0.9em;
-  background: #dddddd image-url("general/button.png") repeat-x;
+	margin: 0 0 0.3rem;
+	padding: 0.65rem 0.9rem;
   @include background-image(linear-gradient(white, #dddddd));	
 	color: $form-button-font-color;
-	font-size: 0.9em;
+	font-size: 0.9rem;
 	text-align: center;
 	font-weight: normal;	
 	@include box-shadow(transparentize(#FFF, .7) 0 1px 0 inset);
@@ -320,14 +344,14 @@ input[type="button"] {
 		font-weight: bold;
 	}
 	&.btn-tiny {
-		font-size: 0.6em;
+		font-size: 0.6rem;
 	}
 	&.btn-small {
-		font-size: 0.8em;
+		font-size: 0.8rem;
 	}
 	&.btn-large {
-		font-size: 1.1em;
-		padding: 0.5em 1.2em;
+		font-size: 1.1rem;
+		padding: 0.5rem 1.2rem;
 	}
 	&.btn-secondary {
 		background: scale-lightness($form-button-secondary-color, 10%);

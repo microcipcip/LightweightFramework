@@ -6,7 +6,7 @@
   overflow: hidden;
   width: 100%;
   padding: 0;
-  margin: 0 0 1em;
+  margin: 0 0 1rem;
 	li {
 		-webkit-backface-visibility: hidden;
 		position: absolute;
@@ -32,14 +32,14 @@
 /*  Responsive Slides Custom Styling                           */
 /***************************************************************/
 #rslides {
-	&.rslides-wrapper {
+	&.rslides-wrap {
 		@extend %wrapper;
 		@extend %clearfix;
 	}
 	.rslides {
 		@include border-radius(3px);
 		img {
-			margin: 0 0 1em;	
+			margin: 0 0 1rem;	
 			@extend %clearfix;		
 		}
 	}
@@ -47,11 +47,11 @@
 	.rslides-caption {
 		width: 100%;
 		background: transparentize(#FFF, .1);
-		.rslides-caption_title {
-			font-size: 1.2em;
+		.rslides-caption-title {
+			font-size: 1.2rem;
 			font-weight: bold;
 		}
-		.rslides-caption_content {
+		.rslides-caption-content {
 			margin: 0;
 			p {
 				margin: 0;
@@ -92,7 +92,7 @@
 			position: absolute;
 			bottom: 0;
 			left: 0;
-			padding: 1em;
+			padding: 1rem;
 		}
 	}	
 }

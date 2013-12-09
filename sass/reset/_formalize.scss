@@ -95,7 +95,7 @@ input:not([type='checkbox']):not([type='radio']):not([type='reset']):not([type='
   // Leaving out Helvetica Neue, to not throw off size="..."
   // on inputs. Arial is more reliable, on Windows and OS X.
   font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
-  height: 1.8em;
+  height: 1.8rem;
   vertical-align: top;
   // IE7
   *padding-top: 2px;
@@ -150,7 +150,7 @@ select[multiple] {
 // for Opera, WebKit, and IE.
 select[size="0"],
 select[size="1"] {
-  height: 1.8em;
+  height: 1.8rem;
   // IE7
   *height: auto;
 }

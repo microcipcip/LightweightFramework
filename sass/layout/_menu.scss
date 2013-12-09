@@ -1,6 +1,6 @@
 // Menu Variables
 // ====================================================================
-$menu-font-size: 1em;
+$menu-font-size: 1rem;
 // Mainmenu
 $mainmenu-font-color: #FFF;
 $mainmenu-font-color-hover: scale-lightness($mainmenu-font-color, -30%);
@@ -17,8 +17,8 @@ $submenu-border: #CCC;
 $mainmenu-mobile-font-color: #DDD;
 $mainmenu-mobile-font-color-hover: scale-lightness($mainmenu-mobile-font-color, -30%);
 $mainmenu-mobile-border-color: #666;
-$mainmenu-mobile-height: 4em;
-$mainmenu-mobile-padding: 0 1.4em;
+$mainmenu-mobile-height: 4rem;
+$mainmenu-mobile-padding: 0 1.4rem;
 $mainmenu-mobile-background: #333;
 // Mobile Submenu
 $submenu-mobile-font-color: $font-link-color;
@@ -30,16 +30,19 @@ $mobile-navigation-color: #666;
 $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 
 
-/*  Mobile Navigation  */
+
+/***************************************************************/
+/*  Mobile Nav                                                 */
+/***************************************************************/
 #mobile-nav {
 	position: absolute;
-	top: 1.8em;
-	right: 0.4em;
+	top: 2.4rem;
+	right: 0.4rem;
 	.no-js & {
 		display: none;
 	}
 }
-#mobile-nav_menu, #mobile-nav_search {
+#mobile-nav-menu, #mobile-nav-search {
 	display: inline;
 	span {
 		position: relative;
@@ -48,7 +51,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 		float: left;
 		width: 50px;	
 		color: $mobile-navigation-color;
-		font-size: 2em;
+		font-size: 2rem;
 		text-align: center;
 		&:hover {
 			background: transparentize(#FFF, .8);
@@ -56,16 +59,16 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 		}
 	}	
 }
-#mobile-nav_menu {
+#mobile-nav-menu {
 	span {
 		.is-menu-open & {
 			color: $mobile-navigation-color-hover;
 		}		
 	}
 }
-#mobile-nav_search {
+#mobile-nav-search {
 	span {
-		top: -0.1em;
+		top: -0.1rem;
 		.is-search-open & {
 			color: $mobile-navigation-color-hover;
 		}		
@@ -77,8 +80,10 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 	}	
 }
 
-/*  Header Menu  */
-#header_menu {
+/***************************************************************/
+/*  Header Menu                                                */
+/***************************************************************/
+#header-menu {
 	z-index: 3;
 	position: relative;
 	font-size: $menu-font-size;
@@ -136,7 +141,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 					// Submenu non expanded icon (+)
 					&.icon:before {				
 						content: "\e602";	
-						font-size: 1.4em;						
+						font-size: 1.4rem;						
 					}			
 					&:hover {
 						background: transparentize(#FFF, .95);						
@@ -147,25 +152,25 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 	}
 }
 @include MQ(MLplus) {
-	#header_menu { 
+	#header-menu { 
 		display: block !important;
 		margin: 0;
 		padding: 0;
 		background: $mainmenu-background;
 		@include border-radius(3px);
 		> ul {
-			padding: 0 1em;
+			padding: 0 1rem;
 			> li {
 				display: inline-block;
 				*display: inline;
 				zoom: 1;				
 				position: relative;	
-				margin: 0 1em;
+				margin: 0 1rem;
 				> a {		
 					height: auto;
 					line-height: normal;					
 					margin: 0 -4px 0 0;
-					padding: 1em 0;
+					padding: 1rem 0;
 					border: none;
 					background: $mainmenu-background-link;		
 					color: $mainmenu-font-color;					
@@ -175,12 +180,12 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 				}					
 				&.has-children {
 					> a { 
-						padding-right: 0.8em;
+						padding-right: 0.8rem;
 						// Arrows
 						&:after {
 							content: '';
 							position: absolute;
-							top: 1.4em;
+							top: 1.4rem;
 							right: 0;
 							border-left: 5px solid transparent;
 							border-right: 5px solid transparent;
@@ -203,8 +208,11 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 		}	
 	}
 }
-/*  Header Submenu  */
-.header_submenu {
+/***************************************************************/
+/*  Header Submenu                                             */
+/***************************************************************/
+
+.header-submenu {
 	margin: 0;
 	padding: 0;
 	.js & {
@@ -216,24 +224,24 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 			position: relative;
 			display: block;
 			color: $submenu-mobile-font-color;
-			padding: 0.6em 0.6em 0.6em 1.4em;
+			padding: 0.6rem 0.6rem 0.6rem 1.4rem;
 			border: 1px solid $submenu-mobile-border;
 			background: $submenu-mobile-background;
 			&:hover {
 				color: $submenu-mobile-font-color-hover;
 			}
 			[data-icon]:before {
-				top: 0.1em;
-				margin: 0 0.4em 0 0;					
+				top: 0.1rem;
+				margin: 0 0.4rem 0 0;					
 			}			
 		}
 	}
 }
 @include MQ(MLplus) {
-	.header_submenu {
+	.header-submenu {
 		display: none !important;
 		position: absolute;
-		top: 3em;
+		top: 3rem;
 		left: 0;
 		width: 260px;
 		border-top: 4px solid $submenu-arrow-color;
@@ -246,7 +254,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 			content: '';
 			position: absolute;
 			top: -11px;
-			left: 1em;
+			left: 1rem;
 			content: '';
 			border-left: 7px solid transparent;
 			border-right: 7px solid transparent;
@@ -256,7 +264,7 @@ $mobile-navigation-color-hover: scale-lightness(#666, 30%);
 			display: inline-block;
 			width: 100%;
 			a {
-				padding: 0.6em 0 0.6em 1em;
+				padding: 0.6rem 0 0.6rem 1rem;
 				border-top: 1px solid $submenu-border;
 				border-bottom: 1px solid scale-lightness($submenu-border, 40%);
 				color: $submenu-font-color;

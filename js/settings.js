@@ -41,7 +41,7 @@ $(document).ready(function(){
 	$('.accordion').makeFAQ({
 		indexTitle: 'My Index',
 		displayIndex: false,
-		faqHeader: '.accordion_title'
+		faqHeader: '.accordion-title'
 	});
 	/* [/End Accordion FAQ] */		
 	
@@ -83,14 +83,21 @@ $(document).ready(function(){
 		removalDelay: 100,
 		callbacks: {beforeOpen: function() {this.st.mainClass = this.st.el.attr('data-effect');}}
 	});
-	$('.popup-external').magnificPopup({
+	$('.popup-ajax').magnificPopup({
 		type:'ajax',
 		midClick: true,
 		closeOnBgClick: false,
 		removalDelay: 100,
 		callbacks: {beforeOpen: function() {this.st.mainClass = this.st.el.attr('data-effect');}}
+	});
+	$('.popup-iframe').magnificPopup({
+		type:'iframe',
+		midClick: true,
+		closeOnBgClick: false,
+		removalDelay: 100,
+		callbacks: {beforeOpen: function() {this.st.mainClass = this.st.el.attr('data-effect');}}
 	});	
-	$('#header .popup-external').magnificPopup({
+	$('#header .popup-ajax').magnificPopup({
 		items: {
 			src: 'login.html',
 			type: 'ajax'
@@ -151,10 +158,10 @@ $(document).ready(function(){
       }
     },		
 		highlight: function(element) {
-			$(element).parent('li').addClass('error');
+			$(element).parent().parent('li').addClass('error');
 		},
 		unhighlight: function(element) {
-			$(element).parent('li').removeClass('error');
+			$(element).parent().parent('li').removeClass('error');
 		}	
 	});		
 	/* [/End jQuery Form Validation] */
@@ -182,39 +189,39 @@ $(document).ready(function(){
 	/* [/End Social Networks] */	
 
 	// Add Class "has-children" if parent "li" has children "ul"
-	$('#header_menu > ul > li:has(ul)').addClass('has-children');
+	$('#header-menu > ul > li:has(ul)').addClass('has-children');
 	// Add span to "a" if parent "li" has children "ul", this will be used to build
 	// a button to expand the menu when viewing the website on Mobiles phones
-	$('#header_menu > ul > li:has(ul) > a').append('<span aria-hidden="true" class="icon"></span>');	
+	$('#header-menu > ul > li:has(ul) > a').append('<span aria-hidden="true" class="icon"></span>');	
 	
 	/* [Media Queries] */
 	enquire.register("only screen and (min-width: 0) and (max-width: 50em)", {
 		setup : function() {
 			// Show/Hide Mobile Menu	
-			$('#mobile-nav_menu span').click(function () {
+			$('#mobile-nav-menu span').click(function () {
 				// Toggle is-menu-open class
 				$('#header').toggleClass('is-menu-open');
 			});
-			$('#mobile-nav_search span').click(function () {
+			$('#mobile-nav-search span').click(function () {
 				// Toggle is-search-open class
 				$('#header').toggleClass('is-search-open');				
 			});				
 		},
 		match : function() {
 			// Slide Down/Up the secondary nav for mobile
-			$('#header_menu > ul > li.has-children a span').click(function(e) {
+			$('#header-menu > ul > li.has-children a span').click(function(e) {
 				e.preventDefault();
 				$(this).parent().parent().toggleClass('is-expanded');				
 			});			
 		},
 		unmatch : function() {
 			// Disable Slide Down/Up if you exit Mobile view
-			$('#header_menu > ul > li.has-children a span').unbind();
+			$('#header-menu > ul > li.has-children a span').unbind();
 		}  
 	}).register("only screen and (min-width: 50em)", {
 		match : function() {
 			// Dropdown Menu (delay)
-			$('#header_menu > ul > li').hover(function () { 
+			$('#header-menu > ul > li').hover(function () { 
 				$(this).addClass('hovering'); 
 			},
 			function () { 
@@ -223,7 +230,7 @@ $(document).ready(function(){
 		},
 		unmatch : function() {
 			// Disable dropdown menu (for mobile)
-			$('#header_menu > ul > li').unbind('mouseenter mouseleave');
+			$('#header-menu > ul > li').unbind('mouseenter mouseleave');
 		} 
     });
 	/* [/End Media Queries] */

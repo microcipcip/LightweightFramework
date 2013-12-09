@@ -1,0 +1,47 @@
+@if $tooltip-active == true {
+[rel="tooltip"] {
+	cursor: help;
+	color: $font-link-color;
+}
+#tooltip {
+	z-index: 100;
+	position: absolute;
+	padding: 15px;
+	background: #111;
+	color: #fff;
+	text-align: center;
+	@include border-radius(5px);
+	// triangle decoration
+	&:after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		bottom: -10px;
+		width: 0;
+		height: 0;
+		margin-left: -10px;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid #111;
+	}
+	&.top:after {
+		top: -20px;
+		bottom: auto;
+		border-top-color: transparent;
+		border-bottom: 10px solid #111;
+	}
+	&.left:after {
+			left: 10px;
+			margin: 0;
+	}
+	&.right:after {
+			right: 10px;
+			left: auto;
+			margin: 0;
+	}
+	a {
+		color: #DDD;
+		border-bottom: 1px dashed #DDD;
+	}	
+}
+} // end if

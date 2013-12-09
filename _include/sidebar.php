@@ -5,8 +5,8 @@
 <aside id="side">
 
 	<div class="side">
-		<div class="side_title">Title here</div>
-		<div class="side_content">
+		<div class="side-title">Title here</div>
+		<div class="side-content">
 			<p>Fusce nec sapien tortor, vel accumsan mi. Nufelis. Phasellus pulvinar velit quis lorem lobortis a rhoncus est varius.</p>
 			<p>Fusce nec sapien tortor, vel accumsan mi. Nufelis. Phasellus pulvinar velit quis lorem lobortis a rhoncus est varius.</p>
 			<p>Fusce nec sapien tortor, vel accumsan mi. Nufelis. Phasellus pulvinar velit quis lorem lobortis a rhoncus est varius.</p>
@@ -15,8 +15,8 @@
 	</div>
 		
 	<div class="side">
-		<div class="side_title">Title here</div>
-		<div class="side_content">
+		<div class="side-title">Title here</div>
+		<div class="side-content">
 			<ul>
 				<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 				<li>Mauris vulputate dui et ante aliquet eu pretium magna mollis.</li>

@@ -8,10 +8,10 @@ $tables-background-title: whitesmoke;
 $tables-background-td-nth: #F9F9F9;
 $tables-border: #DDD;
 // Padding
-$tables-padding: 0.5em 0.625em 0.625em;
-$tables-td-padding: 0.5625em 0.625em;
+$tables-padding: 0.5rem 0.625rem 0.625rem;
+$tables-td-padding: 0.5625rem 0.625rem;
 // Font-size
-$tables-font-size: 1em;
+$tables-font-size: 1rem;
 
 
 
@@ -21,7 +21,7 @@ $tables-font-size: 1em;
 table {
 	width: 100%;
   background: $tables-background;
-  margin-bottom: 1.25em;
+  margin-bottom: 1.25rem;
   border: solid 1px $tables-border;
 	font-size: $tables-font-size; 
 	thead, tfoot {
@@ -55,7 +55,7 @@ table {
   tr td,
   tfoot tr td {
     display: table-cell;
-    line-height: 1.125em; 
+    line-height: 1.125rem; 
 	}	
 }
 } // end if

@@ -1,13 +1,13 @@
 @if $tabs-active == true {
 // Tab Variables [Custom]
 // ====================================================================
-$tab-font-size: 1em;
+$tab-font-size: 1rem;
 // Borders
 $tab-border: $border-color;
 $tab-border-arrow: #9B9797;
 // Tab horizontal
-$tab-horizontal-padding: 0.8em 1em;
-$tab-horizontal-padding-active: 0.75em 1em 0.875em 1em;
+$tab-horizontal-padding: 0.8rem 1rem;
+$tab-horizontal-padding-active: 0.75rem 1rem 0.875rem 1rem;
 $tab-horizontal-tab-bg: #FFF;
 // Tab vertical
 $tab-vertical-width1: 30%;
@@ -17,10 +17,10 @@ $tab-vertical-content-bg: #FFF;
 // Accordion Title
 $tab-accordion-title-bg: #DDD;
 $tab-accordion-title-bg-active: $tab-accordion-title-bg;
-$tab-accordion-padding: 0.6em 1em;
+$tab-accordion-padding: 0.6rem 1rem;
 // Content
 $tab-content-bg: #FFF;
-$tab-content-padding: 1em;
+$tab-content-padding: 1rem;
 
 
 
@@ -79,7 +79,7 @@ h2 {
 			z-index: 1;
 			display: block;
 			position: relative;
-			padding: 1em !important;
+			padding: 1rem !important;
 			margin: 0 -1px -1px 0;
 			cursor: pointer;
 			border: 1px solid transparent;
@@ -142,7 +142,7 @@ h2 {
 	}	
 	&.resp-tab-active {
 		margin-bottom: 0 !important;
-		padding: 0.6em 1em !important;
+		padding: 0.6rem 1rem !important;
 		background: $tab-accordion-title-bg-active !important;
 	}
 	// Arrows

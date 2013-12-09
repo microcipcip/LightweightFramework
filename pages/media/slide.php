@@ -17,10 +17,10 @@
 		<li>
 			<img src="img/_test/slide/<?php echo $x; ?>.jpg" alt="#" />
 			<div class="rslides-caption">
-				<div class="rslides-caption_title">
+				<div class="rslides-caption-title">
 					Slide <?php echo $x; ?> 
 				</div>			
-				<div class="rslides-caption_content">
+				<div class="rslides-caption-ontent">
 					<p>
 						Slide <?php echo $x; ?>:	Lore ipsa ipsum is dummy text that I use here as an example
 					</p>
