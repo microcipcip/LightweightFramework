@@ -52,14 +52,27 @@
         
         // Returns HTML inclusion of CSS files
         function loadCSS() {
-                global $root;
-                global $css_files;
-                $h = "";
-                foreach ($css_files as $c) {
-                        $mtime = @filemtime("$root/$c");
-                        if ($mtime) $h .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"$c?t=$mtime\" media=\"all\">\n";
-                }
-                return $h;
+        	global $root;
+        	global $css_files;
+        	$h = "";
+        	foreach ($css_files as $c) {
+        		$mtime = @filemtime("$root/$c");
+        		if ($mtime) $h .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"$c?t=$mtime\" media=\"all\">\n";
+        	}
+        	return $h;
+        }
+        
+        // Returns HTML inclusion of JS files
+        function loadJS() {
+        	global $root;
+        	global $javascript_files;
+        	buildJS();
+        	$h = "";
+        	foreach ($javascript_files as $j) {
+        		$mtime = @filemtime("$root/$j");
+        		if ($mtime) $h .= "<script src=\"$j?t=$mtime\"></script>\n";
+        	}
+        	return $h;
         }
         
         // Re-defines menu options over default ones
@@ -187,6 +200,40 @@
                 if ($ap[3] == $bp[3]) return strcmp($a, $b);
                 elseif ($ap[3] >= $bp[3]) return 1;
                 else return -1;
+        }
+        
+        // Build Javascript sources
+        function buildJS() {
+        	global $root;
+        	global $js_sources;
+        	global $js_output;
+        	 
+        	// Compute JS sources hash
+        	$hash = '';
+        	foreach ($js_sources as $k => $v) if ($v[0] == 'enabled') $hash .= basename($v[2]) . '/' . filemtime("$root/{$v[2]}") . '/' . filesize("$root/{$v[2]}") . '/';
+        	$hash = md5($hash);
+        	 
+        	// Read the hash from the current build
+        	$build = md5('');
+        	if (is_file("$root/$js_output")) {
+        		$f = fopen("$root/$js_output", 'r');
+        		$build = substr(fgets($f), 3, 32);
+        		fclose($f);
+        	}
+        	 
+        	// Build if something changed
+        	if ($hash != $build) {
+        		$f = fopen("$root/$js_output", 'w');
+        		fputs($f, "/* $hash DO NOT ALTER OR MOVE THIS LINE */\n\n\n");
+        		foreach ($js_sources as $k => $v) if ($v[0] == 'enabled') {
+        			fputs($f, "/* [$k] */\n\n");
+        			fputs($f, file_get_contents("$root/{$v[2]}"));
+        			fputs($f, "\n\n/* [End $k] */\n\n\n");
+        		}
+        		fclose($f);
+        		clearstatcache();
+        	}
+        	 
         }
         
         // List files in a directory (used by loadMenu())
