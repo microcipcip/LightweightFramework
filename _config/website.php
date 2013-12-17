@@ -27,11 +27,11 @@
 	
 	// Sections
 	$sections = array(
-		'head'   => array('enabled', '_include/head.php'),
+		'head'     => array('enabled', '_include/head.php'),
 		'header'   => array('enabled', '_include/header.php'),
-		'content'   => array('enabled', '_include/content.php'),
+		'content'  => array('enabled', '_include/content.php'),
 		'footer'   => array('enabled', '_include/footer.php'),
-		'sidebar1'   => array('enabled', '_include/sidebar.php')
+		'sidebar1' => array('enabled', '_include/sidebar.php')
 	);
 	
 	// JS files

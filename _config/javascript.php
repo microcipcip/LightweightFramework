@@ -10,17 +10,17 @@
 	
 	// Javascript sources [enable/disable, minify (bool), path]
 	$js_sources = array(
-		'modernizr' => array('enabled', false, "$js_sources_path/modernizr.js"),
-		'mediamatch' => array('enabled', false, "$js_sources_path/mediamatch.js"),
-		'enquire' => array('enabled', false, "$js_sources_path/enquire.js"),
-		'responsivetooltip' => array('enabled', false, "$js_sources_path/responsivetooltip.js"),
-		'responsiveslides' => array('enabled', false, "$js_sources_path/responsiveslides.js"),
-		'fitvids' => array('enabled', false, "$js_sources_path/fitvids.js"),
+		'modernizr'          => array('enabled', false, "$js_sources_path/modernizr.js"),
+		'mediamatch'         => array('enabled', false, "$js_sources_path/mediamatch.js"),
+		'enquire'            => array('enabled', false, "$js_sources_path/enquire.js"),
+		'responsivetooltip'  => array('enabled', false, "$js_sources_path/responsivetooltip.js"),
+		'responsiveslides'   => array('enabled', false, "$js_sources_path/responsiveslides.js"),
+		'fitvids'            => array('enabled', false, "$js_sources_path/fitvids.js"),
 		'easyresponsivetabs' => array('enabled', false, "$js_sources_path/easyresponsivetabs.js"),
-		'faq' => array('enabled', false, "$js_sources_path/faq.js"),
-		'magnificpopup' => array('enabled', false, "$js_sources_path/magnificpopup.js"),
-		'validationplugin' => array('enabled', false, "$js_sources_path/validationplugin.js"),
-		'placeholderplugin' => array('enabled', false, "$js_sources_path/placeholderplugin.js")
+		'faq'                => array('enabled', false, "$js_sources_path/faq.js"),
+		'magnificpopup'      => array('enabled', false, "$js_sources_path/magnificpopup.js"),
+		'validationplugin'   => array('enabled', false, "$js_sources_path/validationplugin.js"),
+		'placeholderplugin'  => array('enabled', false, "$js_sources_path/placeholderplugin.js")
 	);
 	
 	// Javascript settings on jQuery DOM Ready [enable/disable/inherit, minify (bool), path]
