@@ -205,14 +205,16 @@
         // Build Javascript sources
         function buildJS() {
         	global $root;
-        	global $js_sources;
         	global $js_output;
-        	 
+        	global $js_settings_output;
+        	global $js_sources;
+        	global $js_settings_sources;
+        	
         	// Compute JS sources hash
         	$hash = '';
         	foreach ($js_sources as $k => $v) if ($v[0] == 'enabled') $hash .= basename($v[2]) . '/' . filemtime("$root/{$v[2]}") . '/' . filesize("$root/{$v[2]}") . '/';
         	$hash = md5($hash);
-        	 
+        	
         	// Read the hash from the current build
         	$build = md5('');
         	if (is_file("$root/$js_output")) {
@@ -220,7 +222,7 @@
         		$build = substr(fgets($f), 3, 32);
         		fclose($f);
         	}
-        	 
+        	
         	// Build if something changed
         	if ($hash != $build) {
         		$f = fopen("$root/$js_output", 'w');
@@ -228,12 +230,40 @@
         		foreach ($js_sources as $k => $v) if ($v[0] == 'enabled') {
         			fputs($f, "/* [$k] */\n\n");
         			fputs($f, file_get_contents("$root/{$v[2]}"));
-        			fputs($f, "\n\n/* [End $k] */\n\n\n");
+        			fputs($f, "\n\n/* [/End $k] */\n\n\n");
         		}
         		fclose($f);
         		clearstatcache();
         	}
-        	 
+        	
+        	// Compute JS settings-hash
+        	$hash = '';
+        	foreach ($js_settings_sources as $k => $v) if ($v[0] == 'enabled' || ($v[0] == 'inherit' && isset($js_sources[$k]) && $js_sources[$k][0] == 'enabled')) $hash .= basename($v[2]) . '/' . filemtime("$root/{$v[2]}") . '/' . filesize("$root/{$v[2]}") . '/';
+        	$hash = md5($hash);
+        	
+        	// Read the settings-hash from the current build
+        	$build = md5('');
+        	if (is_file("$root/$js_settings_output")) {
+        		$f = fopen("$root/$js_settings_output", 'r');
+        		$build = substr(fgets($f), 3, 32);
+        		fclose($f);
+        	}
+        	
+        	// Build if something changed
+        	if ($hash != $build) {
+        		$f = fopen("$root/$js_settings_output", 'w');
+        		fputs($f, "/* $hash DO NOT ALTER OR MOVE THIS LINE */\n\n\n");
+        		fputs($f, "$(document).ready(function(){\n\n");
+        		foreach ($js_settings_sources as $k => $v) if ($v[0] == 'enabled' || ($v[0] == 'inherit' && isset($js_sources[$k]) && $js_sources[$k][0] == 'enabled')) {
+        			fputs($f, "/* [$k] */\n");
+        			fputs($f, file_get_contents("$root/{$v[2]}"));
+        			fputs($f, "\n/* [/End $k] */\n\n");
+        		}
+        		fputs($f, "});\n");
+        		fclose($f);
+        		clearstatcache();
+        	}
+        	
         }
         
         // List files in a directory (used by loadMenu())

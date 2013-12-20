@@ -25,7 +25,15 @@
 	
 	// Javascript settings on jQuery DOM Ready [enable/disable/inherit, minify (bool), path]
 	$js_settings_sources = array(
-		'jquery' => array('inherit', false, "$js_sources_path/jquery_settings.js")
+		'responsiveslides'   => array('inherit', false, "$js_sources_path/responsiveslides_settings.js"),
+		'easyresponsivetabs' => array('inherit', false, "$js_sources_path/easyresponsivetabs_settings.js"),
+		'faq'                => array('inherit', false, "$js_sources_path/faq_settings.js"),
+		'fitvids'            => array('inherit', false, "$js_sources_path/fitvids_settings.js"),
+		'magnificpopup'      => array('inherit', false, "$js_sources_path/magnificpopup_settings.js"),
+		'validationplugin'   => array('inherit', false, "$js_sources_path/validationplugin_settings.js"),
+		'social'             => array('enabled', false, "$js_sources_path/social_settings.js"),
+		'children'           => array('enabled', false, "$js_sources_path/children_settings.js"),
+		'enquire'            => array('inherit', false, "$js_sources_path/enquire_settings.js")
 	);
 	
 ?>
