@@ -1,4 +1,4 @@
-/* 5f410f343c82c01701f145b777261f43 DO NOT ALTER OR MOVE THIS LINE */
+/* 868eccf85b948b479a78771e1f3c36f2 DO NOT ALTER OR MOVE THIS LINE */
 
 
 $(document).ready(function(){
@@ -24,6 +24,10 @@ $('#rslides .rslides').responsiveSlides({
 });	
 /* [/End responsiveslides] */
 
+/* [fitvids] */
+$('.video').fitVids();
+/* [/End fitvids] */
+
 /* [easyresponsivetabs] */
 $('.tabs-horizontal').easyResponsiveTabs({
 	type: 'default', // Types: default, vertical, accordion
@@ -46,10 +50,6 @@ $('.accordion').makeFAQ({
 	faqHeader: '.accordion-title'
 });
 /* [/End faq] */
-
-/* [fitvids] */
-$('.video').fitVids();
-/* [/End fitvids] */
 
 /* [magnificpopup] */
 $('.popup-single').magnificPopup({
@@ -190,13 +190,13 @@ if ($('.box-big .box-socials').is('*')) {
 }	
 /* [/End social] */
 
-/* [children] */
+/* [menu] */
 // Add Class "has-children" if parent "li" has children "ul"
 $('#header-menu > ul > li:has(ul)').addClass('has-children');
 // Add span to "a" if parent "li" has children "ul", this will be used to build
 // a button to expand the menu when viewing the website on Mobiles phones
 $('#header-menu > ul > li:has(ul) > a').append('<span aria-hidden="true" class="icon"></span>');
-/* [/End children] */
+/* [/End menu] */
 
 /* [enquire] */
 enquire.register("only screen and (min-width: 0) and (max-width: 50em)", {
@@ -238,5 +238,9 @@ enquire.register("only screen and (min-width: 0) and (max-width: 50em)", {
 	} 
 });
 /* [/End enquire] */
+
+/* [default] */
+
+/* [/End default] */
 
 });
